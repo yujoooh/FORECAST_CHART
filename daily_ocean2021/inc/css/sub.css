@@ -1,0 +1,391 @@
+@charset "utf-8";
+/* CSS Document */
+
+/********** Header **********/
+
+.dailyOcean {width: 2020px; position: relative;}
+.ulleungdo .dailyOcean {width: 3085px; position: relative;}
+.baengnyeongdo .dailyOcean {width: 3085px; position: relative;}
+
+/* headerContainer */
+.topLogo img {margin-top:22px;}
+.topLogo h1 {font-size:84px; }
+.topLogo h1 span {font-size:80px;}
+
+.today {margin-top:130px; text-align: right; line-height: 50px;}
+.today span {font-size:52px;}
+.today span.arrow {margin-right:20px;}
+.today span.arrow i.icon-arrow {border: 14px solid transparent; border-top: 17px solid; top: 24px; left: 0px;}
+.today span.time {margin-right:0px;}
+.today span.lunar_date {font-size:38px;     padding-top: 0px;  margin-left: 0px;}
+
+.ulleungdo .today {margin-top:36px;}
+.ulleungdo .today span {font-size:76px; font-weight: 100; letter-spacing: -5px; text-align: right; padding:0 12px; color:#444;}
+.ulleungdo .today span.arrow {position:relative;    margin-right: 50px;}
+.ulleungdo .today span.arrow i.icon-arrow {width: 0; height: 0; border: 20px solid transparent; border-top: 24px solid; top: 40px; left: px;  position: absolute;}
+.ulleungdo .today span.time {font-weight: 400; }
+.ulleungdo .today span.lunar_date {font-size:58px; color:#888; background:#fff; margin-left:18px;    padding-top: 10px; }
+
+.baengnyeongdo .today {margin-top:36px;}
+.baengnyeongdo .today span {font-size:76px; font-weight: 100; letter-spacing: -5px; text-align: right; padding:0 12px; color:#444;}
+.baengnyeongdo .today span.arrow {position:relative;    margin-right: 50px;}
+.baengnyeongdo .today span.arrow i.icon-arrow {width: 0; height: 0; border: 20px solid transparent; border-top: 24px solid; top: 40px; left: px;  position: absolute;}
+.baengnyeongdo .today span.time {font-weight: 400; }
+.baengnyeongdo .today span.lunar_date {font-size:58px; color:#888; background:#fff; margin-left:18px;    padding-top: 10px; }
+
+/********** Main **********/
+
+/* contentsContainer */
+.oceanName.ulsan {right: 190px;top: 300px;}
+.oceanName.busan {left: 140px;top: 630px;}
+.oceanName.changwon {right: 480px;top: 530px;}
+
+/* chartWrap */
+/* chartWrap main */
+.busan .mapContainer .chartWrap {display:inline-block;width:750px;height:750px;padding:30px;position:absolute;left:-10px;top:250px;}
+.incheon .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:210px;bottom:-30px;}
+.sokcho .mapContainer .chartWrap {display:inline-block;width:620px;height:620px;padding:20px;position:absolute;left:10px;bottom:400px;}
+.gunsan .mapContainer .chartWrap {display:inline-block;width:580px;height:580px;padding:30px;position:absolute;right:-10px;bottom:-10px;}
+.mokpo .mapContainer .chartWrap {display:inline-block;width:620px;height:620px;padding:20px;position:absolute;right:447px;top:110px;}
+.jeju .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:10px;position:absolute;left:400px;top:790px;}
+.yeosu .mapContainer .chartWrap {display:inline-block;width:720px;height:720px;padding:30px;position:absolute;left:-50px;top:370px;}
+.tongyeong .mapContainer .chartWrap {display:inline-block;width:690px;height:690px;padding:30px;position:absolute;left:370px;top:20px;}
+.pohang .mapContainer .chartWrap {display:inline-block;width:640px;height:640px;padding:30px;position:absolute;left:-20px;top:330px;}
+.donghae .mapContainer .chartWrap {display:inline-block;width:570px;height:570px;padding:20px;position:absolute;left:-10px;bottom:300px;}
+.heuksando .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:-30px;bottom:-45px;}
+.hupo .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;left:-30px;top:760px;}
+.ulleungdo .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:-20px;top:-46px;}
+.taean .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:-20px;top:350px;}
+.wando .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:20px;position:absolute;right:947px;top:-21px;}
+/* 20210517_bck */
+/* .wando .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:20px;position:absolute;right:460px;top:-21px;} */
+/* .wando .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:20px;position:absolute;right:430px;top:-20px;} */
+.baengnyeongdo .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:620px;top:0px;}
+.gyeokyeolbiyeoldo .mapContainer .chartWrap {display:inline-block;width:700px;height:700px;padding:30px;position:absolute;right:-105px;top:710px;}
+.yeonggwang .mapContainer .chartWrap {display:inline-block;width:610px;height:610px;padding:30px;position:absolute;right:-30px;bottom:-65px;}
+.ieodo .mapContainer .chartWrap {display:inline-block;width:600px;height:600px;padding:30px;position:absolute;right:0px;top:0px;}
+
+/* chartWrap moon */
+.busan .chartWrap .moon {position:absolute;width:96px;height:96px;top:270px;left:358px;}
+.incheon .chartWrap .moon {position:absolute;width:80px;height:80px;top:310px;left:290px;}
+.sokcho .chartWrap .moon {position:absolute;width:135px;height:135px;top:263px;left:252px;}
+.gunsan .chartWrap .moon {position:absolute;width:80px;height:80px;top:300px;left:280px;}
+.mokpo .chartWrap .moon {position:absolute;width:96px;height:96px;top:282px;left:294px;}
+.jeju .chartWrap .moon {position:absolute;width:76px;height:76px;top:467px;left:284px;}
+.yeosu .chartWrap .moon {position:absolute;width:110px;height:110px;top:267px;left:335px;}
+.tongyeong .chartWrap .moon {position:absolute;width:114px;height:114px;top:232px;left:294px;}
+.pohang .chartWrap .moon {position:absolute;width:160px;height:160px;top:292px;left:259px;}
+.donghae .chartWrap .moon {position:absolute;width:90px;height:90px;top:260px;left:260px;}
+.heuksando .chartWrap .moon {position:absolute;width:70px;height:70px;top:305px;left:295px;}
+.hupo .chartWrap .moon {position:absolute;width:125px;height:125px;top:278px;left:257px;}
+.ulleungdo .chartWrap .moon {position:absolute;width:120px;height:120px;top:280px;left:270px;}
+.taean .chartWrap .moon {position:absolute;width:85px;height:85px;top:308px;left:288px;}
+.wando .chartWrap .moon {position:absolute;width:100px;height:100px;top:270px;left:270px;}
+.baengnyeongdo .chartWrap .moon {position:absolute;width:120px;height:120px;top:275px;left:270px;}
+.gyeokyeolbiyeoldo .chartWrap .moon {position:absolute;width:96px;height:96px;top:250px;left:332px;}
+.yeonggwang .chartWrap .moon {position:absolute;width:80px;height:80px;top:306px;left:307px;}
+.ieodo .chartWrap .moon {position:absolute;width:70px;height:70px;top:305px;left:295px;}
+
+/* minimap */
+.busan .minimap {top:290px;left:70px;height:278px;width:236px;}
+.incheon .minimap {top:290px;right:70px;}
+.sokcho .minimap {left:60px;bottom:310px;height:361px;width:286px;}
+.gunsan .minimap {top:290px;right:70px;}
+.mokpo .minimap {right:70px;top:290px;height:361px;width:286px;}
+.jeju .minimap {top:290px;left:70px;height:361px;width:286px;}
+.yeosu .minimap {top:290px;left:70px;height:361px;width:286px;}
+.tongyeong .minimap {top:290px;left:70px;height:361px;width:286px;}
+.pohang .minimap {top:290px;left:70px;height:361px;width:286px;}
+.donghae .minimap {left:60px;bottom:310px;height:331px;width:272px;}
+.heuksando .minimap {top:290px;right:70px;height:331px;width:272px;}
+.hupo .minimap {top:290px;left:70px;height:331px;width:272px;}
+.ulleungdo .minimap {top:180px;left:70px;height:331px;width:272px;}
+.taean .minimap {top:280px;right:65px;height:331px;width:272px;}
+.wando .minimap {right:70px;top:290px;height:331px;width:272px;}
+.baengnyeongdo .minimap {top:180px;right:70px;height:331px;width:272px;}
+.gyeokyeolbiyeoldo .minimap {top:290px;right:70px;height:278px;width:236px;}
+/* .gyeokyeolbiyeoldo .minimap {top:2027px;right:70px;height:278px;width:236px;} */
+.yeonggwang .minimap {bottom:800px;right:65px;height:331px;width:272px;}
+.yeonggwang .minimap {bottom:800px;right:65px;height:331px;width:272px;}
+.ieodo .minimap {top:290px;left:70px;height:331px;width:272px;}
+
+/* tideTime */
+.busan .chartWrap .tideUnit {top: 40px; left: 355px;}
+
+.busan .chartWrap .tideTime.t_01 {top: 200px;left: 510px;}
+.busan .chartWrap .tideTime.t_02 {top: 395px;left: 510px;}
+.busan .chartWrap .tideTime.t_03 {top: 493px;left: 342px;}
+.busan .chartWrap .tideTime.t_04 {top: 395px;left: 173px;}
+.busan .chartWrap .tideTime.t_05 {top: 200px;left: 173px;}
+
+.incheon .chartWrap .tideUnit {top: 75px; left: 280px;}
+
+.incheon .chartWrap .tideTime.t_01 {top: 210px;left: 420px;}
+.incheon .chartWrap .tideTime.t_02 {top: 375px;left: 460px;}
+.incheon .chartWrap .tideTime.t_03 {top: 510px;left: 355px;}
+.incheon .chartWrap .tideTime.t_04 {top: 510px;left: 180px;}
+.incheon .chartWrap .tideTime.t_05 {top: 375px;left:  75px;}
+.incheon .chartWrap .tideTime.t_06 {top: 210px;left: 110px;}
+
+.sokcho .chartWrap .tideUnit {top: 65px; left: 270px;}
+
+.sokcho .chartWrap .tideTime.t_01 {top: 310px;left: 440px;}
+.sokcho .chartWrap .tideTime.t_02 {top: 495px;left: 256px;}
+.sokcho .chartWrap .tideTime.t_03 {top: 310px;left:  75px;}
+
+.gunsan .chartWrap .tideUnit {top: 69px; left: 269px;}
+
+.gunsan .chartWrap .tideTime.t_01 {top: 205px;left: 405px;}
+.gunsan .chartWrap .tideTime.t_02 {top: 365px;left: 440px;}
+.gunsan .chartWrap .tideTime.t_03 {top: 490px;left: 340px;}
+.gunsan .chartWrap .tideTime.t_04 {top: 490px;left: 175px;}
+.gunsan .chartWrap .tideTime.t_05 {top: 365px;left:  75px;}
+.gunsan .chartWrap .tideTime.t_06 {top: 205px;left: 110px;}
+
+.mokpo .chartWrap .tideUnit {top: 60px; left: 290px;}
+
+.mokpo .chartWrap .tideTime.t_01 {top: 310px;left: 473px;}
+.mokpo .chartWrap .tideTime.t_02 {top: 502px;left: 280px;}
+.mokpo .chartWrap .tideTime.t_03 {top: 310px;left:  90px;}
+
+.jeju .chartWrap .tideUnit {top: 240px; left: 270px;}
+
+.jeju .chartWrap .tideTime.t_01 {top: 425px;left: 445px;}
+.jeju .chartWrap .tideTime.t_02 {top: 645px;left: 375px;}
+.jeju .chartWrap .tideTime.t_03 {top: 645px;left: 145px;}
+.jeju .chartWrap .tideTime.t_04 {top: 425px;left:  75px;}
+
+.yeosu .chartWrap .tideUnit {top: 40px; left: 340px;}
+
+.yeosu .chartWrap .tideTime.t_01 {top: 240px;left: 520px;}
+.yeosu .chartWrap .tideTime.t_02 {top: 465px;left: 445px;}
+.yeosu .chartWrap .tideTime.t_03 {top: 465px;left: 205px;}
+.yeosu .chartWrap .tideTime.t_04 {top: 240px;left: 130px;}
+
+.tongyeong .chartWrap .tideUnit {top: 10px; left: 300px;}
+
+.tongyeong .chartWrap .tideTime.t_01 {top: 165px;left: 465px;}
+.tongyeong .chartWrap .tideTime.t_02 {top: 373px;left: 465px;}
+.tongyeong .chartWrap .tideTime.t_03 {top: 473px;left: 288px;}
+.tongyeong .chartWrap .tideTime.t_04 {top: 373px;left: 115px;}
+.tongyeong .chartWrap .tideTime.t_05 {top: 165px;left: 115px;}
+
+.pohang .chartWrap .tideUnit {top: 80px; left: 290px;}
+
+.pohang .chartWrap .tideTime.t_01 {top: 285px;left: 475px;}
+.pohang .chartWrap .tideTime.t_02 {top: 520px;left: 400px;}
+.pohang .chartWrap .tideTime.t_03 {top: 520px;left: 150px;}
+.pohang .chartWrap .tideTime.t_04 {top: 285px;left:  75px;}
+
+.donghae .chartWrap .tideUnit {top: 75px; left: 255px;}
+
+.donghae .chartWrap .tideTime.t_01 {top: 285px;left: 400px;}
+.donghae .chartWrap .tideTime.t_02 {top: 440px;left: 242px;}
+.donghae .chartWrap .tideTime.t_03 {top: 285px;left:  88px;}
+
+.heuksando .chartWrap .tideUnit {top: 90px; left: 280px;}
+
+.heuksando .chartWrap .tideTime.t_01 {top: 320px;left: 425px;}
+.heuksando .chartWrap .tideTime.t_02 {top: 480px;left: 267px;}
+.heuksando .chartWrap .tideTime.t_03 {top: 320px;left: 110px;}
+
+.hupo .chartWrap .tideUnit {top: 85px; left: 270px;}
+
+.hupo .chartWrap .tideTime.t_01 {top: 320px;left: 440px;}
+.hupo .chartWrap .tideTime.t_02 {top: 505px;left: 255px;}
+.hupo .chartWrap .tideTime.t_03 {top: 320px;left:  75px;}
+
+.ulleungdo .chartWrap .tideUnit {top: 95px; left: 280px;}
+
+.ulleungdo .chartWrap .tideTime.t_01 {top: 320px;left: 440px;}
+.ulleungdo .chartWrap .tideTime.t_02 {top: 495px;left: 268px;}
+.ulleungdo .chartWrap .tideTime.t_03 {top: 320px;left:  95px;}
+
+.taean .chartWrap .tideUnit {top: 75px; left: 280px;}
+
+.taean .chartWrap .tideTime.t_01 {top: 270px;left: 460px;}
+.taean .chartWrap .tideTime.t_02 {top: 495px;left: 385px;}
+.taean .chartWrap .tideTime.t_03 {top: 495px;left: 150px;}
+.taean .chartWrap .tideTime.t_04 {top: 270px;left:  75px;}
+
+.wando .chartWrap .tideUnit {top: 55px; left: 270px;}
+
+.wando .chartWrap .tideTime.t_01 {top: 300px;left: 450px;}
+.wando .chartWrap .tideTime.t_02 {top: 494px;left: 259px;}
+.wando .chartWrap .tideTime.t_03 {top: 300px;left:  65px;}
+
+.baengnyeongdo .chartWrap .tideUnit {top: 60px; left: 280px;}
+
+.baengnyeongdo .chartWrap .tideTime.t_01 {top: 220px;left: 435px;}
+.baengnyeongdo .chartWrap .tideTime.t_02 {top: 415px;left: 435px;}
+.baengnyeongdo .chartWrap .tideTime.t_03 {top: 510px;left: 268px;}
+.baengnyeongdo .chartWrap .tideTime.t_04 {top: 415px;left: 100px;}
+.baengnyeongdo .chartWrap .tideTime.t_05 {top: 220px;left: 100px;}
+
+.gyeokyeolbiyeoldo .chartWrap .tideUnit {top: 45px; left: 330px;}
+
+.gyeokyeolbiyeoldo .chartWrap .tideTime.t_01 {top: 188px;left: 478px;}
+.gyeokyeolbiyeoldo .chartWrap .tideTime.t_02 {top: 370px;left: 478px;}
+.gyeokyeolbiyeoldo .chartWrap .tideTime.t_03 {top: 463px;left: 318px;}
+.gyeokyeolbiyeoldo .chartWrap .tideTime.t_04 {top: 370px;left: 158px;}
+.gyeokyeolbiyeoldo .chartWrap .tideTime.t_05 {top: 188px;left: 158px;}
+
+.yeonggwang .chartWrap .tideUnit {top: 90px; left: 295px;}
+
+.yeonggwang .chartWrap .tideTime.t_01 {top: 328px;left: 470px;}
+.yeonggwang .chartWrap .tideTime.t_02 {top: 513px;left: 285px;}
+.yeonggwang .chartWrap .tideTime.t_03 {top: 330px;left: 97px;}
+.yeonggwang .chartWrap .tideTime.t_04 {top: 280px;left: 100px;}
+
+.ieodo .chartWrap .tideUnit {top: 95px; left: 280px;}
+
+.ieodo .chartWrap .tideTime.t_01 {top: 320px;left: 425px;}
+.ieodo .chartWrap .tideTime.t_02 {top: 480px;left: 267px;}
+.ieodo .chartWrap .tideTime.t_03 {top: 320px;left: 110px;}
+
+/* legend */
+.mapContainer .chartLegend {transform: scale(1.3); display:inline-block; position:absolute; bottom:-237px; right:130px; z-index:999;}
+.mapContainer .chartLegend table {width: 745px;}
+.legendContainer {height: 270px;}
+.lgdBox.current {transform: scale(1.3); top:30px; left:55px;}
+.lgdBox.tideForecast {transform: scale(1.3); top:30px; left:400px;}/*khoa:left:420px;*/
+.lgdBox.flooding {transform: scale(1.3); top:30px; left:758px;}/*khoa:left:790px;*/
+.lgdBox.wTemp_wHeight {transform: scale(1.3); width: 444px; top:30px; left:1100px;}/*khoa:left:1150px;*/
+.lgdBox.wTemp_wHeight > ul > li {width: 118px;}
+.lgdBox.tideCircle {transform: scale(1.3); top:30px; right:60px;}
+.lgdBox.wTempColorBar {transform: scale(1.3); top:155px; left:155px;}
+.lgdBox.wTempColorBar > ul > li:first-child, .lgdBox.wTempColorBar > ul > li:last-child {background-color:#d7d7d7; padding:0 24px;}
+
+.ulleungdo .mapContainer .chartLegend {transform: scale(1); display:inline-block; position:absolute; bottom:-92px; right:328px; z-index:999;}
+.ulleungdo .mapContainer .chartLegend table {width: 586px;}
+.ulleungdo .legendContainer {height: 102px;}
+.ulleungdo .lgdBox.current {transform: scale(1); top:10px; left:10px;}
+.ulleungdo .lgdBox.tideForecast {transform: scale(1); top:10px; left:370px;}/*khoa:left:385px;*/
+.ulleungdo .lgdBox.flooding {transform: scale(1); top:10px; left:660px;}/*khoa:left:695px;*/
+.ulleungdo .lgdBox.wTemp_wHeight {transform: scale(1); top:10px; left:905px;}
+.ulleungdo .lgdBox.wTemp_wHeight > ul > li {width: 118px;}
+.ulleungdo .lgdBox.tideCircle {transform: scale(1); top:10px; right:10px;}
+.ulleungdo .lgdBox.wTempColorBar {transform: scale(1); top:10px; left:1370px;}
+.ulleungdo .lgdBox.wTempColorBar > ul > li:first-child, .lgdBox.wTempColorBar > ul > li:last-child {background-color:#d7d7d7; padding:0 24px;}/*khoa:padding:0 23px;*/
+
+.baengnyeongdo .mapContainer .chartLegend {transform: scale(1); display:inline-block; position:absolute; bottom:-92px; right:328px; z-index:999;}
+.baengnyeongdo .mapContainer .chartLegend table {width: 586px;}
+.baengnyeongdo .legendContainer {height: 102px;}
+.baengnyeongdo .lgdBox.current {transform: scale(1); top:10px; left:10px;}
+.baengnyeongdo .lgdBox.tideForecast {transform: scale(1); top:10px; left:370px;}/*khoa:left:385px;*/
+.baengnyeongdo .lgdBox.flooding {transform: scale(1); top:10px; left:660px;}/*khoa:left:695px;*/
+.baengnyeongdo .lgdBox.wTemp_wHeight {transform: scale(1); top:10px; left:905px;}
+.baengnyeongdo .lgdBox.wTemp_wHeight > ul > li {width: 118px;}
+.baengnyeongdo .lgdBox.tideCircle {transform: scale(1); top:10px; right:10px;}
+.baengnyeongdo .lgdBox.wTempColorBar {transform: scale(1); top:10px; left:1370px;}
+.baengnyeongdo .lgdBox.wTempColorBar > ul > li:first-child, .lgdBox.wTempColorBar > ul > li:last-child {background-color:#d7d7d7; padding:0 24px;}/*khoa:padding:0 23px;*/
+
+/* tideForecast */
+.busan .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+
+.busan .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.busan .dataMarker.tideForecast#CUR_01 .tfWrap {left:-820px; top:-10px;}
+.busan .dataMarker.tideForecast#CUR_02 .tfWrap {left:-100px; top:-70px;}
+.busan .dataMarker.tideForecast#CUR_03 .tfWrap {left:-5px; top:45px;}
+.busan .dataMarker.tideForecast#CUR_04 .tfWrap {left:-100px; top:58px;}
+
+.incheon .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+.incheon .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.incheon .dataMarker.tideForecast#CUR_01 .tfWrap {left:-60px; top:-70px;}
+.incheon .dataMarker.tideForecast#CUR_02 .tfWrap {left:30px; top:-60px;}
+.incheon .dataMarker.tideForecast#CUR_03 .tfWrap {left:-60px; top:-80px;}
+.incheon .dataMarker.tideForecast#CUR_04 .tfWrap {left:-749px; top:60px;}
+.incheon .dataMarker.tideForecast#CUR_05 .tfWrap {left:-70px; top:-63px;}
+.incheon .dataMarker.tideForecast#CUR_06 .tfWrap {left:-753px; top:-70px;}
+.incheon .dataMarker.tideForecast#CUR_07 .tfWrap {left:-30px; top:45px;}
+
+.gunsan .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+.gunsan .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.gunsan .dataMarker.tideForecast#CUR_01 .tfWrap {left:0px;}
+.gunsan .dataMarker.tideForecast#CUR_02 .tfWrap {left:-105px; top:-80px;}
+.gunsan .dataMarker.tideForecast#CUR_03 .tfWrap {left:50px; top:20px;}
+.gunsan .dataMarker.tideForecast#CUR_04 .tfWrap {left:-10px; top:80px;}
+/* .gunsan .dataMarker.tideForecast#CUR_05 .tfWrap {left:-50px; top:-100px;}*/
+.gunsan .dataMarker.tideForecast#CUR_05 .tfWrap {left:-3px; top:130px;}
+
+/* .mokpo .dataMarker.tideForecast#CUR_01 .tfWrap {left:-830px; top:0px;} */
+.mokpo .dataMarker.tideForecast#CUR_01 .tfWrap {left:-700px; top:70px;}
+.mokpo .dataMarker.tideForecast#CUR_02 .tfWrap {left:50px; top:30px;}
+.mokpo .dataMarker.tideForecast#CUR_03 .tfWrap {left:50px; top:-50px;}
+.mokpo .dataMarker.tideForecast#CUR_04 .tfWrap {left:-700px; top:-100px;}
+.mokpo .dataMarker.tideForecast#CUR_05 .tfWrap {left:-800px; top:-50px;}
+
+.jeju .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+.jeju .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.jeju .dataMarker.tideForecast#CUR_01 .tfWrap {left:50px; top:20px;}
+.jeju .dataMarker.tideForecast#CUR_02 .tfWrap {left:-800px; top:40px;}
+.jeju .dataMarker.tideForecast#CUR_03 .tfWrap {left:-70px; top: -70px;}
+
+.yeosu .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+.yeosu .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.yeosu .dataMarker.tideForecast#CUR_01 .tfWrap {left:-50px; top:80px;}
+.yeosu .dataMarker.tideForecast#CUR_02 .tfWrap {left:-140px; top:-100px;}
+.yeosu .dataMarker.tideForecast#CUR_03 .tfWrap {left:-700px; top: -70px;} 
+.yeosu .dataMarker.tideForecast#CUR_04 .tfWrap {left:-70px; top: 70px;}
+.yeosu .dataMarker.tideForecast#CUR_05 .tfWrap {left:0px; top:-70px;}
+
+.tongyeong .dataMarker.tideForecast .accentBg.title.f_R {border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; border-top-left-radius: 0px; border-bottom-left-radius: 0px;}
+.tongyeong .dataMarker.tideForecast .tfWrap {left:-100px; top:-50px;}
+.tongyeong .dataMarker.tideForecast#CUR_01 .tfWrap {top:-80px; left: -80px;}
+.tongyeong .dataMarker.tideForecast#CUR_02 .tfWrap {top:100px; left:  -700px;}
+.tongyeong .dataMarker.tideForecast#CUR_03 .tfWrap {top:70px; left:-700px;}
+.tongyeong .dataMarker.tideForecast#CUR_04 .tfWrap {top: -70px; left:  -50px;}
+
+.heuksando .dataMarker.tideForecast#CUR_01 .tfWrap {top:-5px;left:-800px;}
+.heuksando .dataMarker.tideForecast#CUR_02 .tfWrap {top:15px;right:-5px;}
+.heuksando .dataMarker.tideForecast#CUR_03 .tfWrap {top:40px;right:55px;}
+
+.taean .dataMarker.tideForecast#CUR_01 .tfWrap {top:-15px; left:50px;}
+.taean .dataMarker.tideForecast#CUR_02 .tfWrap {top:-60px; left:20px;}
+.taean .dataMarker.tideForecast#CUR_03 .tfWrap {top:-10px; left:-820px;}
+.taean .dataMarker.tideForecast#CUR_04 .tfWrap {top:0px; left:70px;}
+
+/* .wando .dataMarker.tideForecast#CUR_01 .tfWrap {top:-70px; left:-550px;} */
+.wando .dataMarker.tideForecast#CUR_01 .tfWrap {top:70px; left:-20px;}
+.wando .dataMarker.tideForecast#CUR_02 .tfWrap {top:50px; left:0px;}
+.wando .dataMarker.tideForecast#CUR_03 .tfWrap {top:-100px; right:-20px;}
+
+/* 20210517 */
+/* .baengnyeongdo .dataMarker.tideForecast#CUR_01 .tfWrap {top:-80px; left:0px;} */
+.baengnyeongdo .dataMarker.tideForecast#CUR_01 .tfWrap {top:41px; left:0px;}
+.baengnyeongdo .dataMarker.tideForecast#CUR_02 .tfWrap {top:10px; left:50px;}
+
+.gyeokyeolbiyeoldo .dataMarker.tideForecast#CUR_01 .tfWrap {top:30px; left:-800px;}
+/* orgin */
+.gyeokyeolbiyeoldo .dataMarker.tideForecast#CUR_02 .tfWrap {top:-10px; left: 50px;}
+/* .gyeokyeolbiyeoldo .dataMarker.tideForecast#CUR_02 .tfWrap {top:-110px; left: -750px;} */
+.gyeokyeolbiyeoldo .dataMarker.tideForecast#CUR_03 .tfWrap {top:-105px; left: -744px;}
+
+.yeonggwang .dataMarker.tideForecast#CUR_01 .tfWrap {top:-80px; left: -80px;}
+.yeonggwang .dataMarker.tideForecast#CUR_02 .tfWrap {top:-10px; left:  60px;}
+.yeonggwang .dataMarker.tideForecast#CUR_03 .tfWrap {top: 40px; left:-750px;}
+.yeonggwang .dataMarker.tideForecast#CUR_04 .tfWrap {top: 35px; left:  50px;}
+.yeonggwang .dataMarker.tideForecast#CUR_05 .tfWrap {top: 50px; left:  -700px;}
+
+
+.ieodo .dataMarker.tideForecast#CUR_01 .tfWrap {top:-80px; left: -700px;}
+.ieodo .dataMarker.tideForecast#CUR_02 .tfWrap {top:70px; left: -700px;}
+
+.ieodo .dataMarker.floodingArea_empty#FRA_01 .dataPanel {top:20px;}
+
+/* WTWH Wind */
+.dataMarker.todayLocalInfo {background-color: rgba(255,255,255,0.35); border-radius: 30px; border:1px solid rgba(255,255,255,0.5);}
+.todayLocalInfo .dataLocalBar {display: inline-block; padding-right: 10px;clear: both; font-size:0; float:left; height: 52px; line-height: 52px;}
+.todayLocalInfo .dataLocalBar .icon {padding:0;}
+.todayLocalInfo .dataLocalBar .icon img {width:44px; height:44px;}
+.todayLocalInfo .dataLocalBar.waterTemp .icon img {padding:4px 0 2px 6px;}
+.todayLocalInfo .dataLocalBar.tide .icon img {padding:4px 0 4px 6px;}
+.todayLocalInfo .dataLocalBar.wind .icon img {padding:4px 0 4px 6px;}
+.todayLocalInfo .dataLocalBar .data {width:84px; text-align: right; font-size:22px; color:#555;}
+.todayLocalInfo .dataLocalBar .data span.value {font-size:28px; color:#000; font-weight: 600; padding:0 2px 0 1px; }

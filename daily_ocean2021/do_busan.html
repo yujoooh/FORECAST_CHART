@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=yes,  initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>:: 해황예보도 이미지 자동생성 시스템 ::</title>
+
+<link rel="stylesheet" href="inc/css/font.css" />
+<link rel="stylesheet" href="inc/css/common.css" />
+<link rel="stylesheet" href="inc/css/sub.css" />
+
+<script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
+<script type="text/javascript" src="inc/js/moment.js"></script>
+<script type="text/javascript" src="inc/js/Chart.min.js"></script>
+<script type="text/javascript" src="inc/js/html2canvas.js"></script>
+<script type="text/javascript" src="inc/js/common.js"></script>
+
+<script>
+
+    
+$(document).ready(function() {
+    
+  uParams = getParams();
+  var dataDir = 'RESULT/data_busan/' + uParams.date + '/' + uParams.time
+  on_map(dataDir,2000,2040);
+  makeChart();
+
+});
+ 
+    
+    
+function makeChart() {
+    // 차트 생성
+    var ctx = document.getElementById("radarChart").getContext('2d');
+
+    var chartOptions = {
+        layout:{
+          padding:{
+            left: 30,
+            right: 30,
+            top: 30,
+            bottom: 30
+          }
+        },
+        scale: {
+            display: true,
+            pointLabels: {
+                fontSize: 24,
+                fontStyle: "bold"
+            },
+            gridLines: {
+                circular: true,
+                color:["rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#538dbe","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#82c892"],
+                lineWidth:[1,1,1,1,1,1,3]
+            },
+            ticks: {
+                display: true,
+                beginAtZero: false,
+                min:-80,
+                max: 250,
+                stepSize: 50,
+                fontSize: 22
+            },
+        },
+        legend: {
+            display: false
+        },
+        "elements": {
+            "line":{
+                "tension":0,
+                "borderWidth":3
+            }
+        },
+        events: false,
+        tooltips: {
+            enabled: false
+        },
+        hover: {
+            animationDuration: 0
+        },
+        animate: false,
+    };
+
+    var chartData = {
+        "labels":[""],        
+        "datasets":[
+            {
+                "label":"고조",
+                "data":[,],
+                "fill":"-1",
+                "borderColor":"rgb(255, 99, 132)",
+                "pointBackgroundColor":"#D92E2E",
+                "pointBorderColor":"#fff",
+                "pointHoverBackgroundColor":"#fff",
+                "pointRadius":6,
+                "pointHoverBorderColor":"rgb(255, 99, 132)"
+            },
+            {
+                "label":"고조",
+                "data":[,],
+                "fill":"-1",
+                "backgroundColor":"rgba(255, 99, 132, 0.1)",
+                "borderColor":"rgb(255, 99, 132)",
+                "pointBackgroundColor":"#D92E2E",
+                "pointBorderColor":"#fff",
+                "pointHoverBackgroundColor":"#fff",
+                "pointRadius":6,
+                "pointHoverBorderColor":"rgb(255, 99, 132)"
+            },
+            {
+                "label":"저조",
+                "data":[,],
+                "fill":"-1",
+                "backgroundColor":"rgba(255, 99, 132, 0.1)",
+                "borderColor":"rgb(54, 162, 235)",
+                "pointBackgroundColor":"#3B529E",
+                "pointBorderColor":"#fff",
+                "pointHoverBackgroundColor":"#fff",
+                "pointRadius":6,
+                "pointHoverBorderColor":"rgb(54, 162, 235)",
+                "fontSize":40,
+            },            
+            {
+                "label":"저조",
+                "data":[,],
+                "fill":"-1",
+                "backgroundColor":"rgba(54, 162, 235, 0.2)",
+                "borderColor":"rgb(54, 162, 235)",
+                "pointBackgroundColor":"#3B529E",
+                "pointBorderColor":"#fff",
+                "pointHoverBackgroundColor":"#fff",
+                "pointRadius":6,
+                "pointHoverBorderColor":"rgb(54, 162, 235)",
+                "fontSize":40,
+            },
+            {
+                "label":"",
+                "data":[,-30,-30,-30,-30,-30],
+                "fill":"-1",
+                "backgroundColor":"rgba(54, 162, 235, 0.2)",
+                "borderColor":"rgba(0,0,0,0)",
+                "pointBackgroundColor":"rgb(255,255,255)",
+                "pointBorderColor":"rgba(0,0,0,0)",
+                "pointHoverBackgroundColor":"rgba(0,0,0,0)",
+                "pointHoverBorderColor":"rgba(0,0,0,0)"
+            }
+        ]
+    };
+    
+    var tideTimeDegrees = [60,120,180,240,300];
+    
+    uParams = getParams();
+    var dataDir = 'RESULT/data_busan/' + uParams.date + '/' + uParams.time
+    
+    $.ajax({
+		type: "GET",
+		url: dataDir + "/chart_radar.json",
+		dataType: "json",
+		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+		success: function(data){
+			
+			var cnt = data.CHART.length;
+			for(var i=0; i < cnt; i++){                
+                // radar chart data
+                chartData.labels.push(data.CHART[i].POS_NAME);
+                chartData.datasets[0].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_01));
+                chartData.datasets[1].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_02));
+                chartData.datasets[2].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_01));
+                chartData.datasets[3].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_02));
+                
+                // tide time
+                $(".tideTime:eq("+i+")").find(".tide_low:eq(0)").text(data.CHART[i].TIDE_LOW_TIME_01);
+                $(".tideTime:eq("+i+")").find(".tide_high:eq(0)").text(data.CHART[i].TIDE_HIGH_TIME_01);
+                $(".tideTime:eq("+i+")").find(".tide_low:eq(1)").text(data.CHART[i].TIDE_LOW_TIME_02);
+                $(".tideTime:eq("+i+")").find(".tide_high:eq(1)").text(data.CHART[i].TIDE_HIGH_TIME_02);
+                $(".tideTime:eq("+i+")").rotate(tideTimeDegrees[i]);            
+			}
+            
+            console.log(chartData.datasets);
+            // make radar chart
+            new Chart(document.getElementById("radarChart"),{
+                "type":"radar",
+                "data":chartData,
+                "options":chartOptions
+            });
+            
+            // moon image change
+            $(".moon").html('<img src="inc/img/moon/moon_'+data.CHART_LEGEND.MOON_STEP+'.png" />');
+			
+            // chart legend update
+            $(".sunTime_01").text(data.CHART_LEGEND.SUN_TIME_01);
+            $(".sunTime_02").text(data.CHART_LEGEND.SUN_TIME_02);
+            $(".sunTime_03").text(data.CHART_LEGEND.SUN_TIME_03);
+            $(".moonTime_01").text(data.CHART_LEGEND.MOON_TIME_01);
+            $(".moonTime_02").text(data.CHART_LEGEND.MOON_TIME_02);
+            $(".moonTime_03").text(data.CHART_LEGEND.MOON_TIME_03);
+            
+			
+		},error: function(XMLHttpRequest, textStatus, errorThrown) { 
+			console.log("Status: " + textStatus+":"+errorThrown);
+		}
+	});		
+}
+    
+Chart.pluginService.register({
+    beforeRender: function(chart) {    
+    },
+    beforeDraw: function(chart) {
+      var context = chart.ctx;
+      var centerX = chart.scale.xCenter;
+      var centerY = chart.scale.yCenter;
+      var radius = 230;
+
+      fillRoundRect(context,  88, 135,  96, 40, 20);
+      fillRoundRect(context, 565, 135,  74, 40, 20);
+      fillRoundRect(context,  88, 393,  96, 40, 20);
+      fillRoundRect(context, 565, 393,  74, 40, 20);
+      fillRoundRect(context, 305, 510, 140, 40, 20);
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = 'rgba(255,255,255,0.8)';
+      context.closePath();
+      context.fill();
+    },
+    afterDraw: function(chart, easing) {
+      
+    }
+});
+
+
+    
+</script>
+    
+</head>
+<body class="busan">
+<div class="dailyOcean">
+
+	<div class="headerContainer" >
+		<div id="image_down"  class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
+            <img src="inc/img/logo_mofKhoa.png" class="f_L" width="330" height="90" />
+            <h1 style="margin-top:112px;">내일의 바다<span>[海況예보도]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;부산</h1>
+        </div>
+		<div class="today f_R">
+            <span class="arrow"><i class="icon-arrow"></i></span>
+            <span class="date"></span>
+            <span class="time"></span><br/>
+            <span class="lunar_date"></span>
+        </div>
+	</div>
+	
+	
+	
+	<div class="contentsContainer">
+		
+		<div class="mapContainer">
+			
+            <div class="onMap"></div>
+
+                <div style="position:absolute; top: 840px; left: 800px;"><img src="inc/img/loc/txt_14_busan.png"/>        </div>
+                <div style="position:absolute; top: 230px; left: 950px;"><img src="inc/img/loc/txt_14_ulsan.png"/>        </div>
+                <div style="position:absolute; top: 530px; left: 730px;"><img src="inc/img/loc/txt_14_gyeongsangS.png"/>  </div>
+
+            <div class="chartWrap">
+                <canvas id="radarChart" height="230"></canvas>
+                <div class="tideUnit">(cm)</div>
+                <div class="moon"><img src="inc/img/moon/moon_01.png" /></div>
+                <div class="tideTime t_01">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_02">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_03">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_04">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_05">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+            </div>
+            
+            <div class="chartLegend">
+              <table cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                      <th rowspan="2">부산<br>기준</th>
+                      <td><img src="inc/img/icon_sunrise.png" /></td>
+                      <td>일출</td>
+                      <td class="sunTime_01">00:00</td>
+                      <td><img src="inc/img/icon_sun_culmination.png" /></td>
+                      <td>남중</td>
+                      <td class="sunTime_02">00:00</td>
+                      <td><img src="inc/img/icon_sunset.png" /></td>
+                      <td>일몰</td>
+                      <td class="sunTime_03">00:00</td>
+                  </tr>
+                  <tr>
+                      <td><img src="inc/img/icon_moonrise.png" /></td>
+                      <td>월출</td>
+                      <td class="moonTime_01">00:00</td>
+                      <td><img src="inc/img/icon_moon_culmination.png" /></td>
+                      <td>남중</td>
+                      <td class="moonTime_02">00:00</td>
+                      <td><img src="inc/img/icon_moonset.png" /></td>
+                      <td>월몰</td>
+                      <td class="moonTime_03">00:00</td>
+                  </tr>                        
+              </table>
+          </div>
+            
+		</div>
+		
+	</div>
+    
+    <div class="minimap">
+        <img src="inc/img/minimap_busan.png" />
+    </div>
+    
+    <div class="legendContainer">
+      <!-- legend -->
+      <div class="legend">
+        <div class="lgdBox current">
+          <ul>
+            <li>해수유동<br>(cm/s)</li>
+            <li style="width:  60px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(0.75) rotate(90deg);"/><br>50</li>
+            <li style="width:  90px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(1.50) rotate(90deg);"/><br>100</li>
+          </ul>
+        </div>
+        <div class="lgdBox tideForecast">
+          <div class="bullet"><svg height="80" width="20">
+              <circle cx="10" cy="40" r="10" stroke="black" stroke-width="0" fill="#F9A01E" /></svg></div>
+          <ul>
+            <li class="accentBg">조류예보</li>
+            <li class="t_C tBlue">전류시각</li>
+            <li class="t_C" style="background-color: #F9A01E; color: #fff;">최강유속시각</li>
+            <li class="t_R">최강유속(cm/s)</li>
+          </ul>
+        </div>
+        <div class="lgdBox flooding">
+          <div class="bullet"><img src="inc/img/icon_floodingArea.png" /></div>
+          <ul>
+            <li>해안침수 주의</li>
+            <li class="accentBg">침수주의 시간</li>
+          </ul>
+        </div>
+        <div class="lgdBox wTemp_wHeight">
+          <ul>
+            <li><img src="inc/img/icon_waterTemp.png" />수온</li>
+            <li><img src="inc/img/icon_waveHeight.png" />파고</li>
+            <li><img src="inc/img/icon_wind.png" />풍속</li>
+          </ul>
+        </div>
+        <div class="lgdBox wTempColorBar">
+          <ul>
+            <li>수온</li>
+            <li>
+              <ul class="colorBar">
+                <li>0</li>
+                <li>5</li>
+                <li>10</li>
+                <li>15</li>
+                <li>20</li>
+                <li>25</li>
+                <li>30</li>
+                <li>35</li>
+              </ul>
+            </li>
+            <li>(°C)</li>
+          </ul>
+        </div>
+        <div class="lgdBox tideCircle">
+          <ul>
+            <li><img src="inc/img/icon_tideLegend.png" /></li>
+            <li>
+              <svg height="20" width="20">
+                <circle cx="10" cy="10" r="10" stroke="black" stroke-width="0" fill="#d92e2e" /></svg> 고조높이<span class="text tideHigh">고조시각</span><br />
+              <svg height="20" width="20">
+                <circle cx="10" cy="10" r="10" stroke="black" stroke-width="0" fill="#3b529e" /></svg> 저조높이<span class="text tideLow">저조시각</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,357 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* common */
+html, body, div, span, p, a, li { font-family: 'Salesforce Sans', 'Noto Sans KR', Verdana, Tahoma, Dotum, '돋움'; font-size: 30px; letter-spacing: -1px; }
+table, tr, td, input, textarea, option { font-size: 30px; }
+html, body { position: relative; font-size: 0; margin: 0px; padding: 0px; width: 100%; height: 100%; display: inline-block; }
+
+
+
+h1,h2,h3,h4,h5,h6,th,dt {font-weight:600;}
+
+strong { font-weight: 600; }
+ul { margin: 0px; padding: 0px; list-style: none; display: inline-block; }
+li a { text-decoration: none; color: #444; }
+a, a:hover, a:focus { color: #14538f; border: none; text-decoration: none; outline: none !important; -moz-outline-style: none; }
+.btn, .btn:hover, .btn:focus { text-decoration: none; outline: none !important; -moz-outline-style: none; }
+input[type=checkbox] { width: 16px; height: 16px; }
+i.fa { margin: 0px; }
+.btn > i.fa {margin-right:6px;}
+p {margin:0;}
+hr {clear:both; margin:14px 0;  border-color:rgba(0,0,0,0.1);}
+dl dt {font-weight:normal;}
+dl dd {font-weight:600;}
+
+.clear { clear: both !important; }
+.f_L { float: left !important; }
+.f_R { float: right !important; }
+.t_L { text-align: left !important; }
+.t_C { text-align: center !important; }
+.t_R { text-align: right !important; }
+.noPadding { padding: 0 !important; }
+.textEllipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.layoutWrap { width: 1100px; display: block; position: relative; margin: 0px auto; padding: 0px; clear: both; font-size: 0; }
+.contentWrap { min-width: 100%; display: inline-block; position: relative; clear: both; float: left; background-color: #fff; font-size: 0; }
+
+.tide_high {color:#f14d27;}
+/* .tide_low {color:#008eda;} */
+.tide_low {color:#3B529E;}
+/********** Header **********/
+
+.dailyOcean {display: inline-block; width: 3085px; padding:10px 40px 20px; font-size:0; background-color: #fff;}
+
+/* headerContainer */
+.headerContainer {margin-bottom:10px; display:inline-block; width:100%;}
+.topLogo img {margin-top:25px; margin-right:20px;}
+.topLogo h1 {font-size:100px; font-weight: 400; letter-spacing: -6px; margin:0;     white-space: nowrap;}
+.topLogo h1 span {font-size:96px; font-weight: 100; padding-left:10px;  letter-spacing: -10px; color:#444;}
+
+.today {margin-top:36px;}
+.today span {font-size:76px; font-weight: 100; letter-spacing: -5px; text-align: right; padding:0 12px; color:#444;}
+.today span.arrow {position:relative;    margin-right: 50px;}
+.today span.arrow i.icon-arrow {width: 0; height: 0; border: 20px solid transparent; border-top: 24px solid; top: 40px; left: px;  position: absolute;}
+.today span.time {font-weight: 400; }
+.today span.lunar_date {font-size:58px; color:#888; background:#fff; margin-left:18px;    padding-top: 10px; }
+
+
+/********** Main **********/
+
+/* contentsContainer */
+.contentsContainer {display:inline-block;}
+
+.mapContainer {margin:0px; position:relative; display: inline-block;}
+.mapContainer .onMap {border:10px solid #444; display: inline-block; position:relative; font-size:0; background: #4A7BB5;}
+
+canvas#mapCanvas {position: absolute; top:0px; left:0px; z-index: 10;}
+
+.mapContainer .oceanName {position:absolute;}
+.oceanName.eastSea {right: 325px;top: 180px;}
+.oceanName.yellowSea {left: 310px;top: 570px;}
+.oceanName.dokdo {right: 420px;top: 390px;}
+.oceanName.ongjin {left: 470px;top: 455px;}
+.oceanName.shinan {left: 410px;top: 1555px;}
+.oceanName.ieodo {left: 615px;top: 2120px;}
+
+.koreaen .oceanName.eastSea {right: 240px;top: 150px;}
+.koreaen .oceanName.yellowSea {left: 200px;top: 550px;}
+.koreaen .oceanName.dokdo {right: 390px;top: 400px;}
+.koreaen .oceanName.ongjin {left: 438px;top: 442px;}
+.koreaen .oceanName.shinan {left: 410px;top: 1555px;}
+.koreaen .oceanName.ieodo {left: 615px;top: 2120px;}
+
+.typhoon {color: white; position:absolute; }
+.typhoonb {position:absolute; }
+.typhoonl {position:absolute; right: 900px; bottom: 30px; border-color:rgba(220,220,220,1); border-width:1px; border-style:solid; padding: 3px 5px 0px 0px; background-color:rgba(239,239,239,1);}
+
+.mapContainer .chartWrap {display: inline-block; width: 760px; height: 760px; padding:10px 20px;position: absolute; right: 10px; bottom: 0px;  /*border-radius: 1000px; background-color: #fff;  box-shadow:0px 0 20px rgba(0,0,0,0.2);*/}
+.chartWrap .moon {position:absolute; width:125px; height:125px; top:343px; left:338px;}
+.chartWrap .moon img {width:100%; height:100%;}
+
+.koreaen .chartWrap .moon {position:absolute; width:121px; height:121px; top:346px; left:351px;}
+
+/*.chartWrap .tideUnit {position:absolute; top:24px; width:100px; text-align: center; font-size: 22px; color: #666; left: 351px;}*/
+.chartWrap .tideUnit {position:absolute; top:24px; width:100px; text-align: center; font-size: 22px; color: #666; left: 351px; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;}
+
+.chartWrap .tideTime {position:absolute; line-height: 16px; width: 124px;}
+.chartWrap .tideTime span {font-size:20px; font-weight: 600; padding:0 4px; display:inline-block; width:50px; text-align: center;}
+.chartWrap .tideTime.t_01 {top: 117px;left: 478px;}
+.chartWrap .tideTime.t_02 {top: 214px;left: 588px;}
+.chartWrap .tideTime.t_03 {top: 349px;left: 640px;}
+.chartWrap .tideTime.t_04 {top: 493px;left: 620px;}
+.chartWrap .tideTime.t_05 {top: 611px;left: 539px;}
+.chartWrap .tideTime.t_06 {top: 679px;left: 410px;}
+.chartWrap .tideTime.t_07 {top: 678px;left: 265px;}
+.chartWrap .tideTime.t_08 {top: 612px;left: 139px;}
+.chartWrap .tideTime.t_09 {top: 493px;left: 58px;}
+.chartWrap .tideTime.t_10 {top: 349px;left: 37px;}
+.chartWrap .tideTime.t_11 {top: 214px;left: 89px;}
+.chartWrap .tideTime.t_12 {top: 117px;left: 198px;}
+
+.koreaen .chartWrap .tideUnit {position:absolute; top:46px; width:124px; text-align: center; font-size: 22px; color: #666; left: 351px; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;}
+
+.koreaen .chartWrap .tideTime {position:absolute; line-height: 16px; width: 124px;}
+.koreaen .chartWrap .tideTime span {font-size:20px; font-weight: 600; padding:0 4px; display:inline-block; width:50px; text-align: center;}
+.koreaen .chartWrap .tideTime.t_01 {top: 136px;left: 482px;}
+.koreaen .chartWrap .tideTime.t_02 {top: 224px;left: 584px;}
+.koreaen .chartWrap .tideTime.t_03 {top: 352px;left: 632px;}
+.koreaen .chartWrap .tideTime.t_04 {top: 490px;left: 614px;}
+.koreaen .chartWrap .tideTime.t_05 {top: 599px;left: 538px;}
+.koreaen .chartWrap .tideTime.t_06 {top: 662px;left: 418px;}
+.koreaen .chartWrap .tideTime.t_07 {top: 662px;left: 282px;}
+.koreaen .chartWrap .tideTime.t_08 {top: 599px;left: 160px;}
+.koreaen .chartWrap .tideTime.t_09 {top: 490px;left: 86px;}
+.koreaen .chartWrap .tideTime.t_10 {top: 352px;left: 68px;}
+.koreaen .chartWrap .tideTime.t_11 {top: 224px;left: 116px;}
+.koreaen .chartWrap .tideTime.t_12 {top: 136px;left: 218px;}
+
+.mapContainer .chartLegend {display:inline-block; position:absolute; bottom:-92px; right:324px; z-index:999;}
+.koreaen .mapContainer .chartLegend {display:inline-block; position:absolute; bottom:-92px; right:370px; z-index:999;}
+.chartLegend table {border-collapse: collapse; width: 586px;}/*khoa:height:82px;*/
+.chartLegend table td, .chartLegend table th {font-size:22px; font-weight: bold; white-space: nowrap; padding:3px; vertical-align: middle; color:#222; border:1px solid #ddd; text-align: center;}
+.chartLegend table td {background-color: #fff; border-width: 1px 0 1px 0; padding: 3px;}
+.koreaen .chartLegend table td {padding: 5px;}
+.chartLegend table td img {vertical-align: middle;}
+.chartLegend table th {background-color: #eee; font-weight: normal;}
+.chartLegend table th span {font-size:22px; color:#555;}
+.chartLegend table th:first-child {background-color: #ddd; font-weight: 600;}
+.chartLegend table td:last-child  {background-color: #fff; border-width: 1px 1px 1px 0;}
+
+.mapContainer .typLegend {display:none; position:absolute; bottom:30px; right:893px; width:540px; height: 91px; background-color: #fff; border:1px solid #ddd;}
+.typLegend #lgdTypLine {position: absolute; top:0; left:70px;}
+.typLegend .m_img {width: 60px; height: 60px; position: absolute; left: 248px; top: 13px;}
+.typLegend .m_img img {width: 60px; height: 60px;}
+.typLegend .m_data {font-size: 20px; position: absolute; left: 14px; top: 16px;}
+.typLegend .m_desc {font-size: 20px; position: absolute; width:250px; text-align: right; right: 10px; top: 12px; color:#666;}
+.typLegend .m_desc span {font-size:20px;}
+.typLegend .m_desc span.lgd_typ_name {font-size:26px;}
+
+.tideForecast .accent {color:#F9A01E;}
+.tideForecast .accentBg {background-color:#F9A01E; color:#fff;}
+.tideForecast .tBlue {color:#088ad5;}
+
+.flooding .accent {color:#D5667B;}
+.flooding .accentBg {background-color:#D5667B; color:#fff;}
+
+
+/* dataMarker */
+.dataMarker{position:absolute;}
+.dataMarker div{color:#000;}
+.dataMarker span{display:inline-block;}
+.dataMarker span.icon {font-size:0; padding:4px;}
+
+.dataMarker.todayInfo {background-color: rgba(255,255,255,0.35); border-radius: 30px; border:1px solid rgba(255,255,255,0.5);}
+
+.todayInfo .dataBar {display: inline-block; padding-right: 10px;clear: both; font-size:0; float:left; height: 52px; line-height: 52px;}
+/*.todayInfo .dataBar:first-child {border-bottom: 1px solid rgba(255,255,255,0.3); }*/
+.todayInfo .dataBar .icon {padding:0;}
+.todayInfo .dataBar .icon img {width:44px; height:44px;}
+.todayInfo .dataBar.waterTemp .icon img {padding:4px 0 2px 6px;}
+.todayInfo .dataBar.tide .icon img {padding:4px 0 4px 6px;}
+.todayInfo .dataBar.wind .icon img {padding:4px 0 4px 6px;}
+.todayInfo .dataBar .data {width:84px; text-align: right; font-size:22px; color:#555;}
+.todayInfo .dataBar .data span.value {font-size:28px; color:#000; font-weight: 600; padding:0 2px 0 1px; }
+
+.dataMarker.todayLocalInfo {background-color: rgba(255,255,255,0.35); border-radius: 15px; border:1px solid rgba(255,255,255,0.5);}
+.todayLocalInfo .dataLocalBar {display: inline-block; padding-right: 10px;clear: both; font-size:0; float:left; height: 30px; line-height: 30px;}
+.todayLocalInfo .dataLocalBar .icon {padding:0;}
+.todayLocalInfo .dataLocalBar .icon img {width:22px; height:22px;}
+.todayLocalInfo .dataLocalBar.waterTemp .icon img {padding:4px 0 2px 6px;}
+.todayLocalInfo .dataLocalBar.tide .icon img {padding:4px 0 4px 6px;}
+.todayLocalInfo .dataLocalBar .data {width:60px; text-align: right; font-size:14px; color:#555;}
+.todayLocalInfo .dataLocalBar .data span.value {font-size:18px; color:#000; font-weight: 600; padding:0 2px 0 1px; }
+
+.dataMarker.floodingArea {width:49px; height:67px;}
+.floodingArea .faWrap {position:relative;}
+.floodingArea .icon {font-size:0;}
+.floodingArea .dataPanel {position:absolute; top:-1px; border:1px solid rgba(205,205,205,0.4); border-radius: 10px; overflow: hidden;}
+.floodingArea .dataPanel .areaName {background-color: rgba(255,255,255,0.25); padding:0 10px;}
+.floodingArea .dataPanel .time {font-size:20px; background-color: #d24162; color:#fff; padding:0 10px; letter-spacing: 1px;}
+.floodingArea_empty .bullet {width:40px; height:40px; line-height: 0;}
+.floodingArea_empty .dataPanel {position:absolute; top:-8px; white-space: nowrap;}
+.floodingArea_empty .dataPanel .areaName {font-size: 36px; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;}
+/*.floodingArea_empty {width:100px; height:40px; background-color: rgba(255,255,255,0.8); border-radius: 30px; border:1px solid rgba(255,255,255,0.9);}
+.floodingArea_empty .faWrap {width:100px; height:30px;}
+.floodingArea_empty .faWrap .bullet    {padding-top: 10px; padding-left: 5px;}
+.floodingArea_empty .faWrap .dataPanel {padding-top: 10px;}
+#FRA_05.floodingArea_empty {width:120px;}*/
+
+.dataMarker.lowWaterTemp {width:20px; height:20px;}
+.lowWaterTemp .faWrap {position:relative;}
+.lowWaterTemp .icon {font-size:0; position: absolute; top:-7px;}
+.lowWaterTemp_empty .bullet {width:20px; height:20px; line-height: 0;}
+.lowWaterTemp_empty .dataPanel {position:absolute; top:-14px; white-space: nowrap;}
+
+.dataMarker.seaFog {background-color: rgba(255,255,255,0.35); border-radius: 30px; border:1px solid rgba(255,255,255,0.5);}
+.dataMarker.seaFog.sf_1 {background-color: rgba(25,115,176,0.35); border-color:rgba(25,115,176,0.5);}
+.dataMarker.seaFog.sf_2 {background-color: rgba(61,146,68,0.35); border-color:rgba(61,146,68,0.5);}
+.dataMarker.seaFog.sf_3 {background-color: rgba(241,116,36,0.35); border-color:rgba(241,116,36,0.5);}
+.dataMarker.seaFog.sf_4 {background-color: rgba(239,86,85,0.35); border-color:rgba(239,86,85,0.5);}
+
+.seaFog .dataBar {display: inline-block; padding-right: 10px;clear: both; font-size:0; float:left; height: 52px; line-height: 52px;}
+.seaFog .dataBar .icon {padding:0;}
+.seaFog .dataBar .icon img {width:44px; height:44px; padding: 4px 0 2px 6px;}
+.seaFog .dataBar .data {width:84px; text-align: right; font-size:22px; color:#555;}
+.seaFog .dataBar .data span.value {font-size:28px; color:#000; font-weight: 600; padding:0 2px 0 1px; }
+
+.dataMarker.waveDirectPeriod {background-color: rgba(173,105,168,0.35); border-radius: 30px; border:1px solid rgba(173,105,168,0.5);}
+
+.waveDirectPeriod .dataBar {display: inline-block; padding-right: 10px;clear: both; font-size:0; float:left; height: 52px; line-height: 52px;}
+.waveDirectPeriod .dataBar .icon {padding:0; margin-right:4px;}
+.waveDirectPeriod .dataBar .icon img {width:44px; height:44px; padding: 4px 0 2px 6px;}
+.waveDirectPeriod .dataBar .data {width:94px; font-size:22px; color:#555;}
+.waveDirectPeriod .dataBar .data span.value {font-size:28px; color:#000; font-weight: 600; padding:0 2px 0 1px; margin-left:6px;}
+.waveDirectPeriod .arrow {width:40px; height:40px; display:inline-block; vertical-align:middle; margin:0; margin-top: -7px; }
+
+
+.dataMarker.tideForecast {width:40px; height:40px;}
+.dataMarker.tideForecast .bullet {width:40px; height:40px;}
+.dataMarker.tideForecast .circle {width:20px; height:20px; border-top-left-radius:40px; border-top-right-radius:40px; margin: 10px;}
+.dataMarker.tideForecast .tfWrap {position: absolute; width: 800px; left: 50px; display: inline-block; top: -6px;}
+.dataMarker.tideForecast .tfWrap.left {left:auto; right: 50px;}
+.dataMarker.tideForecast .accentBg.title {white-space: nowrap; display: inline-block; width: 140px; border-top-left-radius: 30px; border-bottom-left-radius: 30px; text-align: center; font-size: 26px; height: 52px; line-height: 52px;}
+.koreaen .dataMarker.tideForecast .accentBg.title {white-space: nowrap; display: inline-block; width: 185px; border-top-left-radius: 30px; border-bottom-left-radius: 30px; text-align: center; font-size: 26px; height: 52px; line-height: 52px;}
+.koreaen #CUR_03.dataMarker.tideForecast .accentBg.title {line-height: 25px;}
+.dataMarker.tideForecast .tfWrap.left .accentBg.title {border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-top-right-radius: 30px; border-bottom-right-radius: 30px;}
+
+.dataMarker.tideForecast .dataWrap {line-height: 0; background: #fff; display: inline-block; border: 3px solid #F9A01E; padding:0px;}
+/*.dataMarker.tideForecast ul {overflow: hidden; font-size:0; line-height: 0; width: 128px; height:130px; border-right:2px solid #ddd;}*/
+.dataMarker.tideForecast ul {overflow: hidden; font-size:0; line-height: 0; width: 64px; height:130px; border-right:2px solid #ddd;}
+.dataMarker.tideForecast ul:last-child {border-right:none;}
+.dataMarker.tideForecast ul li {display:inline-block; height:28px; line-height: 30px; font-size:20px; /*font-size:24px;*/ font-weight: 600;}
+.dataMarker.tideForecast ul li.accentBg {padding:0 12px; font-size:24px; font-weight: normal;}
+/*.dataMarker.tideForecast ul li .arrow {width:80px; height:80px; display:inline-block; text-align: center; vertical-align:middle; margin:0;}*/
+.dataMarker.tideForecast ul li .arrow {width:40px; height:40px; display:inline-block; text-align: center; vertical-align:middle; margin:0;}*/
+
+.dataMarker.tideForecast ul li {padding:0 !important;}
+/*.dataMarker.tideForecast ul li:nth-child(1) {width:62px; text-align: center;}*/
+.dataMarker.tideForecast ul li:nth-child(1) {width:64px; text-align: center;}
+/*.dataMarker.tideForecast ul li:nth-child(2) {width:62px; text-align: center; margin-left:4px; background-color:#f9a01e; color:#fff;}*/
+.dataMarker.tideForecast ul li:nth-child(2) {width:64px; text-align: center; background-color:#f9a01e; color:#fff;}
+/*.dataMarker.tideForecast ul li:nth-child(3) {width:70%; height: 100px; line-height: 100px; text-align: center; vertical-align: bottom;}*/
+.dataMarker.tideForecast ul li:nth-child(3) {width:64px; height: 36px; padding:6px 0 6px 0; text-align: center; vertical-align: bottom;}
+/* .dataMarker.tideForecast ul li:nth-child(4) {width:30px; text-align: center;} */
+.dataMarker.tideForecast ul li:nth-child(4) {width:64px; text-align: center; vertical-align: bottom;}
+/* .dataMarker.tideForecast ul li:nth-child(5) {width:54px; text-align: right;} */
+
+.dataMarker.typhoon {width:80px; height:80px; z-index: 20300;}
+.dataMarker.typhoon .markerWrap {position: relative; width: 100%; height:100%; margin:-40px 0 0 -40px;}
+.dataMarker.typhoon .m_img {width:80px; height:80px;}
+.dataMarker.typhoon .m_data {position:absolute; font-size:24px; display:inline-block; width:660px; word-break: keep-all; top:7px; text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;  font-weight: 700; line-height: 32px;}
+.dataMarker.typhoon .m_data.pos_L {right:90px; left:inherit; text-align: right;}
+.dataMarker.typhoon .m_data.pos_R {left:90px; right:inherit; text-align: left;}
+
+
+/* legend */
+.legendContainer {position:relative; display:inline-block; background-color:#efefef; width:100%; font-size:0; height:102px;}
+.legend {margin:10px; display:inline-block;}
+.lgdBox {display: inline-block; height:82px; position: absolute; }
+.lgdBox > ul {background:#fff; border:1px solid #ccc; display: inline-block; margin:0px; font-size:0;}
+.legend > .lgdBox:first-child ul {margin-left:0;}
+.legend > .lgdBox:last-child ul {margin-right:0;}
+.lgdBox ul li {display:inline-block; padding:0 14px; font-size:22px; line-height: 80px;}/*khoa:padding:0 2px;*/
+.lgdBox img {vertical-align: middle;}
+.lgdBox ul li span {font-size:22px;}
+.lgdBox .bullet {float:left;}
+.lgdBox .circle {width:20px; height:20px; border-radius:40px;}
+
+.lgdBox.current ul {padding: 10px 0 10px 0;}
+.lgdBox.current ul li {vertical-align: middle; text-align: center; height:60px; line-height: 30px;}
+.koreaen .lgdBox.current ul li:nth-child(1) {vertical-align: middle; text-align: center; height:60px; line-height: 22px;}
+.lgdBox.current li:first-child {padding:0 0 0 12px;}
+.lgdBox.current li {padding:0 6px;}
+
+.lgdBox.flooding .bullet {margin:10px;}
+.lgdBox.flooding ul {width:150px;}
+.koreaen .lgdBox.flooding ul {width:150px;}
+.lgdBox.flooding ul li {width:100%; height:40px; line-height: 40px; padding:0; text-align: center;}
+
+.lgdBox.tideForecast .bullet {margin:0 10px;}
+.lgdBox.tideForecast ul {border-color:#F9A01E; width:460px; float:left;}
+.lgdBox.tideForecast ul:last-child{width:243px; margin-left: -3px;}
+.koreaen .lgdBox.tideForecast ul:last-child{width:236px; margin-left: -3px;}
+.lgdBox.tideForecast ul li {float:left;}
+.lgdBox.tideForecast ul li:not(.accentBg) {padding:0px 4px; line-height: 20px; height:26px; width:130px; font-size:20px;}/*khoa:width:147px;*/
+.koreaen .lgdBox.tideForecast ul li.accentBg {padding:0px 5px;}
+.koreaen .lgdBox.tideForecast ul li:not(.accentBg) {padding:0px 4px; line-height: 20px; height:26px; width:95px; font-size:20px;}/*khoa:width:147px;*/
+.lgdBox.tideForecast ul.step li {width:120px; padding:0px; background-position: center; background-repeat: no-repeat; background-size: contain; height:80px; line-height: 130px; }
+.lgdBox.tideForecast ul.step li:nth-child(1) {background-image: url('../img/lgd_TidalCurrentDirect_Icon_2.png');}
+.lgdBox.tideForecast ul.step li:nth-child(2) {background-image: url('../img/lgd_TidalCurrentDirect_Icon_4.png');}
+.lgdBox.tideForecast ul.step li:nth-child(3) {background-image: url('../img/lgd_TidalCurrentDirect_Icon_6.png');}
+
+
+.lgdBox.wTemp_wHeight li img {margin-right:10px;}
+.lgdBox.wTemp_wHeight > ul > li {width:118px;}
+.koreaen .lgdBox.wTemp_wHeight > ul > li {width:115px;}
+
+.lgdBox.wTempColorBar ul {height:80px; background-image:url('../img/wTempColorBar.png'); background-size: 100% 100%;}
+.lgdBox.wTempColorBar > ul > li {padding:0; }
+.lgdBox.wTempColorBar > ul > li:first-child, .lgdBox.wTempColorBar > ul > li:last-child {background-color:#d7d7d7; padding:0 20px;}
+.lgdBox.wTempColorBar ul.colorBar li {padding:0 10px 0 0; text-align:right; width:60px;}
+.koreaen .lgdBox.wTempColorBar > ul > li:last-child {background-color:#d7d7d7; padding:0 0px;}
+.koreaen .lgdBox.wTempColorBar > ul > li:first-child {background-color:#d7d7d7; padding:0 20px;}
+.koreaen .lgdBox.wTempColorBar ul.colorBar li {padding:30px 10px 0 0; text-align:right; width:60px;}
+.koreaen .lgdBox.wTempColorBar ul li {vertical-align: middle; text-align: center; height:80px; line-height: 20px;}
+
+.lgdBox.tideCircle ul li {line-height:40px;}
+.lgdBox.tideCircle li:first-child {padding:0 0 0 10px; line-height: 80px;     vertical-align: bottom;}
+.lgdBox.tideCircle svg {vertical-align: text-top; padding-top:4px;}
+.lgdBox.tideCircle .text {padding-left:10px;}
+.lgdBox.tideCircle .text.tideHigh {color:#D92E2E;}
+.lgdBox.tideCircle .text.tideLow {color:#3B529E;}
+
+.minimap {position:absolute; width:270px; height:330px; border:2px solid #ddd;}
+.minimap img {width:100%; height:100%;}
+
+/* 범례 위치 지정 */
+.lgdBox.current {top:10px; left:10px;}
+.lgdBox.tideForecast {top:10px; left:370px;}/*khoa:left:385px;*/
+.lgdBox.flooding {top:10px; left:660px;}/*khoa:left:695px;*/
+.lgdBox.wTemp_wHeight {top:10px; right:1730px;}
+.lgdBox.wTempColorBar {top:10px; right:945px;}
+.lgdBox.tideCircle {top:10px; right:10px;}
+
+.koreaen .lgdBox.current {top:10px; left:10px;}
+.koreaen .lgdBox.tideForecast {top:10px; left:365px;}/*khoa:left:385px;*/
+.koreaen .lgdBox.flooding {top:10px; left:635px;}/*khoa:left:695px;*/
+.koreaen .lgdBox.wTemp_wHeight {top:10px; right:1790px;}
+.koreaen .lgdBox.wTempColorBar {top:10px; right:1110px;}
+.koreaen .lgdBox.tideCircle {top:10px; right:10px;}
+
+/* tideForecast */
+.dailyOcean .dataMarker.tideForecast#CUR_01 .tfWrap {left:20px; top:-50px;}
+.dailyOcean .dataMarker.tideForecast#CUR_02 .tfWrap {left:-800px; top:-20px;}
+.dailyOcean .dataMarker.tideForecast#CUR_03 .tfWrap {left:-720px; top:-60px;}
+.dailyOcean .dataMarker.tideForecast#CUR_04 .tfWrap {left:-840px; top:0px;}
+.dailyOcean .dataMarker.tideForecast#CUR_05 .tfWrap {left:-20px; top:80px;}
+.dailyOcean .dataMarker.tideForecast#CUR_06 .tfWrap {left:60px; top:20px;}
+
+.koreaen .dailyOcean .dataMarker.tideForecast#CUR_01 .tfWrap {left:20px; top:-50px;}
+.koreaen .dailyOcean .dataMarker.tideForecast#CUR_03 .tfWrap {left:-640px; top:60px;}
+
+/* Flooding */
+.koreaen .dailyOcean .dataMarker.floodingArea#FRA_11 .areaName {letter-spacing:-5px;}
+.koreaen .dailyOcean .dataMarker.floodingArea#FRA_25 .areaName {letter-spacing:-5px;}
+
+.floodingArea_empty_city#FRA_11 .dataPanel {top: 30px; left: 0px!important;}
