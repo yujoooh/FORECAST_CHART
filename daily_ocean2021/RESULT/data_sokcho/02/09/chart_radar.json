@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:37",
+		"SUN_TIME_02": "12:22",
+		"SUN_TIME_03": "17:07",
+		"MOON_TIME_01": "16:18",
+		"MOON_TIME_02": "23:55",
+		"MOON_TIME_03": "06:40",
+		"MOON_STEP": "15"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "동해항",
+			"TIDE_HIGH_VALUE_01": "23",
+			"TIDE_HIGH_TIME_01": "01:34",
+			"TIDE_LOW_VALUE_01": "14",
+			"TIDE_LOW_TIME_01": "20:17",
+			"TIDE_HIGH_VALUE_02": "17",
+			"TIDE_HIGH_TIME_02": "16:22",
+			"TIDE_LOW_VALUE_02": "0",
+			"TIDE_LOW_TIME_02": "09:17"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "묵호",
+			"TIDE_HIGH_VALUE_01": "26",
+			"TIDE_HIGH_TIME_01": "01:28",
+			"TIDE_LOW_VALUE_01": "18",
+			"TIDE_LOW_TIME_01": "20:08",
+			"TIDE_HIGH_VALUE_02": "20",
+			"TIDE_HIGH_TIME_02": "16:29",
+			"TIDE_LOW_VALUE_02": "3",
+			"TIDE_LOW_TIME_02": "09:13"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "속초",
+			"TIDE_HIGH_VALUE_01": "25",
+			"TIDE_HIGH_TIME_01": "01:37",
+			"TIDE_LOW_VALUE_01": "14",
+			"TIDE_LOW_TIME_01": "20:19",
+			"TIDE_HIGH_VALUE_02": "18",
+			"TIDE_HIGH_TIME_02": "16:14",
+			"TIDE_LOW_VALUE_02": "-2",
+			"TIDE_LOW_TIME_02": "09:13"
+		}
+	]
+}

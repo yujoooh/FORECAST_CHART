@@ -1,0 +1,61 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:42",
+		"SUN_TIME_02": "12:31",
+		"SUN_TIME_03": "17:21",
+		"MOON_TIME_01": "17:15",
+		"MOON_TIME_02": "00:05",
+		"MOON_TIME_03": "07:42",
+		"MOON_STEP": "16"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "대산",
+			"TIDE_HIGH_VALUE_01": "738",
+			"TIDE_HIGH_TIME_01": "16:50",
+			"TIDE_LOW_VALUE_01": "153",
+			"TIDE_LOW_TIME_01": "23:10",
+			"TIDE_HIGH_VALUE_02": "639",
+			"TIDE_HIGH_TIME_02": "04:18",
+			"TIDE_LOW_VALUE_02": "70",
+			"TIDE_LOW_TIME_02": "10:27"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "보령",
+			"TIDE_HIGH_VALUE_01": "683",
+			"TIDE_HIGH_TIME_01": "15:54",
+			"TIDE_LOW_VALUE_01": "151",
+			"TIDE_LOW_TIME_01": "22:36",
+			"TIDE_HIGH_VALUE_02": "594",
+			"TIDE_HIGH_TIME_02": "03:22",
+			"TIDE_LOW_VALUE_02": "83",
+			"TIDE_LOW_TIME_02": "09:54"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "어청도",
+			"TIDE_HIGH_VALUE_01": "535",
+			"TIDE_HIGH_TIME_01": "15:42",
+			"TIDE_LOW_VALUE_01": "123",
+			"TIDE_LOW_TIME_01": "22:10",
+			"TIDE_HIGH_VALUE_02": "450",
+			"TIDE_HIGH_TIME_02": "03:07",
+			"TIDE_LOW_VALUE_02": "58",
+			"TIDE_LOW_TIME_02": "09:25"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "안흥",
+			"TIDE_HIGH_VALUE_01": "619",
+			"TIDE_HIGH_TIME_01": "16:20",
+			"TIDE_LOW_VALUE_01": "136",
+			"TIDE_LOW_TIME_01": "22:43",
+			"TIDE_HIGH_VALUE_02": "530",
+			"TIDE_HIGH_TIME_02": "03:45",
+			"TIDE_LOW_VALUE_02": "63",
+			"TIDE_LOW_TIME_02": "09:59"
+		}
+	]
+}

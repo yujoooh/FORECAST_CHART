@@ -1,0 +1,157 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:44",
+		"SUN_TIME_02": "12:31",
+		"SUN_TIME_03": "17:19",
+		"MOON_TIME_01": "18:54",
+		"MOON_TIME_02": "01:44",
+		"MOON_TIME_03": "09:26",
+		"MOON_STEP": "18"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "속초",
+			"TIDE_HIGH_VALUE_01": "27",
+			"TIDE_HIGH_TIME_01": "03:17",
+			"TIDE_LOW_VALUE_01": "14",
+			"TIDE_LOW_TIME_01": "21:55",
+			"TIDE_HIGH_VALUE_02": "17",
+			"TIDE_HIGH_TIME_02": "18:02",
+			"TIDE_LOW_VALUE_02": "-3",
+			"TIDE_LOW_TIME_02": "10:55"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "포항",
+			"TIDE_HIGH_VALUE_01": "27",
+			"TIDE_HIGH_TIME_01": "03:07",
+			"TIDE_LOW_VALUE_01": "10",
+			"TIDE_LOW_TIME_01": "12:16",
+			"TIDE_HIGH_VALUE_02": "27",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "울산",
+			"TIDE_HIGH_VALUE_01": "47",
+			"TIDE_HIGH_TIME_01": "08:44",
+			"TIDE_LOW_VALUE_01": "15",
+			"TIDE_LOW_TIME_01": "02:30",
+			"TIDE_HIGH_VALUE_02": "45",
+			"TIDE_HIGH_TIME_02": "21:09",
+			"TIDE_LOW_VALUE_02": "3",
+			"TIDE_LOW_TIME_02": "14:47"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "부산",
+			"TIDE_HIGH_VALUE_01": "116",
+			"TIDE_HIGH_TIME_01": "09:39",
+			"TIDE_LOW_VALUE_01": "13",
+			"TIDE_LOW_TIME_01": "15:36",
+			"TIDE_HIGH_VALUE_02": "98",
+			"TIDE_HIGH_TIME_02": "21:40",
+			"TIDE_LOW_VALUE_02": "13",
+			"TIDE_LOW_TIME_02": "03:13"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "거제도",
+			"TIDE_HIGH_VALUE_01": "181",
+			"TIDE_HIGH_TIME_01": "10:03",
+			"TIDE_LOW_VALUE_01": "29",
+			"TIDE_LOW_TIME_01": "15:56",
+			"TIDE_HIGH_VALUE_02": "147",
+			"TIDE_HIGH_TIME_02": "21:48",
+			"TIDE_LOW_VALUE_02": "12",
+			"TIDE_LOW_TIME_02": "03:22"
+		},
+		{
+			"ID": "CRD_ 6",
+			"POS_NAME": "제주",
+			"TIDE_HIGH_VALUE_01": "256",
+			"TIDE_HIGH_TIME_01": "12:13",
+			"TIDE_LOW_VALUE_01": "98",
+			"TIDE_LOW_TIME_01": "18:45",
+			"TIDE_HIGH_VALUE_02": "198",
+			"TIDE_HIGH_TIME_02": "23:48",
+			"TIDE_LOW_VALUE_02": "38",
+			"TIDE_LOW_TIME_02": "05:43"
+		},
+		{
+			"ID": "CRD_ 7",
+			"POS_NAME": "여수",
+			"TIDE_HIGH_VALUE_01": "314",
+			"TIDE_HIGH_TIME_01": "10:28",
+			"TIDE_LOW_VALUE_01": "80",
+			"TIDE_LOW_TIME_01": "16:30",
+			"TIDE_HIGH_VALUE_02": "254",
+			"TIDE_HIGH_TIME_02": "22:21",
+			"TIDE_LOW_VALUE_02": "41",
+			"TIDE_LOW_TIME_02": "03:52"
+		},
+		{
+			"ID": "CRD_ 8",
+			"POS_NAME": "진도",
+			"TIDE_HIGH_VALUE_01": "349",
+			"TIDE_HIGH_TIME_01": "12:31",
+			"TIDE_LOW_VALUE_01": "91",
+			"TIDE_LOW_TIME_01": "19:07",
+			"TIDE_HIGH_VALUE_02": "349",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "15",
+			"TIDE_LOW_TIME_02": "06:13"
+		},
+		{
+			"ID": "CRD_ 9",
+			"POS_NAME": "목포",
+			"TIDE_HIGH_VALUE_01": "426",
+			"TIDE_HIGH_TIME_01": "15:46",
+			"TIDE_LOW_VALUE_01": "75",
+			"TIDE_LOW_TIME_01": "21:04",
+			"TIDE_HIGH_VALUE_02": "342",
+			"TIDE_HIGH_TIME_02": "02:54",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "08:18"
+		},
+		{
+			"ID": "CRD_10",
+			"POS_NAME": "군산",
+			"TIDE_HIGH_VALUE_01": "639",
+			"TIDE_HIGH_TIME_01": "16:40",
+			"TIDE_LOW_VALUE_01": "136",
+			"TIDE_LOW_TIME_01": "23:16",
+			"TIDE_HIGH_VALUE_02": "550",
+			"TIDE_HIGH_TIME_02": "04:08",
+			"TIDE_LOW_VALUE_02": "66",
+			"TIDE_LOW_TIME_02": "10:30"
+		},
+		{
+			"ID": "CRD_11",
+			"POS_NAME": "안흥",
+			"TIDE_HIGH_VALUE_01": "620",
+			"TIDE_HIGH_TIME_01": "17:23",
+			"TIDE_LOW_VALUE_01": "138",
+			"TIDE_LOW_TIME_01": "23:49",
+			"TIDE_HIGH_VALUE_02": "532",
+			"TIDE_HIGH_TIME_02": "04:51",
+			"TIDE_LOW_VALUE_02": "61",
+			"TIDE_LOW_TIME_02": "11:03"
+		},
+		{
+			"ID": "CRD_12",
+			"POS_NAME": "인천",
+			"TIDE_HIGH_VALUE_01": "818",
+			"TIDE_HIGH_TIME_01": "18:18",
+			"TIDE_LOW_VALUE_01": "152",
+			"TIDE_LOW_TIME_01": "00:11",
+			"TIDE_HIGH_VALUE_02": "726",
+			"TIDE_HIGH_TIME_02": "05:53",
+			"TIDE_LOW_VALUE_02": "68",
+			"TIDE_LOW_TIME_02": "12:03"
+		}
+	]
+}

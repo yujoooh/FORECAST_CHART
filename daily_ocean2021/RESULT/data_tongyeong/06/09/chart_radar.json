@@ -1,0 +1,73 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:30",
+		"SUN_TIME_02": "12:24",
+		"SUN_TIME_03": "17:19",
+		"MOON_TIME_01": "19:53",
+		"MOON_TIME_02": "02:27",
+		"MOON_TIME_03": "09:55",
+		"MOON_STEP": "19"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "부산항신항",
+			"TIDE_HIGH_VALUE_01": "160",
+			"TIDE_HIGH_TIME_01": "10:31",
+			"TIDE_LOW_VALUE_01": "20",
+			"TIDE_LOW_TIME_01": "16:24",
+			"TIDE_HIGH_VALUE_02": "130",
+			"TIDE_HIGH_TIME_02": "22:26",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "03:53"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "가덕도",
+			"TIDE_HIGH_VALUE_01": "162",
+			"TIDE_HIGH_TIME_01": "10:30",
+			"TIDE_LOW_VALUE_01": "31",
+			"TIDE_LOW_TIME_01": "16:25",
+			"TIDE_HIGH_VALUE_02": "132",
+			"TIDE_HIGH_TIME_02": "22:26",
+			"TIDE_LOW_VALUE_02": "21",
+			"TIDE_LOW_TIME_02": "03:53"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "거제도",
+			"TIDE_HIGH_VALUE_01": "178",
+			"TIDE_HIGH_TIME_01": "10:36",
+			"TIDE_LOW_VALUE_01": "31",
+			"TIDE_LOW_TIME_01": "16:30",
+			"TIDE_HIGH_VALUE_02": "143",
+			"TIDE_HIGH_TIME_02": "22:24",
+			"TIDE_LOW_VALUE_02": "13",
+			"TIDE_LOW_TIME_02": "03:55"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "삼천포",
+			"TIDE_HIGH_VALUE_01": "283",
+			"TIDE_HIGH_TIME_01": "10:58",
+			"TIDE_LOW_VALUE_01": "59",
+			"TIDE_LOW_TIME_01": "16:57",
+			"TIDE_HIGH_VALUE_02": "225",
+			"TIDE_HIGH_TIME_02": "22:47",
+			"TIDE_LOW_VALUE_02": "27",
+			"TIDE_LOW_TIME_02": "04:21"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "통영",
+			"TIDE_HIGH_VALUE_01": "242",
+			"TIDE_HIGH_TIME_01": "10:49",
+			"TIDE_LOW_VALUE_01": "64",
+			"TIDE_LOW_TIME_01": "16:47",
+			"TIDE_HIGH_VALUE_02": "193",
+			"TIDE_HIGH_TIME_02": "22:38",
+			"TIDE_LOW_VALUE_02": "33",
+			"TIDE_LOW_TIME_02": "04:09"
+		}
+	]
+}

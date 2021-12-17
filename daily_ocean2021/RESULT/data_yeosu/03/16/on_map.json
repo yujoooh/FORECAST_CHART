@@ -1,0 +1,711 @@
+{
+	"BASE_MAP": [
+		{
+			"MAP_URL": "temp.png",
+			"MAP_BOUNDARY_TL_LAT": 34.980320502064,
+			"MAP_BOUNDARY_TL_LNG": 127.07008196713998,
+			"MAP_BOUNDARY_BR_LAT": 33.970709878139,
+			"MAP_BOUNDARY_BR_LNG": 128.09303278683
+		}
+	],
+	"TODAY_DATE": {
+		"DATE": "2021년 12월 19일",
+		"TIME": "16시",
+		"LUNAR_DATE": "음력 11월 16일"
+	},
+	"WATER_TEMP_WAVE_HEIGHT": [],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT": [],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT_WIND": [
+		{
+			"ID": "LWTWHW_1",
+			"LAT": 34.1519,
+			"LON": 127.1732,
+			"WATER_TEMP": "13.8",
+			"WAVE_HEIGHT": "1.5",
+			"WIND": "10",
+			"WIND_DIR": "325"
+		},
+		{
+			"ID": "LWTWHW_3",
+			"LAT": 34.3368,
+			"LON": 127.1732,
+			"WATER_TEMP": "12.2",
+			"WAVE_HEIGHT": "0.8",
+			"WIND": " 8",
+			"WIND_DIR": "307"
+		},
+		{
+			"ID": "LWTWHW_22",
+			"LAT": 34.2443,
+			"LON": 127.3774,
+			"WATER_TEMP": "12.7",
+			"WAVE_HEIGHT": "1.3",
+			"WIND": " 8",
+			"WIND_DIR": "312"
+		},
+		{
+			"ID": "LWTWHW_30",
+			"LAT": 34.0594,
+			"LON": 127.4794,
+			"WATER_TEMP": "13.9",
+			"WAVE_HEIGHT": "1.5",
+			"WIND": "10",
+			"WIND_DIR": "329"
+		},
+		{
+			"ID": "LWTWHW_33",
+			"LAT": 34.3368,
+			"LON": 127.4794,
+			"WATER_TEMP": "11.4",
+			"WAVE_HEIGHT": "1.1",
+			"WIND": " 8",
+			"WIND_DIR": "311"
+		},
+		{
+			"ID": "LWTWHW_45",
+			"LAT": 34.5217,
+			"LON": 127.5815,
+			"WATER_TEMP": "9.5",
+			"WAVE_HEIGHT": "0.7",
+			"WIND": " 7",
+			"WIND_DIR": "303"
+		},
+		{
+			"ID": "LWTWHW_50",
+			"LAT": 34.0594,
+			"LON": 127.6837,
+			"WATER_TEMP": "13.6",
+			"WAVE_HEIGHT": "1.9",
+			"WIND": "10",
+			"WIND_DIR": "320"
+		},
+		{
+			"ID": "LWTWHW_52",
+			"LAT": 34.2443,
+			"LON": 127.6837,
+			"WATER_TEMP": "11.9",
+			"WAVE_HEIGHT": "1.7",
+			"WIND": " 8",
+			"WIND_DIR": "312"
+		},
+		{
+			"ID": "LWTWHW_80",
+			"LAT": 34.0594,
+			"LON": 127.9899,
+			"WATER_TEMP": "14.0",
+			"WAVE_HEIGHT": "2.0",
+			"WIND": " 9",
+			"WIND_DIR": "323"
+		},
+		{
+			"ID": "LWTWHW_82",
+			"LAT": 34.2443,
+			"LON": 127.9899,
+			"WATER_TEMP": "13.9",
+			"WAVE_HEIGHT": "1.9",
+			"WIND": " 9",
+			"WIND_DIR": "328"
+		},
+		{
+			"ID": "LWTWHW_85",
+			"LAT": 34.5217,
+			"LON": 127.9899,
+			"WATER_TEMP": "11.4",
+			"WAVE_HEIGHT": "1.3",
+			"WIND": " 6",
+			"WIND_DIR": "309"
+		}
+	],
+	"S111_CUR": [
+		{
+			"ID": "S111_0",
+			"LAT": 34.0132,
+			"LON": 127.1222,
+			"CUR_SPD": "0.7103",
+			"CUR_DIR": "99.7495"
+		},
+		{
+			"ID": "S111_1",
+			"LAT": 34.1056,
+			"LON": 127.1222,
+			"CUR_SPD": "0.7496",
+			"CUR_DIR": "95.8175"
+		},
+		{
+			"ID": "S111_3",
+			"LAT": 34.2906,
+			"LON": 127.1222,
+			"CUR_SPD": "0.6517",
+			"CUR_DIR": "81.9126"
+		},
+		{
+			"ID": "S111_4",
+			"LAT": 34.383,
+			"LON": 127.1222,
+			"CUR_SPD": "0.5759",
+			"CUR_DIR": "90.0386"
+		},
+		{
+			"ID": "S111_11",
+			"LAT": 34.0132,
+			"LON": 127.2243,
+			"CUR_SPD": "0.7766",
+			"CUR_DIR": "105.4717"
+		},
+		{
+			"ID": "S111_12",
+			"LAT": 34.1056,
+			"LON": 127.2243,
+			"CUR_SPD": "0.7585",
+			"CUR_DIR": "92.8319"
+		},
+		{
+			"ID": "S111_14",
+			"LAT": 34.2906,
+			"LON": 127.2243,
+			"CUR_SPD": "0.8192",
+			"CUR_DIR": "73.9749"
+		},
+		{
+			"ID": "S111_23",
+			"LAT": 34.1056,
+			"LON": 127.3263,
+			"CUR_SPD": "1.0140",
+			"CUR_DIR": "101.7966"
+		},
+		{
+			"ID": "S111_24",
+			"LAT": 34.1981,
+			"LON": 127.3263,
+			"CUR_SPD": "0.9809",
+			"CUR_DIR": "66.0844"
+		},
+		{
+			"ID": "S111_33",
+			"LAT": 34.0132,
+			"LON": 127.4284,
+			"CUR_SPD": "0.5559",
+			"CUR_DIR": "78.2608"
+		},
+		{
+			"ID": "S111_34",
+			"LAT": 34.1056,
+			"LON": 127.4284,
+			"CUR_SPD": "0.8636",
+			"CUR_DIR": "93.2984"
+		},
+		{
+			"ID": "S111_35",
+			"LAT": 34.1981,
+			"LON": 127.4284,
+			"CUR_SPD": "0.8086",
+			"CUR_DIR": "98.1524"
+		},
+		{
+			"ID": "S111_37",
+			"LAT": 34.383,
+			"LON": 127.4284,
+			"CUR_SPD": "0.7175",
+			"CUR_DIR": "86.5700"
+		},
+		{
+			"ID": "S111_44",
+			"LAT": 34.0132,
+			"LON": 127.5305,
+			"CUR_SPD": "0.4636",
+			"CUR_DIR": "82.8324"
+		},
+		{
+			"ID": "S111_45",
+			"LAT": 34.1056,
+			"LON": 127.5305,
+			"CUR_SPD": "0.6615",
+			"CUR_DIR": "91.6579"
+		},
+		{
+			"ID": "S111_46",
+			"LAT": 34.1981,
+			"LON": 127.5305,
+			"CUR_SPD": "0.7226",
+			"CUR_DIR": "81.7348"
+		},
+		{
+			"ID": "S111_48",
+			"LAT": 34.383,
+			"LON": 127.5305,
+			"CUR_SPD": "0.6718",
+			"CUR_DIR": "89.2010"
+		},
+		{
+			"ID": "S111_50",
+			"LAT": 34.568,
+			"LON": 127.5305,
+			"CUR_SPD": "0.2126",
+			"CUR_DIR": "-172.4858"
+		},
+		{
+			"ID": "S111_55",
+			"LAT": 34.0132,
+			"LON": 127.6326,
+			"CUR_SPD": "0.5510",
+			"CUR_DIR": "91.6398"
+		},
+		{
+			"ID": "S111_56",
+			"LAT": 34.1056,
+			"LON": 127.6326,
+			"CUR_SPD": "0.5849",
+			"CUR_DIR": "87.5653"
+		},
+		{
+			"ID": "S111_57",
+			"LAT": 34.1981,
+			"LON": 127.6326,
+			"CUR_SPD": "0.6184",
+			"CUR_DIR": "82.2686"
+		},
+		{
+			"ID": "S111_58",
+			"LAT": 34.2906,
+			"LON": 127.6326,
+			"CUR_SPD": "0.5655",
+			"CUR_DIR": "83.7702"
+		},
+		{
+			"ID": "S111_59",
+			"LAT": 34.383,
+			"LON": 127.6326,
+			"CUR_SPD": "0.4696",
+			"CUR_DIR": "86.0144"
+		},
+		{
+			"ID": "S111_60",
+			"LAT": 34.4755,
+			"LON": 127.6326,
+			"CUR_SPD": "0.2745",
+			"CUR_DIR": "102.3395"
+		},
+		{
+			"ID": "S111_66",
+			"LAT": 34.0132,
+			"LON": 127.7347,
+			"CUR_SPD": "0.5011",
+			"CUR_DIR": "87.5397"
+		},
+		{
+			"ID": "S111_67",
+			"LAT": 34.1056,
+			"LON": 127.7347,
+			"CUR_SPD": "0.4782",
+			"CUR_DIR": "86.3191"
+		},
+		{
+			"ID": "S111_68",
+			"LAT": 34.1981,
+			"LON": 127.7347,
+			"CUR_SPD": "0.5627",
+			"CUR_DIR": "83.9320"
+		},
+		{
+			"ID": "S111_69",
+			"LAT": 34.2906,
+			"LON": 127.7347,
+			"CUR_SPD": "0.4819",
+			"CUR_DIR": "80.8461"
+		},
+		{
+			"ID": "S111_71",
+			"LAT": 34.4755,
+			"LON": 127.7347,
+			"CUR_SPD": "0.1620",
+			"CUR_DIR": "117.1601"
+		},
+		{
+			"ID": "S111_77",
+			"LAT": 34.0132,
+			"LON": 127.8368,
+			"CUR_SPD": "0.4914",
+			"CUR_DIR": "83.1467"
+		},
+		{
+			"ID": "S111_78",
+			"LAT": 34.1056,
+			"LON": 127.8368,
+			"CUR_SPD": "0.4322",
+			"CUR_DIR": "79.5861"
+		},
+		{
+			"ID": "S111_79",
+			"LAT": 34.1981,
+			"LON": 127.8368,
+			"CUR_SPD": "0.4042",
+			"CUR_DIR": "80.2310"
+		},
+		{
+			"ID": "S111_80",
+			"LAT": 34.2906,
+			"LON": 127.8368,
+			"CUR_SPD": "0.3951",
+			"CUR_DIR": "74.0544"
+		},
+		{
+			"ID": "S111_81",
+			"LAT": 34.383,
+			"LON": 127.8368,
+			"CUR_SPD": "0.4047",
+			"CUR_DIR": "69.0779"
+		},
+		{
+			"ID": "S111_84",
+			"LAT": 34.6605,
+			"LON": 127.8368,
+			"CUR_SPD": "0.0662",
+			"CUR_DIR": "174.2939"
+		},
+		{
+			"ID": "S111_88",
+			"LAT": 34.0132,
+			"LON": 127.9389,
+			"CUR_SPD": "0.4818",
+			"CUR_DIR": "85.7623"
+		},
+		{
+			"ID": "S111_89",
+			"LAT": 34.1056,
+			"LON": 127.9389,
+			"CUR_SPD": "0.3833",
+			"CUR_DIR": "79.5025"
+		},
+		{
+			"ID": "S111_90",
+			"LAT": 34.1981,
+			"LON": 127.9389,
+			"CUR_SPD": "0.3221",
+			"CUR_DIR": "73.9036"
+		},
+		{
+			"ID": "S111_91",
+			"LAT": 34.2906,
+			"LON": 127.9389,
+			"CUR_SPD": "0.3002",
+			"CUR_DIR": "66.9522"
+		},
+		{
+			"ID": "S111_92",
+			"LAT": 34.383,
+			"LON": 127.9389,
+			"CUR_SPD": "0.3509",
+			"CUR_DIR": "60.3503"
+		},
+		{
+			"ID": "S111_93",
+			"LAT": 34.4755,
+			"LON": 127.9389,
+			"CUR_SPD": "0.3976",
+			"CUR_DIR": "53.9967"
+		},
+		{
+			"ID": "S111_94",
+			"LAT": 34.568,
+			"LON": 127.9389,
+			"CUR_SPD": "0.2370",
+			"CUR_DIR": "60.1532"
+		},
+		{
+			"ID": "S111_95",
+			"LAT": 34.6605,
+			"LON": 127.9389,
+			"CUR_SPD": "0.0287",
+			"CUR_DIR": "25.4149"
+		},
+		{
+			"ID": "S111_99",
+			"LAT": 34.0132,
+			"LON": 128.0409,
+			"CUR_SPD": "0.5702",
+			"CUR_DIR": "80.3152"
+		},
+		{
+			"ID": "S111_100",
+			"LAT": 34.1056,
+			"LON": 128.0409,
+			"CUR_SPD": "0.3135",
+			"CUR_DIR": "77.1160"
+		},
+		{
+			"ID": "S111_101",
+			"LAT": 34.1981,
+			"LON": 128.0409,
+			"CUR_SPD": "0.2756",
+			"CUR_DIR": "72.9297"
+		},
+		{
+			"ID": "S111_102",
+			"LAT": 34.2906,
+			"LON": 128.0409,
+			"CUR_SPD": "0.2495",
+			"CUR_DIR": "71.8276"
+		},
+		{
+			"ID": "S111_103",
+			"LAT": 34.383,
+			"LON": 128.0409,
+			"CUR_SPD": "0.3265",
+			"CUR_DIR": "72.1799"
+		},
+		{
+			"ID": "S111_104",
+			"LAT": 34.4755,
+			"LON": 128.0409,
+			"CUR_SPD": "0.3557",
+			"CUR_DIR": "72.3850"
+		},
+		{
+			"ID": "S111_105",
+			"LAT": 34.568,
+			"LON": 128.0409,
+			"CUR_SPD": "0.2184",
+			"CUR_DIR": "65.4707"
+		},
+		{
+			"ID": "S111_106",
+			"LAT": 34.6605,
+			"LON": 128.0409,
+			"CUR_SPD": "0.0937",
+			"CUR_DIR": "117.7699"
+		}
+	],
+	"FLOOD_RISK_AREA": [
+		{
+			"ID": "FRA_01",
+			"NAME": "여수",
+			"MARKER_POS": "R",
+			"LON": 127.766,
+			"LAT": 34.747,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_02",
+			"NAME": "고흥발포",
+			"MARKER_POS": "L",
+			"LON": 127.34299999999999,
+			"LAT": 34.481,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_03",
+			"NAME": "거문도",
+			"MARKER_POS": "R",
+			"LON": 127.309,
+			"LAT": 34.028,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_04",
+			"NAME": "광양",
+			"MARKER_POS": "R",
+			"LON": 127.755,
+			"LAT": 34.904,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		}
+	],
+	"CURRENT_INFO": [
+		{
+			"ID": "CUR_01",
+			"NAME": "노량수도",
+			"LON": 127.88600000000001,
+			"LAT": 34.948,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "T",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:51",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 2.3
+				},
+				{
+					"MIN_CUR_TIME": "05:12",
+					"MAX_CUR_TIME": "08:28",
+					"CUR_DIRECT": "68",
+					"CUR_SPEED": 2.2
+				},
+				{
+					"MIN_CUR_TIME": "11:40",
+					"MAX_CUR_TIME": "13:56",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 1.8
+				},
+				{
+					"MIN_CUR_TIME": "16:55",
+					"MAX_CUR_TIME": "19:31",
+					"CUR_DIRECT": "68",
+					"CUR_SPEED": 1.9
+				}
+			],
+			"DEG_FE": [
+				"155",
+				"340",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_02",
+			"NAME": "여자만",
+			"LON": 127.52,
+			"LAT": 34.588,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "02:41",
+					"MAX_CUR_TIME": "05:36",
+					"CUR_DIRECT": "0",
+					"CUR_SPEED": 0.9
+				},
+				{
+					"MIN_CUR_TIME": "09:49",
+					"MAX_CUR_TIME": "11:42",
+					"CUR_DIRECT": "158",
+					"CUR_SPEED": 1.0
+				},
+				{
+					"MIN_CUR_TIME": "14:53",
+					"MAX_CUR_TIME": "17:40",
+					"CUR_DIRECT": "0",
+					"CUR_SPEED": 0.8
+				},
+				{
+					"MIN_CUR_TIME": "22:03",
+					"MAX_CUR_TIME": "23:55",
+					"CUR_DIRECT": "158",
+					"CUR_SPEED": 0.9
+				}
+			],
+			"DEG_FE": [
+				"90",
+				"270",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_03",
+			"NAME": "손죽도북측",
+			"LON": 127.35444440000002,
+			"LAT": 34.34805556,
+			"MARKER_POS": "L",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "02:05",
+					"CUR_DIRECT": "113",
+					"CUR_SPEED": 0.8
+				},
+				{
+					"MIN_CUR_TIME": "04:43",
+					"MAX_CUR_TIME": "08:33",
+					"CUR_DIRECT": "270",
+					"CUR_SPEED": 1.5
+				},
+				{
+					"MIN_CUR_TIME": "12:38",
+					"MAX_CUR_TIME": "16:00",
+					"CUR_DIRECT": "90",
+					"CUR_SPEED": 1.1
+				},
+				{
+					"MIN_CUR_TIME": "19:50",
+					"MAX_CUR_TIME": "20:58",
+					"CUR_DIRECT": "315",
+					"CUR_SPEED": 0.3
+				}
+			],
+			"DEG_FE": [
+				"0",
+				"180",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_04",
+			"NAME": "여수해만입구",
+			"LON": 127.91722220000001,
+			"LAT": 34.61722222,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "02:49",
+					"MAX_CUR_TIME": "06:34",
+					"CUR_DIRECT": "270",
+					"CUR_SPEED": 0.7
+				},
+				{
+					"MIN_CUR_TIME": "10:26",
+					"MAX_CUR_TIME": "13:50",
+					"CUR_DIRECT": "90",
+					"CUR_SPEED": 0.5
+				}
+			],
+			"DEG_FE": [
+				"0",
+				"180",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_05",
+			"NAME": "외나로도남측",
+			"LON": 127.6622222,
+			"LAT": 34.29638889,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:09",
+					"CUR_DIRECT": "113",
+					"CUR_SPEED": 0.8
+				},
+				{
+					"MIN_CUR_TIME": "04:14",
+					"MAX_CUR_TIME": "07:42",
+					"CUR_DIRECT": "270",
+					"CUR_SPEED": 1.2
+				},
+				{
+					"MIN_CUR_TIME": "11:36",
+					"MAX_CUR_TIME": "15:15",
+					"CUR_DIRECT": "90",
+					"CUR_SPEED": 0.9
+				}
+			],
+			"DEG_FE": [
+				"0",
+				"180",
+				"EBB"
+			]
+		}
+	]
+}

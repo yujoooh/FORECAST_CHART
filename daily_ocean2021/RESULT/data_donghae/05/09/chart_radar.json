@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:34",
+		"SUN_TIME_02": "12:21",
+		"SUN_TIME_03": "17:09",
+		"MOON_TIME_01": "18:44",
+		"MOON_TIME_02": "01:34",
+		"MOON_TIME_03": "09:17",
+		"MOON_STEP": "18"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "동해항",
+			"TIDE_HIGH_VALUE_01": "26",
+			"TIDE_HIGH_TIME_01": "03:07",
+			"TIDE_LOW_VALUE_01": "15",
+			"TIDE_LOW_TIME_01": "21:50",
+			"TIDE_HIGH_VALUE_02": "17",
+			"TIDE_HIGH_TIME_02": "18:22",
+			"TIDE_LOW_VALUE_02": "-2",
+			"TIDE_LOW_TIME_02": "10:57"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "묵호",
+			"TIDE_HIGH_VALUE_01": "29",
+			"TIDE_HIGH_TIME_01": "03:00",
+			"TIDE_LOW_VALUE_01": "19",
+			"TIDE_LOW_TIME_01": "21:34",
+			"TIDE_HIGH_VALUE_02": "20",
+			"TIDE_HIGH_TIME_02": "18:27",
+			"TIDE_LOW_VALUE_02": "2",
+			"TIDE_LOW_TIME_02": "10:56"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "호산항",
+			"TIDE_HIGH_VALUE_01": "24",
+			"TIDE_HIGH_TIME_01": "03:05",
+			"TIDE_LOW_VALUE_01": "13",
+			"TIDE_LOW_TIME_01": "21:41",
+			"TIDE_HIGH_VALUE_02": "14",
+			"TIDE_HIGH_TIME_02": "18:47",
+			"TIDE_LOW_VALUE_02": "-2",
+			"TIDE_LOW_TIME_02": "11:05"
+		}
+	]
+}

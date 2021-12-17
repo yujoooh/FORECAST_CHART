@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:32",
+		"SUN_TIME_02": "12:20",
+		"SUN_TIME_03": "17:10",
+		"MOON_TIME_01": "19:43",
+		"MOON_TIME_02": "02:23",
+		"MOON_TIME_03": "09:57",
+		"MOON_STEP": "19"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "왕돌초",
+			"TIDE_HIGH_VALUE_01": "20",
+			"TIDE_HIGH_TIME_01": "03:24",
+			"TIDE_LOW_VALUE_01": "0",
+			"TIDE_LOW_TIME_01": "11:42",
+			"TIDE_HIGH_VALUE_02": "20",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "0",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "포항",
+			"TIDE_HIGH_VALUE_01": "28",
+			"TIDE_HIGH_TIME_01": "03:49",
+			"TIDE_LOW_VALUE_01": "10",
+			"TIDE_LOW_TIME_01": "12:57",
+			"TIDE_HIGH_VALUE_02": "28",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "후포",
+			"TIDE_HIGH_VALUE_01": "22",
+			"TIDE_HIGH_TIME_01": "03:40",
+			"TIDE_LOW_VALUE_01": "1",
+			"TIDE_LOW_TIME_01": "11:57",
+			"TIDE_HIGH_VALUE_02": "22",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "1",
+			"TIDE_LOW_TIME_02": "--:--"
+		}
+	]
+}

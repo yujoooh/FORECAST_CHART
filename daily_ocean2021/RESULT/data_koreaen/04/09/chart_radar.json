@@ -1,0 +1,157 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:43",
+		"SUN_TIME_02": "12:30",
+		"SUN_TIME_03": "17:18",
+		"MOON_TIME_01": "18:00",
+		"MOON_TIME_02": "00:53",
+		"MOON_TIME_03": "08:37",
+		"MOON_STEP": "17"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "Sokcho",
+			"TIDE_HIGH_VALUE_01": "26",
+			"TIDE_HIGH_TIME_01": "02:42",
+			"TIDE_LOW_VALUE_01": "14",
+			"TIDE_LOW_TIME_01": "21:22",
+			"TIDE_HIGH_VALUE_02": "18",
+			"TIDE_HIGH_TIME_02": "17:25",
+			"TIDE_LOW_VALUE_02": "-3",
+			"TIDE_LOW_TIME_02": "10:20"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "Pohang",
+			"TIDE_HIGH_VALUE_01": "27",
+			"TIDE_HIGH_TIME_01": "02:23",
+			"TIDE_LOW_VALUE_01": "10",
+			"TIDE_LOW_TIME_01": "11:34",
+			"TIDE_HIGH_VALUE_02": "27",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "Ulsan",
+			"TIDE_HIGH_VALUE_01": "47",
+			"TIDE_HIGH_TIME_01": "08:10",
+			"TIDE_LOW_VALUE_01": "15",
+			"TIDE_LOW_TIME_01": "02:00",
+			"TIDE_HIGH_VALUE_02": "45",
+			"TIDE_HIGH_TIME_02": "20:37",
+			"TIDE_LOW_VALUE_02": "2",
+			"TIDE_LOW_TIME_02": "14:14"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "Busan",
+			"TIDE_HIGH_VALUE_01": "115",
+			"TIDE_HIGH_TIME_01": "09:05",
+			"TIDE_LOW_VALUE_01": "12",
+			"TIDE_LOW_TIME_01": "15:03",
+			"TIDE_HIGH_VALUE_02": "99",
+			"TIDE_HIGH_TIME_02": "21:06",
+			"TIDE_LOW_VALUE_02": "12",
+			"TIDE_LOW_TIME_02": "02:41"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "Geojedo",
+			"TIDE_HIGH_VALUE_01": "181",
+			"TIDE_HIGH_TIME_01": "09:30",
+			"TIDE_LOW_VALUE_01": "29",
+			"TIDE_LOW_TIME_01": "15:23",
+			"TIDE_HIGH_VALUE_02": "149",
+			"TIDE_HIGH_TIME_02": "21:15",
+			"TIDE_LOW_VALUE_02": "13",
+			"TIDE_LOW_TIME_02": "02:50"
+		},
+		{
+			"ID": "CRD_ 6",
+			"POS_NAME": "Jeju",
+			"TIDE_HIGH_VALUE_01": "255",
+			"TIDE_HIGH_TIME_01": "11:40",
+			"TIDE_LOW_VALUE_01": "97",
+			"TIDE_LOW_TIME_01": "18:11",
+			"TIDE_HIGH_VALUE_02": "198",
+			"TIDE_HIGH_TIME_02": "23:14",
+			"TIDE_LOW_VALUE_02": "39",
+			"TIDE_LOW_TIME_02": "05:09"
+		},
+		{
+			"ID": "CRD_ 7",
+			"POS_NAME": "Yeosu",
+			"TIDE_HIGH_VALUE_01": "313",
+			"TIDE_HIGH_TIME_01": "09:54",
+			"TIDE_LOW_VALUE_01": "78",
+			"TIDE_LOW_TIME_01": "15:57",
+			"TIDE_HIGH_VALUE_02": "257",
+			"TIDE_HIGH_TIME_02": "21:48",
+			"TIDE_LOW_VALUE_02": "40",
+			"TIDE_LOW_TIME_02": "03:18"
+		},
+		{
+			"ID": "CRD_ 8",
+			"POS_NAME": "Jindo",
+			"TIDE_HIGH_VALUE_01": "349",
+			"TIDE_HIGH_TIME_01": "12:00",
+			"TIDE_LOW_VALUE_01": "90",
+			"TIDE_LOW_TIME_01": "18:34",
+			"TIDE_HIGH_VALUE_02": "270",
+			"TIDE_HIGH_TIME_02": "23:45",
+			"TIDE_LOW_VALUE_02": "18",
+			"TIDE_LOW_TIME_02": "05:39"
+		},
+		{
+			"ID": "CRD_ 9",
+			"POS_NAME": "Mokpo",
+			"TIDE_HIGH_VALUE_01": "427",
+			"TIDE_HIGH_TIME_01": "15:13",
+			"TIDE_LOW_VALUE_01": "75",
+			"TIDE_LOW_TIME_01": "20:31",
+			"TIDE_HIGH_VALUE_02": "341",
+			"TIDE_HIGH_TIME_02": "02:19",
+			"TIDE_LOW_VALUE_02": "14",
+			"TIDE_LOW_TIME_02": "07:45"
+		},
+		{
+			"ID": "CRD_10",
+			"POS_NAME": "Gunsan",
+			"TIDE_HIGH_VALUE_01": "638",
+			"TIDE_HIGH_TIME_01": "16:08",
+			"TIDE_LOW_VALUE_01": "134",
+			"TIDE_LOW_TIME_01": "22:42",
+			"TIDE_HIGH_VALUE_02": "549",
+			"TIDE_HIGH_TIME_02": "03:36",
+			"TIDE_LOW_VALUE_02": "67",
+			"TIDE_LOW_TIME_02": "09:57"
+		},
+		{
+			"ID": "CRD_11",
+			"POS_NAME": "Anheung",
+			"TIDE_HIGH_VALUE_01": "622",
+			"TIDE_HIGH_TIME_01": "16:52",
+			"TIDE_LOW_VALUE_01": "135",
+			"TIDE_LOW_TIME_01": "23:16",
+			"TIDE_HIGH_VALUE_02": "533",
+			"TIDE_HIGH_TIME_02": "04:19",
+			"TIDE_LOW_VALUE_02": "60",
+			"TIDE_LOW_TIME_02": "10:31"
+		},
+		{
+			"ID": "CRD_12",
+			"POS_NAME": "Incheon",
+			"TIDE_HIGH_VALUE_01": "819",
+			"TIDE_HIGH_TIME_01": "17:46",
+			"TIDE_LOW_VALUE_01": "68",
+			"TIDE_LOW_TIME_01": "11:30",
+			"TIDE_HIGH_VALUE_02": "727",
+			"TIDE_HIGH_TIME_02": "05:20",
+			"TIDE_LOW_VALUE_02": "68",
+			"TIDE_LOW_TIME_02": "--:--"
+		}
+	]
+}

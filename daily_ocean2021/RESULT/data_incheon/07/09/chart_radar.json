@@ -1,0 +1,85 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:45",
+		"SUN_TIME_02": "12:32",
+		"SUN_TIME_03": "17:20",
+		"MOON_TIME_01": "20:54",
+		"MOON_TIME_02": "03:24",
+		"MOON_TIME_03": "10:48",
+		"MOON_STEP": "20"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "태안",
+			"TIDE_HIGH_VALUE_01": "672",
+			"TIDE_HIGH_TIME_01": "18:52",
+			"TIDE_LOW_VALUE_01": "157",
+			"TIDE_LOW_TIME_01": "00:43",
+			"TIDE_HIGH_VALUE_02": "579",
+			"TIDE_HIGH_TIME_02": "06:22",
+			"TIDE_LOW_VALUE_02": "73",
+			"TIDE_LOW_TIME_02": "12:31"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "대산",
+			"TIDE_HIGH_VALUE_01": "723",
+			"TIDE_HIGH_TIME_01": "19:00",
+			"TIDE_LOW_VALUE_01": "168",
+			"TIDE_LOW_TIME_01": "00:51",
+			"TIDE_HIGH_VALUE_02": "630",
+			"TIDE_HIGH_TIME_02": "06:31",
+			"TIDE_LOW_VALUE_02": "80",
+			"TIDE_LOW_TIME_02": "12:40"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "영흥도",
+			"TIDE_HIGH_VALUE_01": "751",
+			"TIDE_HIGH_TIME_01": "19:15",
+			"TIDE_LOW_VALUE_01": "160",
+			"TIDE_LOW_TIME_01": "01:07",
+			"TIDE_HIGH_VALUE_02": "661",
+			"TIDE_HIGH_TIME_02": "06:50",
+			"TIDE_LOW_VALUE_02": "84",
+			"TIDE_LOW_TIME_02": "13:00"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "안산",
+			"TIDE_HIGH_VALUE_01": "753",
+			"TIDE_HIGH_TIME_01": "19:12",
+			"TIDE_LOW_VALUE_01": "156",
+			"TIDE_LOW_TIME_01": "01:07",
+			"TIDE_HIGH_VALUE_02": "662",
+			"TIDE_HIGH_TIME_02": "06:46",
+			"TIDE_LOW_VALUE_02": "66",
+			"TIDE_LOW_TIME_02": "12:58"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "인천",
+			"TIDE_HIGH_VALUE_01": "804",
+			"TIDE_HIGH_TIME_01": "19:22",
+			"TIDE_LOW_VALUE_01": "165",
+			"TIDE_LOW_TIME_01": "01:16",
+			"TIDE_HIGH_VALUE_02": "711",
+			"TIDE_HIGH_TIME_02": "06:59",
+			"TIDE_LOW_VALUE_02": "84",
+			"TIDE_LOW_TIME_02": "13:10"
+		},
+		{
+			"ID": "CRD_ 6",
+			"POS_NAME": "평택",
+			"TIDE_HIGH_VALUE_01": "826",
+			"TIDE_HIGH_TIME_01": "19:14",
+			"TIDE_LOW_VALUE_01": "184",
+			"TIDE_LOW_TIME_01": "01:12",
+			"TIDE_HIGH_VALUE_02": "736",
+			"TIDE_HIGH_TIME_02": "06:50",
+			"TIDE_LOW_VALUE_02": "105",
+			"TIDE_LOW_TIME_02": "13:06"
+		}
+	]
+}

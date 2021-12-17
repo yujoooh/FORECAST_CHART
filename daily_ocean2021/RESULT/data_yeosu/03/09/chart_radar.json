@@ -1,0 +1,61 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:32",
+		"SUN_TIME_02": "12:26",
+		"SUN_TIME_03": "17:21",
+		"MOON_TIME_01": "17:15",
+		"MOON_TIME_02": "--:--",
+		"MOON_TIME_03": "07:30",
+		"MOON_STEP": "16"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "거문도",
+			"TIDE_HIGH_VALUE_01": "299",
+			"TIDE_HIGH_TIME_01": "09:55",
+			"TIDE_LOW_VALUE_01": "105",
+			"TIDE_LOW_TIME_01": "16:11",
+			"TIDE_HIGH_VALUE_02": "246",
+			"TIDE_HIGH_TIME_02": "21:38",
+			"TIDE_LOW_VALUE_02": "47",
+			"TIDE_LOW_TIME_02": "03:19"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "고흥발포",
+			"TIDE_HIGH_VALUE_01": "330",
+			"TIDE_HIGH_TIME_01": "09:45",
+			"TIDE_LOW_VALUE_01": "88",
+			"TIDE_LOW_TIME_01": "16:05",
+			"TIDE_HIGH_VALUE_02": "266",
+			"TIDE_HIGH_TIME_02": "21:36",
+			"TIDE_LOW_VALUE_02": "37",
+			"TIDE_LOW_TIME_02": "03:13"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "여수",
+			"TIDE_HIGH_VALUE_01": "308",
+			"TIDE_HIGH_TIME_01": "09:20",
+			"TIDE_LOW_VALUE_01": "80",
+			"TIDE_LOW_TIME_01": "15:25",
+			"TIDE_HIGH_VALUE_02": "256",
+			"TIDE_HIGH_TIME_02": "21:15",
+			"TIDE_LOW_VALUE_02": "44",
+			"TIDE_LOW_TIME_02": "02:44"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "광양",
+			"TIDE_HIGH_VALUE_01": "342",
+			"TIDE_HIGH_TIME_01": "09:23",
+			"TIDE_LOW_VALUE_01": "90",
+			"TIDE_LOW_TIME_01": "15:26",
+			"TIDE_HIGH_VALUE_02": "286",
+			"TIDE_HIGH_TIME_02": "21:20",
+			"TIDE_LOW_VALUE_02": "55",
+			"TIDE_LOW_TIME_02": "02:49"
+		}
+	]
+}

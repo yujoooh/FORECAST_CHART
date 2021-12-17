@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:39",
+		"SUN_TIME_02": "12:33",
+		"SUN_TIME_03": "17:28",
+		"MOON_TIME_01": "21:02",
+		"MOON_TIME_02": "03:25",
+		"MOON_TIME_03": "10:42",
+		"MOON_STEP": "20"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "목포",
+			"TIDE_HIGH_VALUE_01": "415",
+			"TIDE_HIGH_TIME_01": "16:55",
+			"TIDE_LOW_VALUE_01": "81",
+			"TIDE_LOW_TIME_01": "22:14",
+			"TIDE_HIGH_VALUE_02": "337",
+			"TIDE_HIGH_TIME_02": "04:07",
+			"TIDE_LOW_VALUE_02": "11",
+			"TIDE_LOW_TIME_02": "09:29"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "진도",
+			"TIDE_HIGH_VALUE_01": "338",
+			"TIDE_HIGH_TIME_01": "13:39",
+			"TIDE_LOW_VALUE_01": "96",
+			"TIDE_LOW_TIME_01": "20:22",
+			"TIDE_HIGH_VALUE_02": "264",
+			"TIDE_HIGH_TIME_02": "00:53",
+			"TIDE_LOW_VALUE_02": "25",
+			"TIDE_LOW_TIME_02": "07:25"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "흑산도",
+			"TIDE_HIGH_VALUE_01": "319",
+			"TIDE_HIGH_TIME_01": "16:34",
+			"TIDE_LOW_VALUE_01": "93",
+			"TIDE_LOW_TIME_01": "22:34",
+			"TIDE_HIGH_VALUE_02": "258",
+			"TIDE_HIGH_TIME_02": "03:51",
+			"TIDE_LOW_VALUE_02": "36",
+			"TIDE_LOW_TIME_02": "09:34"
+		}
+	]
+}

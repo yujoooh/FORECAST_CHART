@@ -1,0 +1,61 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:33",
+		"SUN_TIME_02": "12:30",
+		"SUN_TIME_03": "17:29",
+		"MOON_TIME_01": "17:24",
+		"MOON_TIME_02": "00:04",
+		"MOON_TIME_03": "07:31",
+		"MOON_STEP": "16"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "제주",
+			"TIDE_HIGH_VALUE_01": "250",
+			"TIDE_HIGH_TIME_01": "11:07",
+			"TIDE_LOW_VALUE_01": "98",
+			"TIDE_LOW_TIME_01": "17:38",
+			"TIDE_HIGH_VALUE_02": "197",
+			"TIDE_HIGH_TIME_02": "22:40",
+			"TIDE_LOW_VALUE_02": "44",
+			"TIDE_LOW_TIME_02": "04:36"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "성산포",
+			"TIDE_HIGH_VALUE_01": "223",
+			"TIDE_HIGH_TIME_01": "10:10",
+			"TIDE_LOW_VALUE_01": "82",
+			"TIDE_LOW_TIME_01": "16:23",
+			"TIDE_HIGH_VALUE_02": "177",
+			"TIDE_HIGH_TIME_02": "21:40",
+			"TIDE_LOW_VALUE_02": "20",
+			"TIDE_LOW_TIME_02": "03:25"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "서귀포",
+			"TIDE_HIGH_VALUE_01": "266",
+			"TIDE_HIGH_TIME_01": "10:13",
+			"TIDE_LOW_VALUE_01": "97",
+			"TIDE_LOW_TIME_01": "16:24",
+			"TIDE_HIGH_VALUE_02": "214",
+			"TIDE_HIGH_TIME_02": "21:45",
+			"TIDE_LOW_VALUE_02": "29",
+			"TIDE_LOW_TIME_02": "03:28"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "모슬포",
+			"TIDE_HIGH_VALUE_01": "245",
+			"TIDE_HIGH_TIME_01": "10:54",
+			"TIDE_LOW_VALUE_01": "86",
+			"TIDE_LOW_TIME_01": "17:10",
+			"TIDE_HIGH_VALUE_02": "195",
+			"TIDE_HIGH_TIME_02": "22:22",
+			"TIDE_LOW_VALUE_02": "22",
+			"TIDE_LOW_TIME_02": "04:09"
+		}
+	]
+}

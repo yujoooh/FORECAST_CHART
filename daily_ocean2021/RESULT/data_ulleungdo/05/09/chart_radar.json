@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:27",
+		"SUN_TIME_02": "12:14",
+		"SUN_TIME_03": "17:02",
+		"MOON_TIME_01": "18:37",
+		"MOON_TIME_02": "01:26",
+		"MOON_TIME_03": "09:09",
+		"MOON_STEP": "18"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "울릉도",
+			"TIDE_HIGH_VALUE_01": "25",
+			"TIDE_HIGH_TIME_01": "02:23",
+			"TIDE_LOW_VALUE_01": "0",
+			"TIDE_LOW_TIME_01": "10:32",
+			"TIDE_HIGH_VALUE_02": "25",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "0",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "독도",
+			"TIDE_HIGH_VALUE_01": "21",
+			"TIDE_HIGH_TIME_01": "01:53",
+			"TIDE_LOW_VALUE_01": "-4",
+			"TIDE_LOW_TIME_01": "09:48",
+			"TIDE_HIGH_VALUE_02": "21",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "-4",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "쌍정초",
+			"TIDE_HIGH_VALUE_01": "23",
+			"TIDE_HIGH_TIME_01": "03:07",
+			"TIDE_LOW_VALUE_01": "1",
+			"TIDE_LOW_TIME_01": "17:59",
+			"TIDE_HIGH_VALUE_02": "2",
+			"TIDE_HIGH_TIME_02": "16:26",
+			"TIDE_LOW_VALUE_02": "-8",
+			"TIDE_LOW_TIME_02": "11:55"
+		}
+	]
+}

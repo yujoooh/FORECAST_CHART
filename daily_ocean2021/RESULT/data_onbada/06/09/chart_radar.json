@@ -1,0 +1,25 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:44",
+		"SUN_TIME_02": "12:31",
+		"SUN_TIME_03": "17:19",
+		"MOON_TIME_01": "19:53",
+		"MOON_TIME_02": "02:35",
+		"MOON_TIME_03": "10:10",
+		"MOON_STEP": "19"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "속초",
+			"TIDE_HIGH_VALUE_01": "26",
+			"TIDE_HIGH_TIME_01": "03:53",
+			"TIDE_LOW_VALUE_01": "14",
+			"TIDE_LOW_TIME_01": "22:31",
+			"TIDE_HIGH_VALUE_02": "17",
+			"TIDE_HIGH_TIME_02": "18:42",
+			"TIDE_LOW_VALUE_02": "-3",
+			"TIDE_LOW_TIME_02": "11:32"
+		}
+	]
+}

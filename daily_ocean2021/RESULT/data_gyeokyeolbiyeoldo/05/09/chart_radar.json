@@ -1,0 +1,75 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:43",
+		"SUN_TIME_02": "12:32",
+		"SUN_TIME_03": "17:22",
+		"MOON_TIME_01": "18:58",
+		"MOON_TIME_02": "01:46",
+		"MOON_TIME_03": "09:26",
+		"MOON_STEP": "18"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "안산",
+			"TIDE_HIGH_VALUE_01": "769",
+			"TIDE_HIGH_TIME_01": "18:07",
+			"TIDE_LOW_VALUE_01": "146",
+			"TIDE_LOW_TIME_01": "00:00",
+			"TIDE_HIGH_VALUE_02": "675",
+			"TIDE_HIGH_TIME_02": "05:41",
+			"TIDE_LOW_VALUE_02": "53",
+			"TIDE_LOW_TIME_02": "00:00",
+			"TIDE_LOW_VALUE_03": "53",
+			"TIDE_LOW_TIME_03": "11:50"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "군산",
+			"TIDE_HIGH_VALUE_01": "639",
+			"TIDE_HIGH_TIME_01": "16:40",
+			"TIDE_LOW_VALUE_01": "136",
+			"TIDE_LOW_TIME_01": "23:16",
+			"TIDE_HIGH_VALUE_02": "550",
+			"TIDE_HIGH_TIME_02": "04:08",
+			"TIDE_LOW_VALUE_02": "66",
+			"TIDE_LOW_TIME_02": "10:30"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "보령",
+			"TIDE_HIGH_VALUE_01": "682",
+			"TIDE_HIGH_TIME_01": "16:57",
+			"TIDE_LOW_VALUE_01": "155",
+			"TIDE_LOW_TIME_01": "23:43",
+			"TIDE_HIGH_VALUE_02": "594",
+			"TIDE_HIGH_TIME_02": "04:28",
+			"TIDE_LOW_VALUE_02": "81",
+			"TIDE_LOW_TIME_02": "11:00"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "안흥",
+			"TIDE_HIGH_VALUE_01": "620",
+			"TIDE_HIGH_TIME_01": "17:23",
+			"TIDE_LOW_VALUE_01": "138",
+			"TIDE_LOW_TIME_01": "23:49",
+			"TIDE_HIGH_VALUE_02": "532",
+			"TIDE_HIGH_TIME_02": "04:51",
+			"TIDE_LOW_VALUE_02": "61",
+			"TIDE_LOW_TIME_02": "11:03"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "대산",
+			"TIDE_HIGH_VALUE_01": "742",
+			"TIDE_HIGH_TIME_01": "17:55",
+			"TIDE_LOW_VALUE_01": "60",
+			"TIDE_LOW_TIME_01": "11:33",
+			"TIDE_HIGH_VALUE_02": "643",
+			"TIDE_HIGH_TIME_02": "05:24",
+			"TIDE_LOW_VALUE_02": "60",
+			"TIDE_LOW_TIME_02": "--:--"
+		}
+	]
+}

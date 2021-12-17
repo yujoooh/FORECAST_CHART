@@ -1,0 +1,73 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:42",
+		"SUN_TIME_02": "12:29",
+		"SUN_TIME_03": "17:17",
+		"MOON_TIME_01": "15:51",
+		"MOON_TIME_02": "23:15",
+		"MOON_TIME_03": "05:46",
+		"MOON_STEP": "14"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "순위도",
+			"TIDE_HIGH_VALUE_01": "468",
+			"TIDE_HIGH_TIME_01": "17:02",
+			"TIDE_LOW_VALUE_01": "131",
+			"TIDE_LOW_TIME_01": "23:34",
+			"TIDE_HIGH_VALUE_02": "354",
+			"TIDE_HIGH_TIME_02": "04:12",
+			"TIDE_LOW_VALUE_02": "58",
+			"TIDE_LOW_TIME_02": "10:26"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "연평도",
+			"TIDE_HIGH_VALUE_01": "625",
+			"TIDE_HIGH_TIME_01": "16:32",
+			"TIDE_LOW_VALUE_01": "153",
+			"TIDE_LOW_TIME_01": "22:52",
+			"TIDE_HIGH_VALUE_02": "534",
+			"TIDE_HIGH_TIME_02": "03:58",
+			"TIDE_LOW_VALUE_02": "91",
+			"TIDE_LOW_TIME_02": "10:07"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "옹진소청초",
+			"TIDE_HIGH_VALUE_01": "323",
+			"TIDE_HIGH_TIME_01": "16:41",
+			"TIDE_LOW_VALUE_01": "111",
+			"TIDE_LOW_TIME_01": "23:07",
+			"TIDE_HIGH_VALUE_02": "256",
+			"TIDE_HIGH_TIME_02": "03:49",
+			"TIDE_LOW_VALUE_02": "50",
+			"TIDE_LOW_TIME_02": "10:02"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "대청도",
+			"TIDE_HIGH_VALUE_01": "335",
+			"TIDE_HIGH_TIME_01": "17:31",
+			"TIDE_LOW_VALUE_01": "55",
+			"TIDE_LOW_TIME_01": "10:55",
+			"TIDE_HIGH_VALUE_02": "257",
+			"TIDE_HIGH_TIME_02": "04:41",
+			"TIDE_LOW_VALUE_02": "55",
+			"TIDE_LOW_TIME_02": "--:--"
+		},
+		{
+			"ID": "CRD_ 5",
+			"POS_NAME": "백령도",
+			"TIDE_HIGH_VALUE_01": "338",
+			"TIDE_HIGH_TIME_01": "17:43",
+			"TIDE_LOW_VALUE_01": "43",
+			"TIDE_LOW_TIME_01": "11:09",
+			"TIDE_HIGH_VALUE_02": "263",
+			"TIDE_HIGH_TIME_02": "04:51",
+			"TIDE_LOW_VALUE_02": "43",
+			"TIDE_LOW_TIME_02": "--:--"
+		}
+	]
+}

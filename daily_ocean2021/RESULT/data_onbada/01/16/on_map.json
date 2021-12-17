@@ -1,0 +1,154 @@
+{
+	"BASE_MAP": [
+		{
+			"MAP_URL": "temp.png",
+			"MAP_BOUNDARY_TL_LAT": 38.594184697940996,
+			"MAP_BOUNDARY_TL_LNG": 124.38483606548999,
+			"MAP_BOUNDARY_BR_LAT": 32.152595664545004,
+			"MAP_BOUNDARY_BR_LNG": 132.40860655737
+		}
+	],
+	"TODAY_DATE": {
+		"DATE": "2021년 12월 17일",
+		"TIME": "16시",
+		"LUNAR_DATE": "음력 11월 14일"
+	},
+	"WATER_TEMP_WAVE_HEIGHT": [
+		{
+			"ID": "WTWH_01",
+			"LAT": 37.3582,
+			"LON": 125.844,
+			"WATER_TEMP": "8.8",
+			"WAVE_HEIGHT": "1.7",
+			"WIND": "16",
+			"WIND_DIR": "296"
+		},
+		{
+			"ID": "WTWH_02",
+			"LAT": 36.5089,
+			"LON": 125.1237,
+			"WATER_TEMP": "11.2",
+			"WAVE_HEIGHT": "3.3",
+			"WIND": "16",
+			"WIND_DIR": "302"
+		},
+		{
+			"ID": "WTWH_03",
+			"LAT": 35.62,
+			"LON": 125.8874,
+			"WATER_TEMP": "12.8",
+			"WAVE_HEIGHT": "3.3",
+			"WIND": "18",
+			"WIND_DIR": "304"
+		},
+		{
+			"ID": "WTWH_04",
+			"LAT": 35.0183,
+			"LON": 125.0195,
+			"WATER_TEMP": "13.1",
+			"WAVE_HEIGHT": "3.2",
+			"WIND": "16",
+			"WIND_DIR": "292"
+		},
+		{
+			"ID": "WTWH_05",
+			"LAT": 33.8275,
+			"LON": 126.5904,
+			"WATER_TEMP": "15.7",
+			"WAVE_HEIGHT": "1.7",
+			"WIND": "18",
+			"WIND_DIR": "310"
+		},
+		{
+			"ID": "WTWH_06",
+			"LAT": 32.9116,
+			"LON": 125.4361,
+			"WATER_TEMP": "18.0",
+			"WAVE_HEIGHT": "2.1",
+			"WIND": "16",
+			"WIND_DIR": "302"
+		},
+		{
+			"ID": "WTWH_07",
+			"LAT": 32.5618,
+			"LON": 127.276,
+			"WATER_TEMP": "20.3",
+			"WAVE_HEIGHT": "1.9",
+			"WIND": "16",
+			"WIND_DIR": "311"
+		},
+		{
+			"ID": "WTWH_08",
+			"LAT": 33.253,
+			"LON": 128.0918,
+			"WATER_TEMP": "18.4",
+			"WAVE_HEIGHT": "2.0",
+			"WIND": "14",
+			"WIND_DIR": "316"
+		},
+		{
+			"ID": "WTWH_09",
+			"LAT": 34.144,
+			"LON": 128.4997,
+			"WATER_TEMP": "15.3",
+			"WAVE_HEIGHT": "2.0",
+			"WIND": "11",
+			"WIND_DIR": "308"
+		},
+		{
+			"ID": "WTWH_10",
+			"LAT": 35.6595,
+			"LON": 130.0705,
+			"WATER_TEMP": "13.6",
+			"WAVE_HEIGHT": "1.7",
+			"WIND": "20",
+			"WIND_DIR": "334"
+		},
+		{
+			"ID": "WTWH_11",
+			"LAT": 36.29,
+			"LON": 130.9,
+			"WATER_TEMP": "15.3",
+			"WAVE_HEIGHT": "1.8",
+			"WIND": "20",
+			"WIND_DIR": "332"
+		},
+		{
+			"ID": "WTWH_12",
+			"LAT": 37.7846,
+			"LON": 130.7729,
+			"WATER_TEMP": "12.9",
+			"WAVE_HEIGHT": "2.5",
+			"WIND": "21",
+			"WIND_DIR": "328"
+		},
+		{
+			"ID": "WTWH_13",
+			"LAT": 38.2076,
+			"LON": 129.4196,
+			"WATER_TEMP": "11.5",
+			"WAVE_HEIGHT": "2.5",
+			"WIND": "20",
+			"WIND_DIR": "326"
+		}
+	],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT": [],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT_WIND": [],
+	"S111_CUR": [],
+	"FLOOD_RISK_AREA": [
+		{
+			"ID": "FRA_01",
+			"NAME": "속초",
+			"MARKER_POS": "R",
+			"LON": 128.594,
+			"LAT": 38.207,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		}
+	],
+	"CURRENT_INFO": []
+}

@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:33",
+		"SUN_TIME_02": "12:29",
+		"SUN_TIME_03": "17:25",
+		"MOON_TIME_01": "16:37",
+		"MOON_TIME_02": "--:--",
+		"MOON_TIME_03": "06:36",
+		"MOON_STEP": "15"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "완도",
+			"TIDE_HIGH_VALUE_01": "333",
+			"TIDE_HIGH_TIME_01": "09:53",
+			"TIDE_LOW_VALUE_01": "105",
+			"TIDE_LOW_TIME_01": "16:25",
+			"TIDE_HIGH_VALUE_02": "271",
+			"TIDE_HIGH_TIME_02": "21:42",
+			"TIDE_LOW_VALUE_02": "53",
+			"TIDE_LOW_TIME_02": "03:30"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "추자도",
+			"TIDE_HIGH_VALUE_01": "279",
+			"TIDE_HIGH_TIME_01": "11:03",
+			"TIDE_LOW_VALUE_01": "93",
+			"TIDE_LOW_TIME_01": "17:23",
+			"TIDE_HIGH_VALUE_02": "218",
+			"TIDE_HIGH_TIME_02": "22:37",
+			"TIDE_LOW_VALUE_02": "39",
+			"TIDE_LOW_TIME_02": "04:25"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "진도",
+			"TIDE_HIGH_VALUE_01": "336",
+			"TIDE_HIGH_TIME_01": "10:59",
+			"TIDE_LOW_VALUE_01": "93",
+			"TIDE_LOW_TIME_01": "17:29",
+			"TIDE_HIGH_VALUE_02": "267",
+			"TIDE_HIGH_TIME_02": "22:43",
+			"TIDE_LOW_VALUE_02": "36",
+			"TIDE_LOW_TIME_02": "04:36"
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:33",
+		"SUN_TIME_02": "12:30",
+		"SUN_TIME_03": "17:29",
+		"MOON_TIME_01": "17:24",
+		"MOON_TIME_02": "00:04",
+		"MOON_TIME_03": "07:31",
+		"MOON_STEP": "16"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "이어도",
+			"TIDE_HIGH_VALUE_01": "227",
+			"TIDE_HIGH_TIME_01": "10:53",
+			"TIDE_LOW_VALUE_01": "68",
+			"TIDE_LOW_TIME_01": "17:05",
+			"TIDE_HIGH_VALUE_02": "176",
+			"TIDE_HIGH_TIME_02": "22:31",
+			"TIDE_LOW_VALUE_02": "19",
+			"TIDE_LOW_TIME_02": "04:07"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "도농탄",
+			"TIDE_HIGH_VALUE_01": "252",
+			"TIDE_HIGH_TIME_01": "10:47",
+			"TIDE_LOW_VALUE_01": "81",
+			"TIDE_LOW_TIME_01": "16:49",
+			"TIDE_HIGH_VALUE_02": "200",
+			"TIDE_HIGH_TIME_02": "22:15",
+			"TIDE_LOW_VALUE_02": "16",
+			"TIDE_LOW_TIME_02": "03:52"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "모슬포",
+			"TIDE_HIGH_VALUE_01": "245",
+			"TIDE_HIGH_TIME_01": "10:54",
+			"TIDE_LOW_VALUE_01": "86",
+			"TIDE_LOW_TIME_01": "17:10",
+			"TIDE_HIGH_VALUE_02": "195",
+			"TIDE_HIGH_TIME_02": "22:22",
+			"TIDE_LOW_VALUE_02": "22",
+			"TIDE_LOW_TIME_02": "04:09"
+		}
+	]
+}

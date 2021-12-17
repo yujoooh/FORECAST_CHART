@@ -1,0 +1,61 @@
+{
+	"CHART_LEGEND": {
+		"SUN_TIME_01": "07:30",
+		"SUN_TIME_02": "12:21",
+		"SUN_TIME_03": "17:13",
+		"MOON_TIME_01": "20:47",
+		"MOON_TIME_02": "03:13",
+		"MOON_TIME_03": "10:33",
+		"MOON_STEP": "20"
+	},
+	"CHART": [
+		{
+			"ID": "CRD_ 1",
+			"POS_NAME": "양포항",
+			"TIDE_HIGH_VALUE_01": "10",
+			"TIDE_HIGH_TIME_01": "04:45",
+			"TIDE_LOW_VALUE_01": "8",
+			"TIDE_LOW_TIME_01": "00:03",
+			"TIDE_HIGH_VALUE_02": "9",
+			"TIDE_HIGH_TIME_02": "21:29",
+			"TIDE_LOW_VALUE_02": "-6",
+			"TIDE_LOW_TIME_02": "14:16"
+		},
+		{
+			"ID": "CRD_ 2",
+			"POS_NAME": "읍천항",
+			"TIDE_HIGH_VALUE_01": "17",
+			"TIDE_HIGH_TIME_01": "21:40",
+			"TIDE_LOW_VALUE_01": "9",
+			"TIDE_LOW_TIME_01": "02:35",
+			"TIDE_HIGH_VALUE_02": "15",
+			"TIDE_HIGH_TIME_02": "07:44",
+			"TIDE_LOW_VALUE_02": "-6",
+			"TIDE_LOW_TIME_02": "14:47"
+		},
+		{
+			"ID": "CRD_ 3",
+			"POS_NAME": "울산",
+			"TIDE_HIGH_VALUE_01": "46",
+			"TIDE_HIGH_TIME_01": "09:47",
+			"TIDE_LOW_VALUE_01": "17",
+			"TIDE_LOW_TIME_01": "03:33",
+			"TIDE_HIGH_VALUE_02": "42",
+			"TIDE_HIGH_TIME_02": "22:15",
+			"TIDE_LOW_VALUE_02": "5",
+			"TIDE_LOW_TIME_02": "15:54"
+		},
+		{
+			"ID": "CRD_ 4",
+			"POS_NAME": "포항",
+			"TIDE_HIGH_VALUE_01": "27",
+			"TIDE_HIGH_TIME_01": "04:31",
+			"TIDE_LOW_VALUE_01": "10",
+			"TIDE_LOW_TIME_01": "13:38",
+			"TIDE_HIGH_VALUE_02": "27",
+			"TIDE_HIGH_TIME_02": "--:--",
+			"TIDE_LOW_VALUE_02": "10",
+			"TIDE_LOW_TIME_02": "--:--"
+		}
+	]
+}

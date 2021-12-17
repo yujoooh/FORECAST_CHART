@@ -1,0 +1,719 @@
+{
+	"BASE_MAP": [
+		{
+			"MAP_URL": "temp.png",
+			"MAP_BOUNDARY_TL_LAT": 37.79667411835,
+			"MAP_BOUNDARY_TL_LNG": 125.75942622950001,
+			"MAP_BOUNDARY_BR_LAT": 36.710449143444,
+			"MAP_BOUNDARY_BR_LNG": 126.91024590164
+		}
+	],
+	"TODAY_DATE": {
+		"DATE": "2021년 12월 18일",
+		"TIME": "9시",
+		"LUNAR_DATE": "음력 11월 15일"
+	},
+	"WATER_TEMP_WAVE_HEIGHT": [],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT": [],
+	"LOCAL_WATER_TEMP_WAVE_HEIGHT_WIND": [
+		{
+			"ID": "LWTWHW_0",
+			"LAT": 36.8088,
+			"LON": 125.8799,
+			"WATER_TEMP": "11.1",
+			"WAVE_HEIGHT": "3.0",
+			"WIND": " 1",
+			"WIND_DIR": "319"
+		},
+		{
+			"ID": "LWTWHW_3",
+			"LAT": 37.1053,
+			"LON": 125.8799,
+			"WATER_TEMP": "10.2",
+			"WAVE_HEIGHT": "2.4",
+			"WIND": " 2",
+			"WIND_DIR": "351"
+		},
+		{
+			"ID": "LWTWHW_6",
+			"LAT": 37.4019,
+			"LON": 125.8799,
+			"WATER_TEMP": "7.8",
+			"WAVE_HEIGHT": "1.7",
+			"WIND": " 3",
+			"WIND_DIR": "64"
+		},
+		{
+			"ID": "LWTWHW_9",
+			"LAT": 37.6984,
+			"LON": 125.8799,
+			"WATER_TEMP": "6.1",
+			"WAVE_HEIGHT": "0.8",
+			"WIND": " 2",
+			"WIND_DIR": "73"
+		},
+		{
+			"ID": "LWTWHW_15",
+			"LAT": 37.303,
+			"LON": 125.9937,
+			"WATER_TEMP": "9.4",
+			"WAVE_HEIGHT": "1.9",
+			"WIND": " 1",
+			"WIND_DIR": "14"
+		},
+		{
+			"ID": "LWTWHW_22",
+			"LAT": 37.0065,
+			"LON": 126.1075,
+			"WATER_TEMP": "10.4",
+			"WAVE_HEIGHT": "1.8",
+			"WIND": " 1",
+			"WIND_DIR": "324"
+		},
+		{
+			"ID": "LWTWHW_28",
+			"LAT": 37.5996,
+			"LON": 126.1075,
+			"WATER_TEMP": "6.5",
+			"WAVE_HEIGHT": "0.9",
+			"WIND": " 1",
+			"WIND_DIR": "161"
+		},
+		{
+			"ID": "LWTWHW_36",
+			"LAT": 37.4019,
+			"LON": 126.2211,
+			"WATER_TEMP": "7.8",
+			"WAVE_HEIGHT": "1.4",
+			"WIND": " 1",
+			"WIND_DIR": "199"
+		},
+		{
+			"ID": "LWTWHW_45",
+			"LAT": 37.303,
+			"LON": 126.3349,
+			"WATER_TEMP": "8.4",
+			"WAVE_HEIGHT": "1.4",
+			"WIND": " 1",
+			"WIND_DIR": "266"
+		},
+		{
+			"ID": "LWTWHW_63",
+			"LAT": 37.1053,
+			"LON": 126.5623,
+			"WATER_TEMP": "7.8",
+			"WAVE_HEIGHT": "1.0",
+			"WIND": " 2",
+			"WIND_DIR": "199"
+		}
+	],
+	"S111_CUR": [
+		{
+			"ID": "S111_0",
+			"LAT": 36.7593,
+			"LON": 125.8231,
+			"CUR_SPD": "0.6182",
+			"CUR_DIR": "-158.8603"
+		},
+		{
+			"ID": "S111_1",
+			"LAT": 36.8582,
+			"LON": 125.8231,
+			"CUR_SPD": "0.5748",
+			"CUR_DIR": "-143.5712"
+		},
+		{
+			"ID": "S111_2",
+			"LAT": 36.957,
+			"LON": 125.8231,
+			"CUR_SPD": "0.5588",
+			"CUR_DIR": "-159.0554"
+		},
+		{
+			"ID": "S111_3",
+			"LAT": 37.0559,
+			"LON": 125.8231,
+			"CUR_SPD": "0.6789",
+			"CUR_DIR": "-146.3107"
+		},
+		{
+			"ID": "S111_4",
+			"LAT": 37.1547,
+			"LON": 125.8231,
+			"CUR_SPD": "0.8747",
+			"CUR_DIR": "-137.5789"
+		},
+		{
+			"ID": "S111_5",
+			"LAT": 37.2536,
+			"LON": 125.8231,
+			"CUR_SPD": "0.8344",
+			"CUR_DIR": "-134.5199"
+		},
+		{
+			"ID": "S111_6",
+			"LAT": 37.3524,
+			"LON": 125.8231,
+			"CUR_SPD": "0.7078",
+			"CUR_DIR": "-140.3492"
+		},
+		{
+			"ID": "S111_7",
+			"LAT": 37.4513,
+			"LON": 125.8231,
+			"CUR_SPD": "0.9035",
+			"CUR_DIR": "-137.9917"
+		},
+		{
+			"ID": "S111_8",
+			"LAT": 37.5501,
+			"LON": 125.8231,
+			"CUR_SPD": "0.8631",
+			"CUR_DIR": "-152.3181"
+		},
+		{
+			"ID": "S111_9",
+			"LAT": 37.649,
+			"LON": 125.8231,
+			"CUR_SPD": "0.6907",
+			"CUR_DIR": "-144.4672"
+		},
+		{
+			"ID": "S111_10",
+			"LAT": 37.7478,
+			"LON": 125.8231,
+			"CUR_SPD": "0.6532",
+			"CUR_DIR": "-145.2759"
+		},
+		{
+			"ID": "S111_11",
+			"LAT": 36.7593,
+			"LON": 125.9368,
+			"CUR_SPD": "0.7252",
+			"CUR_DIR": "-156.8333"
+		},
+		{
+			"ID": "S111_12",
+			"LAT": 36.8582,
+			"LON": 125.9368,
+			"CUR_SPD": "0.7661",
+			"CUR_DIR": "-152.9756"
+		},
+		{
+			"ID": "S111_13",
+			"LAT": 36.957,
+			"LON": 125.9368,
+			"CUR_SPD": "0.4358",
+			"CUR_DIR": "-123.5101"
+		},
+		{
+			"ID": "S111_15",
+			"LAT": 37.1547,
+			"LON": 125.9368,
+			"CUR_SPD": "0.1975",
+			"CUR_DIR": "150.5246"
+		},
+		{
+			"ID": "S111_16",
+			"LAT": 37.2536,
+			"LON": 125.9368,
+			"CUR_SPD": "0.8801",
+			"CUR_DIR": "-133.8016"
+		},
+		{
+			"ID": "S111_17",
+			"LAT": 37.3524,
+			"LON": 125.9368,
+			"CUR_SPD": "0.7334",
+			"CUR_DIR": "-155.6008"
+		},
+		{
+			"ID": "S111_18",
+			"LAT": 37.4513,
+			"LON": 125.9368,
+			"CUR_SPD": "0.9172",
+			"CUR_DIR": "-138.7464"
+		},
+		{
+			"ID": "S111_19",
+			"LAT": 37.5501,
+			"LON": 125.9368,
+			"CUR_SPD": "0.8575",
+			"CUR_DIR": "-150.4057"
+		},
+		{
+			"ID": "S111_20",
+			"LAT": 37.649,
+			"LON": 125.9368,
+			"CUR_SPD": "0.7332",
+			"CUR_DIR": "-153.5049"
+		},
+		{
+			"ID": "S111_21",
+			"LAT": 37.7478,
+			"LON": 125.9368,
+			"CUR_SPD": "0.4437",
+			"CUR_DIR": "-148.8992"
+		},
+		{
+			"ID": "S111_22",
+			"LAT": 36.7593,
+			"LON": 126.0506,
+			"CUR_SPD": "0.8965",
+			"CUR_DIR": "-162.4249"
+		},
+		{
+			"ID": "S111_24",
+			"LAT": 36.957,
+			"LON": 126.0506,
+			"CUR_SPD": "0.8344",
+			"CUR_DIR": "-143.6038"
+		},
+		{
+			"ID": "S111_25",
+			"LAT": 37.0559,
+			"LON": 126.0506,
+			"CUR_SPD": "0.5808",
+			"CUR_DIR": "-165.2425"
+		},
+		{
+			"ID": "S111_28",
+			"LAT": 37.3524,
+			"LON": 126.0506,
+			"CUR_SPD": "0.8495",
+			"CUR_DIR": "-139.6628"
+		},
+		{
+			"ID": "S111_29",
+			"LAT": 37.4513,
+			"LON": 126.0506,
+			"CUR_SPD": "0.9614",
+			"CUR_DIR": "-155.5721"
+		},
+		{
+			"ID": "S111_30",
+			"LAT": 37.5501,
+			"LON": 126.0506,
+			"CUR_SPD": "0.8306",
+			"CUR_DIR": "-138.2786"
+		},
+		{
+			"ID": "S111_31",
+			"LAT": 37.649,
+			"LON": 126.0506,
+			"CUR_SPD": "0.8123",
+			"CUR_DIR": "-165.8080"
+		},
+		{
+			"ID": "S111_32",
+			"LAT": 37.7478,
+			"LON": 126.0506,
+			"CUR_SPD": "0.3894",
+			"CUR_DIR": "-125.0906"
+		},
+		{
+			"ID": "S111_35",
+			"LAT": 36.957,
+			"LON": 126.1643,
+			"CUR_SPD": "0.9068",
+			"CUR_DIR": "-126.6963"
+		},
+		{
+			"ID": "S111_36",
+			"LAT": 37.0559,
+			"LON": 126.1643,
+			"CUR_SPD": "0.9602",
+			"CUR_DIR": "-126.6818"
+		},
+		{
+			"ID": "S111_39",
+			"LAT": 37.3524,
+			"LON": 126.1643,
+			"CUR_SPD": "0.7569",
+			"CUR_DIR": "-124.7661"
+		},
+		{
+			"ID": "S111_40",
+			"LAT": 37.4513,
+			"LON": 126.1643,
+			"CUR_SPD": "1.1205",
+			"CUR_DIR": "-159.4644"
+		},
+		{
+			"ID": "S111_41",
+			"LAT": 37.5501,
+			"LON": 126.1643,
+			"CUR_SPD": "1.0918",
+			"CUR_DIR": "-141.7178"
+		},
+		{
+			"ID": "S111_47",
+			"LAT": 37.0559,
+			"LON": 126.278,
+			"CUR_SPD": "0.9783",
+			"CUR_DIR": "-135.7218"
+		},
+		{
+			"ID": "S111_70",
+			"LAT": 37.1547,
+			"LON": 126.5054,
+			"CUR_SPD": "0.4724",
+			"CUR_DIR": "-111.6697"
+		}
+	],
+	"FLOOD_RISK_AREA": [
+		{
+			"ID": "FRA_01",
+			"NAME": "인천",
+			"MARKER_POS": "L",
+			"LON": 126.59200000000001,
+			"LAT": 37.452,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_02",
+			"NAME": "안산",
+			"MARKER_POS": "L",
+			"LON": 126.647,
+			"LAT": 37.192,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_03",
+			"NAME": "평택",
+			"MARKER_POS": "L",
+			"LON": 126.823,
+			"LAT": 36.967,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_04",
+			"NAME": "대산",
+			"MARKER_POS": "L",
+			"LON": 126.353,
+			"LAT": 37.008,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_05",
+			"NAME": "영흥도",
+			"MARKER_POS": "L",
+			"LON": 126.428,
+			"LAT": 37.238,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		},
+		{
+			"ID": "FRA_06",
+			"NAME": "태안",
+			"MARKER_POS": "L",
+			"LON": 126.23899999999999,
+			"LAT": 36.913000000000004,
+			"FLOOD": "T",
+			"DISPLAY": "N",
+			"ATTENTION_SPAN": [
+				"    ",
+				"    "
+			]
+		}
+	],
+	"CURRENT_INFO": [
+		{
+			"ID": "CUR_01",
+			"NAME": "염하수도",
+			"LON": 126.54299999999999,
+			"LAT": 37.631,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "00:02",
+					"MAX_CUR_TIME": "02:43",
+					"CUR_DIRECT": "0",
+					"CUR_SPEED": 2.0
+				},
+				{
+					"MIN_CUR_TIME": "05:20",
+					"MAX_CUR_TIME": "08:45",
+					"CUR_DIRECT": "180",
+					"CUR_SPEED": 3.5
+				},
+				{
+					"MIN_CUR_TIME": "12:07",
+					"MAX_CUR_TIME": "14:53",
+					"CUR_DIRECT": "338",
+					"CUR_SPEED": 2.2
+				},
+				{
+					"MIN_CUR_TIME": "17:56",
+					"MAX_CUR_TIME": "21:38",
+					"CUR_DIRECT": "180",
+					"CUR_SPEED": 3.3
+				}
+			],
+			"DEG_FE": [
+				"65",
+				"250",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_02",
+			"NAME": "인천동수도",
+			"LON": 126.40799999999999,
+			"LAT": 37.281,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:58",
+					"CUR_DIRECT": "23",
+					"CUR_SPEED": 1.4
+				},
+				{
+					"MIN_CUR_TIME": "05:35",
+					"MAX_CUR_TIME": "08:13",
+					"CUR_DIRECT": "203",
+					"CUR_SPEED": 2.0
+				},
+				{
+					"MIN_CUR_TIME": "11:19",
+					"MAX_CUR_TIME": "14:16",
+					"CUR_DIRECT": "23",
+					"CUR_SPEED": 1.7
+				},
+				{
+					"MIN_CUR_TIME": "18:06",
+					"MAX_CUR_TIME": "20:39",
+					"CUR_DIRECT": "203",
+					"CUR_SPEED": 2.1
+				}
+			],
+			"DEG_FE": [
+				"110",
+				"295",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_03",
+			"NAME": "아산만입구",
+			"LON": 126.699,
+			"LAT": 37.027,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:09",
+					"CUR_DIRECT": "113",
+					"CUR_SPEED": 1.5
+				},
+				{
+					"MIN_CUR_TIME": "04:22",
+					"MAX_CUR_TIME": "06:44",
+					"CUR_DIRECT": "315",
+					"CUR_SPEED": 1.1
+				},
+				{
+					"MIN_CUR_TIME": "09:58",
+					"MAX_CUR_TIME": "13:26",
+					"CUR_DIRECT": "113",
+					"CUR_SPEED": 1.8
+				},
+				{
+					"MIN_CUR_TIME": "16:57",
+					"MAX_CUR_TIME": "19:16",
+					"CUR_DIRECT": "315",
+					"CUR_SPEED": 1.1
+				}
+			],
+			"DEG_FE": [
+				"45",
+				"225",
+				"FLD"
+			]
+		},
+		{
+			"ID": "CUR_04",
+			"NAME": "이작도서측",
+			"LON": 126.1958,
+			"LAT": 37.17667,
+			"MARKER_POS": "L",
+			"MARKER_V_POS": "T",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:52",
+					"CUR_DIRECT": "45",
+					"CUR_SPEED": 2.1
+				},
+				{
+					"MIN_CUR_TIME": "04:35",
+					"MAX_CUR_TIME": "06:56",
+					"CUR_DIRECT": "180",
+					"CUR_SPEED": 0.9
+				},
+				{
+					"MIN_CUR_TIME": "10:17",
+					"MAX_CUR_TIME": "14:00",
+					"CUR_DIRECT": "45",
+					"CUR_SPEED": 2.3
+				},
+				{
+					"MIN_CUR_TIME": "16:41",
+					"MAX_CUR_TIME": "19:11",
+					"CUR_DIRECT": "180",
+					"CUR_SPEED": 1.1
+				}
+			],
+			"DEG_FE": [
+				"135",
+				"315",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_05",
+			"NAME": "장안서",
+			"LON": 126.28399999999999,
+			"LAT": 37.074,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:19",
+					"CUR_DIRECT": "45",
+					"CUR_SPEED": 1.9
+				},
+				{
+					"MIN_CUR_TIME": "04:20",
+					"MAX_CUR_TIME": "06:11",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 1.0
+				},
+				{
+					"MIN_CUR_TIME": "08:43",
+					"MAX_CUR_TIME": "13:35",
+					"CUR_DIRECT": "45",
+					"CUR_SPEED": 2.2
+				},
+				{
+					"MIN_CUR_TIME": "16:46",
+					"MAX_CUR_TIME": "18:40",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 1.1
+				}
+			],
+			"DEG_FE": [
+				"155",
+				"340",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_06",
+			"NAME": "석모수도",
+			"LON": 126.353,
+			"LAT": 37.639,
+			"MARKER_POS": "L",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "00:42",
+					"MAX_CUR_TIME": "02:54",
+					"CUR_DIRECT": "68",
+					"CUR_SPEED": 2.9
+				},
+				{
+					"MIN_CUR_TIME": "05:35",
+					"MAX_CUR_TIME": "08:30",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 2.7
+				},
+				{
+					"MIN_CUR_TIME": "12:35",
+					"MAX_CUR_TIME": "15:02",
+					"CUR_DIRECT": "68",
+					"CUR_SPEED": 3.4
+				},
+				{
+					"MIN_CUR_TIME": "17:55",
+					"MAX_CUR_TIME": "20:56",
+					"CUR_DIRECT": "248",
+					"CUR_SPEED": 2.6
+				}
+			],
+			"DEG_FE": [
+				"155",
+				"340",
+				"EBB"
+			]
+		},
+		{
+			"ID": "CUR_07",
+			"NAME": "울도남측",
+			"LON": 126.00333329999998,
+			"LAT": 36.89055556,
+			"MARKER_POS": "R",
+			"MARKER_V_POS": "B",
+			"CUR_INFO": [
+				{
+					"MIN_CUR_TIME": "",
+					"MAX_CUR_TIME": "01:26",
+					"CUR_DIRECT": "45",
+					"CUR_SPEED": 1.6
+				},
+				{
+					"MIN_CUR_TIME": "04:34",
+					"MAX_CUR_TIME": "07:35",
+					"CUR_DIRECT": "203",
+					"CUR_SPEED": 2.0
+				},
+				{
+					"MIN_CUR_TIME": "10:36",
+					"MAX_CUR_TIME": "13:33",
+					"CUR_DIRECT": "23",
+					"CUR_SPEED": 2.3
+				},
+				{
+					"MIN_CUR_TIME": "17:17",
+					"MAX_CUR_TIME": "20:23",
+					"CUR_DIRECT": "203",
+					"CUR_SPEED": 1.9
+				}
+			],
+			"DEG_FE": [
+				"110",
+				"295",
+				"EBB"
+			]
+		}
+	]
+}
