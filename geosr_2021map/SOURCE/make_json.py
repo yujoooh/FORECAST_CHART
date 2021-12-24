@@ -424,7 +424,8 @@ for areaname in liAreaname:
                     current_comp["DEG_FE"]   = [ str(df_current['LOW'][current_id]), str(df_current['HIGH'][current_id]), df_current['TYPE'][current_id] ]
 
                     current_info.append(current_comp)
-            except:
+            except Exception as e:
+                print(e)
                 pass
             on_map_json["CURRENT_INFO"] = current_info
 
@@ -441,7 +442,7 @@ for areaname in liAreaname:
                     chart_comp["POS_NAME"] = areaenglish[chart_name]
                 else:
                     chart_comp["POS_NAME"] = chart_name
-                df_tide = pd.read_csv('INPUT/01_Tide/'+chart_name+' 예측조위(극치)_20210101_20211231.txt', sep='\\s+', header=None, encoding='EUC-KR', skiprows=7, index_col=[0,1,2,5], engine="python")
+                df_tide = pd.read_csv('INPUT/01_Tide/'+chart_name+' 예측조위(극치)_20220101_20221231.txt', sep='\\s+', header=None, encoding='EUC-KR', skiprows=7, index_col=[0,1,2,5], engine="python")
                 df_tide.columns = ['HH', 'MM', 'Hgt']
                 df_tide.index.name = ('YYYY','MM','DD','TYPE')
                 chart_comp["TIDE_HIGH_VALUE_01"]=""
