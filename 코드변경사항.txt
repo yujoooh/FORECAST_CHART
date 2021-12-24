@@ -1,0 +1,9 @@
+20211224
+※해황예보도 산출코드 변경 사항※
+
+1. /INPUT
+   : 데이터 2022버전으로 추가.
+
+2. /SOURCE/make_json.py
+   : (427line) error message print code 추가.
+     (445line) tide input data 2021->2022로 변경.
