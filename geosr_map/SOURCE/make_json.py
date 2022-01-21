@@ -4,6 +4,7 @@
 # 20190922 HGChoe For Typhoon
 # 20191014 HGChoe For 16 types
 # 20201015 HGChoe For S111 and 7days
+# 20220121 YJOh For KIM_WW3(CWW3, RWW3)
 
 from netCDF4 import Dataset
 from datetime import datetime, timedelta
@@ -32,8 +33,10 @@ liAreaname = [ 'kor', 'inc', 'bus', 'sok', 'gun', \
 
 # Model File Name
 filenmYES3K = "YES3K_"+yyyymmdd+"00.nc"
-filenmCWW3  =  "CWW3_"+yyyymmdd+"00.nc"
-filenmRWW3  =  "RWW3_"+yyyymmdd+"00.nc"
+# filenmCWW3  =  "CWW3_"+yyyymmdd+"00.nc"
+# filenmRWW3  =  "RWW3_"+yyyymmdd+"00.nc"
+filenmCWW3  =  "KIM_CWW3_"+yyyymmdd+"00.nc"
+filenmRWW3  =  "KIM_RWW3_"+yyyymmdd+"00.nc"
 filenmWW3   =   "WW3_"+yyyymmdd+"00.nc"
 filenmWRF   =   "WRF_"+yyyymmdd+".nc"
 # Area Name for LonLat
@@ -104,11 +107,11 @@ ncWW3 = Dataset(filenmWW3)
 print('WW3 Loaded')
 try:
     ncWAVE = Dataset(filenmCWW3)
-    stWAVE = 'CWW3'
+    stWAVE = 'KIM_CWW3'
 except:
     try:
         ncWAVE = Dataset(filenmRWW3)
-        stWAVE = 'RWW3'
+        stWAVE = 'KIM_RWW3'
     except:
         ncWAVE = Dataset(filenmWW3)
         stWAVE = 'WW3'
@@ -199,7 +202,7 @@ for areaname in liAreaname:
             water_temp_wave_height = []
             try:
                 df_wtwh = pd.read_csv('INPUT/INP_ONMAP_WTWH/on_map_wtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
-                df_wtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
+                df_wtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_wtwh.index.name = 'ID'
 
                 for wtwh_id in df_wtwh.index:
@@ -222,10 +225,11 @@ for areaname in liAreaname:
                         wvel = wvel[np.argmax(wvel)]
                     else:
                         wtwh_comp["WATER_TEMP"] = f"{ncYES3K.variables['temp'][khoastep,df_wtwh.YES3K_LAT[wtwh_id],df_wtwh.YES3K_LON[wtwh_id]]:.1f}"
-                        if   stWAVE == 'CWW3':
-                            wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig'+df_wtwh.CWW3_AREA[wtwh_id]][kmastep,df_wtwh.CWW3_LAT[wtwh_id],df_wtwh.CWW3_LON[wtwh_id]], 0.1):.1f}"
-                        elif stWAVE == 'RWW3':
-                            wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_wtwh.RWW3_LAT[wtwh_id],df_wtwh.RWW3_LON[wtwh_id]], 0.1):.1f}"
+                        if   stWAVE == 'KIM_CWW3':
+                            # wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig'+df_wtwh.CWW3_AREA[wtwh_id]][kmastep,df_wtwh.CWW3_LAT[wtwh_id],df_wtwh.CWW3_LON[wtwh_id]], 0.1):.1f}"
+                            wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_wtwh.KIM_CWW3_LAT[wtwh_id],df_wtwh.KIM_CWW3_LON[wtwh_id]], 0.1):.1f}"
+                        elif stWAVE == 'KIM_RWW3':
+                            wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_wtwh.KIM_RWW3_LAT[wtwh_id],df_wtwh.KIM_RWW3_LON[wtwh_id]], 0.1):.1f}"
                         else:
                             wtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['Hsig'][khoastep,df_wtwh.WW3_LAT[wtwh_id],df_wtwh.WW3_LON[wtwh_id]], 0.1):.1f}"
                         #print('hgchoe2')
@@ -249,7 +253,7 @@ for areaname in liAreaname:
             local_water_temp_wave_height = []
             try:
                 df_lwtwh = pd.read_csv('INPUT/INP_ONMAP_LWTWH/on_map_lwtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
-                df_lwtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
+                df_lwtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_lwtwh.index.name = 'ID'                
                 for lwtwh_id in df_lwtwh.index:
                     lwtwh_comp = dict()
@@ -261,10 +265,10 @@ for areaname in liAreaname:
                         lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWW3.variables['Hsig'][khoastep-9:khoastep+15,df_lwtwh.WW3_LAT[lwtwh_id],df_lwtwh.WW3_LON[lwtwh_id]].max(axis=0), 0.1):.1f}"
                     else:
                         lwtwh_comp["WATER_TEMP"] = f"{ncYES3K.variables['temp'][khoastep,df_lwtwh.YES3K_LAT[lwtwh_id],df_lwtwh.YES3K_LON[lwtwh_id]]:.1f}"
-                        if   stWAVE == 'CWW3':
-                            lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig'+df_lwtwh.CWW3_AREA[lwtwh_id]][ kmastep,df_lwtwh.CWW3_LAT[lwtwh_id],df_lwtwh.CWW3_LON[lwtwh_id]], 0.1):.1f}"
-                        elif stWAVE == 'RWW3':
-                            lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwh.RWW3_LAT[lwtwh_id],df_lwtwh.RWW3_LON[lwtwh_id]], 0.1):.1f}"
+                        if   stWAVE == 'KIM_CWW3':
+                            lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwh.KIM_CWW3_LAT[lwtwh_id],df_lwtwh.KIM_CWW3_LON[lwtwh_id]], 0.1):.1f}"
+                        elif stWAVE == 'KIM_RWW3':
+                            lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwh.KIM_RWW3_LAT[lwtwh_id],df_lwtwh.KIM_RWW3_LON[lwtwh_id]], 0.1):.1f}"
                         else:
                             lwtwh_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['Hsig'][khoastep,df_lwtwh.WW3_LAT[lwtwh_id],df_lwtwh.WW3_LON[lwtwh_id]], 0.1):.1f}"
                     
@@ -277,7 +281,7 @@ for areaname in liAreaname:
             local_water_temp_wave_height_wind = []
             try:
                 df_lwtwhw = pd.read_csv('INPUT/INP_ONMAP_LWTWHW/on_map_lwtwhw_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
-                df_lwtwhw.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
+                df_lwtwhw.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_lwtwhw.index.name = 'ID'                
                 for lwtwhw_id in df_lwtwhw.index:
                     lwtwhw_comp = dict()
@@ -299,10 +303,10 @@ for areaname in liAreaname:
                         wvel = wvel[np.argmax(wvel)]
                     else:
                         lwtwhw_comp["WATER_TEMP"] = f"{ncYES3K.variables['temp'][khoastep,df_lwtwhw.YES3K_LAT[lwtwhw_id],df_lwtwhw.YES3K_LON[lwtwhw_id]]:.1f}"
-                        if   stWAVE == 'CWW3':
-                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig'+df_lwtwhw.CWW3_AREA[lwtwhw_id]][kmastep,df_lwtwhw.CWW3_LAT[lwtwhw_id],df_lwtwhw.CWW3_LON[lwtwhw_id]], 0.1):.1f}"
-                        elif stWAVE == 'RWW3':
-                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.RWW3_LAT[lwtwhw_id],df_lwtwhw.RWW3_LON[lwtwhw_id]], 0.1):.1f}"
+                        if   stWAVE == 'KIM_CWW3':
+                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.KIM_CWW3_LAT[lwtwhw_id],df_lwtwhw.KIM_CWW3_LON[lwtwhw_id]], 0.1):.1f}"
+                        elif stWAVE == 'KIM_RWW3':
+                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.KIM_RWW3_LAT[lwtwhw_id],df_lwtwhw.RWW3_LON[lwtwhw_id]], 0.1):.1f}"
                         else:
                             lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['Hsig'][khoastep,df_lwtwhw.WW3_LAT[lwtwhw_id],df_lwtwhw.WW3_LON[lwtwhw_id]], 0.1):.1f}"
                         wvelU = ncWRF.variables['Uwind'][khoastep,df_lwtwhw.WRF_LAT[lwtwhw_id],df_lwtwhw.WRF_LON[lwtwhw_id]]
