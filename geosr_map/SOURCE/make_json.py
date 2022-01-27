@@ -166,6 +166,7 @@ for areaname in liAreaname:
             df_date = pd.read_csv('INPUT/04_SunNMoon/'+areakorea[areaname]+'.txt', sep='\\s+', header=None, encoding='UTF-8', index_col=0, engine="python")
             df_date.columns = ['Lunar', 'S1', 'S2', 'S3', 'M1', 'M2', 'M3', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6']
             df_date.index.name = 'DATE'
+            chartdate = '20220117'
             yyyy  = int(chartdate[0:4])
             sm    = int(chartdate[4:6])
             sd    = int(chartdate[6:8])
@@ -201,7 +202,7 @@ for areaname in liAreaname:
             ## WTWH
             water_temp_wave_height = []
             try:
-                df_wtwh = pd.read_csv('INPUT/INP_ONMAP_WTWH/on_map_wtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
+                df_wtwh = pd.read_csv('INPUT/INP_ONMAP_WTWH/on_map_wtwh_kor.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
                 df_wtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_wtwh.index.name = 'ID'
 
@@ -250,9 +251,10 @@ for areaname in liAreaname:
             on_map_json["WATER_TEMP_WAVE_HEIGHT"] = water_temp_wave_height
 
             ## Local WTWH
+            
             local_water_temp_wave_height = []
             try:
-                df_lwtwh = pd.read_csv('INPUT/INP_ONMAP_LWTWH/on_map_lwtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
+                df_lwtwh = pd.read_csv('INPUT/INP_ONMAP_LWTWH/on_map_lwtwh_kor.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
                 df_lwtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_lwtwh.index.name = 'ID'                
                 for lwtwh_id in df_lwtwh.index:
@@ -277,7 +279,7 @@ for areaname in liAreaname:
                 pass
             on_map_json["LOCAL_WATER_TEMP_WAVE_HEIGHT"] = local_water_temp_wave_height
 
-            ## Local WTWH Wind
+            ## Local WTWH Wind          
             local_water_temp_wave_height_wind = []
             try:
                 df_lwtwhw = pd.read_csv('INPUT/INP_ONMAP_LWTWHW/on_map_lwtwhw_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
@@ -429,7 +431,7 @@ for areaname in liAreaname:
 
                     current_info.append(current_comp)
             except Exception as e:
-                print(e)
+                print('on_map_current_'+areaname+'.inp : ',e)
                 pass
             on_map_json["CURRENT_INFO"] = current_info
 
@@ -487,7 +489,7 @@ for areaname in liAreaname:
                 json.dump(chart_radar_json, f_chartradar, indent="\t", ensure_ascii=False)
 
             # BREAK MIDDLE FORECAST
-            if fcstdate > shortDay: break
+        if fcstdate > shortDay: break
             
 ncYES3K.close()
 ncWW3.close()
