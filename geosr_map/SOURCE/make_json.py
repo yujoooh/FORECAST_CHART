@@ -202,7 +202,7 @@ for areaname in liAreaname:
             ## WTWH
             water_temp_wave_height = []
             try:
-                df_wtwh = pd.read_csv('INPUT/INP_ONMAP_WTWH/on_map_wtwh_kor.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
+                df_wtwh = pd.read_csv('INPUT/INP_ONMAP_WTWH/on_map_wtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
                 df_wtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_wtwh.index.name = 'ID'
 
@@ -254,7 +254,7 @@ for areaname in liAreaname:
             
             local_water_temp_wave_height = []
             try:
-                df_lwtwh = pd.read_csv('INPUT/INP_ONMAP_LWTWH/on_map_lwtwh_kor.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
+                df_lwtwh = pd.read_csv('INPUT/INP_ONMAP_LWTWH/on_map_lwtwh_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8', index_col=0)
                 df_lwtwh.columns = ['LAT', 'LON', 'YES3K_LAT', 'YES3K_LON', 'CWW3_AREA', 'KIM_CWW3_LAT', 'KIM_CWW3_LON', 'KIM_RWW3_LAT', 'KIM_RWW3_LON', 'CWW3_LAT', 'CWW3_LON', 'RWW3_LAT', 'RWW3_LON', 'WW3_LAT', 'WW3_LON', 'WRF_LAT', 'WRF_LON']
                 df_lwtwh.index.name = 'ID'                
                 for lwtwh_id in df_lwtwh.index:
@@ -431,7 +431,7 @@ for areaname in liAreaname:
 
                     current_info.append(current_comp)
             except Exception as e:
-                print('on_map_current_'+areaname+'.inp : ',e)
+                print(e, ': on_map_current_'+areaname+'.inp')
                 pass
             on_map_json["CURRENT_INFO"] = current_info
 
