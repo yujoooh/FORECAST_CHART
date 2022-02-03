@@ -132,7 +132,8 @@ for areaname in liAreaname:
             kmastep  = int((timestep-9)/3) + fcstdate *  8
              # KST today 09:00 -  0 timestep - 00:00 UTC
              # KST today 12:00 -  1 timestep - 03:00 UTC
-            
+
+
             # Chart Date
             chartdate = (datetime.strptime(yyyymmdd, '%Y%m%d') + timedelta(days=fcstdate)).strftime('%Y%m%d')
             # Chart Time
@@ -308,7 +309,7 @@ for areaname in liAreaname:
                         if   stWAVE == 'KIM_CWW3':
                             lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.KIM_CWW3_LAT[lwtwhw_id],df_lwtwhw.KIM_CWW3_LON[lwtwhw_id]], 0.1):.1f}"
                         elif stWAVE == 'KIM_RWW3':
-                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.KIM_RWW3_LAT[lwtwhw_id],df_lwtwhw.RWW3_LON[lwtwhw_id]], 0.1):.1f}"
+                            lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['hsig1_dajn'][kmastep,df_lwtwhw.KIM_RWW3_LAT[lwtwhw_id],df_lwtwhw.KIM_RWW3_LON[lwtwhw_id]], 0.1):.1f}"
                         else:
                             lwtwhw_comp["WAVE_HEIGHT"] = f"{max(ncWAVE.variables['Hsig'][khoastep,df_lwtwhw.WW3_LAT[lwtwhw_id],df_lwtwhw.WW3_LON[lwtwhw_id]], 0.1):.1f}"
                         wvelU = ncWRF.variables['Uwind'][khoastep,df_lwtwhw.WRF_LAT[lwtwhw_id],df_lwtwhw.WRF_LON[lwtwhw_id]]
