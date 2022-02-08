@@ -126,7 +126,7 @@ for areaname in liAreaname:
             khoastep =        (timestep-9) + fcstdate * 24
              # KST today 09:00 -  0 timestep - 00:00 UTC
              # KST today 10:00 -  1 timestep - 01:00 UTC
-            kmastep  = int((timestep-9)/3) + fcstdate *  8
+            kmastep  = int((timestep-9)/3+4) + fcstdate *  8
              # KST today 09:00 -  0 timestep - 00:00 UTC
              # KST today 12:00 -  1 timestep - 03:00 UTC
             
