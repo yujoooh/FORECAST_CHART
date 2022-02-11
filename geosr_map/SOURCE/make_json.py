@@ -123,7 +123,7 @@ for areaname in liAreaname:
     for fcstdate in liFcstdate:
         for timestep in liTimestep:
             # Model Timestep
-            khoastep =        (timestep-9) + fcstdate * 24
+            khoastep =        (timestep-8) + fcstdate * 24
              # KST today 09:00 -  0 timestep - 00:00 UTC
              # KST today 10:00 -  1 timestep - 01:00 UTC
             kmastep  = int((timestep-9)/3+4) + fcstdate *  8
