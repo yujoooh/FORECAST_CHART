@@ -6,7 +6,7 @@ from selenium import webdriver
 import pandas as pd
 
 #원하는 기간 조정
-datelist = pd.date_range(start = '20210104', end = '20211231')
+datelist = pd.date_range(start = '20220101', end = '20220131')
 datelist = datelist.strftime('%Y%m%d').tolist()
 
 
@@ -34,14 +34,10 @@ for date in datelist:
                 url = baseURL + 'type=' + regType + '&forecastDay=' + date + '&forecastHour=' + hour
                 print(url)        # PRINT URL
                 driver.get(url)   # To Get MFC
-                if hour == '09' :
-                    fname = 'do_' + regType.lower() + '009.png' 
-                elif hour == '16' :
-                    fname = 'do_' + regType.lower() + '016.png'     
                 filenm  = 'do_' + regType.lower() +  '_' +date + '_' +hour + '.png'
                 #orgfile = os.path.join(os.environ['USERPROFILE'],'Downloads',filenm)
                 time.sleep(2) # Time Interval
                 #print(orgfile)    # PRINT Filename
-                shutil.move('C:/Users/geosr_fcstidx/Downloads/'+fname, fpath+'/' + date +'/'+ filenm)
+                shutil.move('C:/Users/geosr_fcstidx/Downloads/'+filenm, fpath+'/' + date +'/'+ filenm)
                 #shutil.move(orgfile, fpath + date)
 driver.quit()                
