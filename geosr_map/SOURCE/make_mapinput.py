@@ -20,8 +20,9 @@ if os.path.exists("input.json"):
 df = pd.read_csv('INPUT/on_map_base.inp', sep='\\s+', encoding='UTF-8', index_col=0)
 
 ### LIST FOR LOOP
-liFcstdate = [ 0, 1, 2, 3, 4, 5, 6 ] # 7 days forecast
-liTimestep = [ 0, 7 ] # KST 09, 16
+# liFcstdate = [ 0, 1, 2, 3, 4, 5, 6 ] # 7 days forecast
+liFcstdate = [ 0, 1, 2 ] # 7 days forecast
+liTimestep = [ 0, 3, 6, 9, 12, 15, 18, 21 ] # KST 00:00~21:00; timestep:3hour
 # KST today 09:00 -  0 timestep - 00:00 UTC
 # KST today 10:00 -  1 timestep - 01:00 UTC
 liAreaname = ['KOREA', 'INCHEON', 'BUSAN', 'SOKCHO', 'GUNSAN', \
@@ -38,7 +39,10 @@ for areaname in liAreaname:
     for fcstdate in liFcstdate:
         for timestep in liTimestep:
             # CALCULATE khoastep
-            khoastep = timestep + fcstdate * 24
+            # khoastep = timestep + fcstdate * 24
+            khoastep =    (timestep-9)   + fcstdate * 24
+            if khoastep < 0: continue
+
             # TEMP_MAP
             map_comp = dict()
             map_comp["YES3K_NAME" ] = filenmYES3K
@@ -46,7 +50,7 @@ for areaname in liAreaname:
             map_comp["RESULT_NAME"] = "temp.png"
             map_comp["OBJECT_DIR" ] = df['OBJECT_DIR'][areaname] + '\\' \
                                       + str(fcstdate+1).zfill(2) + '\\' \
-                                      + str(timestep+9).zfill(2) + '\\'
+                                      + str(timestep).zfill(2) + '\\'
             map_comp["TIME" ] = khoastep
             map_comp["TYPE" ] = "short" if int(fcstdate) < 3 else 'middle'
             map_comp["Y_0"  ] = int(df["Y_0"][areaname])

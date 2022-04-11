@@ -12,15 +12,17 @@ import numpy as np
 import json
 import sys
 import os
+import time
 
+start_time = time.time()
 ### SET VARIABLE NAME
 ## GET ARGUMENTS
 yyyymmdd = str(sys.argv[1])
 shortDay = 2
 ## LIST FOR MAIN LOOP
-liFcstdate = [ 0, 1, 2, 3, 4, 5, 6 ]
-#liFcstdate = [ 0, 1, 2] # 7 days forecast
-liTimestep = [ 9, 16 ] # KST 09. 16
+# liFcstdate = [ 0, 1, 2, 3, 4, 5, 6 ] #7 days forecast
+liFcstdate = [ 0, 1, 2]
+liTimestep = [ 0, 3, 6, 9, 12, 15, 18, 21] # KST 09. 16
 liAreaname = [ 'kor', 'inc', 'bus', 'sok', 'gun', \
                'mok', 'jej', 'yeo', 'ton', 'poh', \
                'tae', 'heu', 'wan', 'hup', 'don', \
@@ -117,19 +119,23 @@ print('0~2days WAVE: '+stWAVE)
 ncWRF = Dataset(filenmWRF)
 print('WRF Loaded')
 
-
 ### MAIN LOOP
 for areaname in liAreaname:
     for fcstdate in liFcstdate:
         for timestep in liTimestep:
             # Model Timestep
-            khoastep =        (timestep-8) + fcstdate * 24
+            khoastep =    (timestep-9)   + fcstdate * 24
              # KST today 09:00 -  0 timestep - 00:00 UTC
              # KST today 10:00 -  1 timestep - 01:00 UTC
-            kmastep  = int((timestep-9)/3+4) + fcstdate *  8
-             # KST today 09:00 -  0 timestep - 00:00 UTC
-             # KST today 12:00 -  1 timestep - 03:00 UTC
-            
+            kmastep  = int(timestep/3)+1 + fcstdate *  8
+             # KST yesterday 21:00 -  0 timestep - 12:00 UTC
+             # KST today     00:00 -  1 timestep - 15:00 UTC
+             #                 :           :          :
+             # KST today     09:00 -  4 timestep - 00:00 UTC
+
+            if khoastep < 0 or kmastep < 0: continue
+            print(kmastep, khoastep)
+  
             # Chart Date
             chartdate = (datetime.strptime(yyyymmdd, '%Y%m%d') + timedelta(days=fcstdate)).strftime('%Y%m%d')
             # Chart Time
@@ -241,7 +247,7 @@ for areaname in liAreaname:
                     water_temp_wave_height.append(wtwh_comp)
                     #print("success")
             except Exception as e:
-                print("error", e)
+                # print("error", e)
                 pass
             on_map_json["WATER_TEMP_WAVE_HEIGHT"] = water_temp_wave_height
 
@@ -425,7 +431,7 @@ for areaname in liAreaname:
 
                     current_info.append(current_comp)
             except Exception as e:
-                print(e)
+                # print(e)
                 pass
             on_map_json["CURRENT_INFO"] = current_info
 
@@ -489,3 +495,5 @@ ncYES3K.close()
 ncWW3.close()
 ncWAVE.close()
 ncWRF.close()
+
+print("---{}s seconds---".format(time.time()-start_time))
