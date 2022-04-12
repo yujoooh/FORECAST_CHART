@@ -27,11 +27,22 @@ var mapImage;
 function pageDownload() {
 	var fileName;
 	var temp = location.href;
+	
+	// temp = temp.split('/');
+	// temp = temp[temp.length - 1].split('.');
+	// temp = temp[0];
+	// fileName = temp + ".png";
+
+	//다운로드 파일명 변경
 	temp = temp.split('/');
 	temp = temp[temp.length - 1].split('.');
-	temp = temp[0];
-	fileName = temp + ".png";
-
+	area = temp[0];
+	temp = temp[1].split('&');
+	console.log(temp)
+	// date = temp[0].split("=")[1]
+	date = temp[1].split("=")[1]
+	time = temp[2].split("=")[1]
+	fileName = area + '_'+date+'_'+time+ ".png";
 
 	var canvas = mapImage;
 	html2canvas(document.body.getElementsByClassName("dailyOcean")[0]).then(function (canvas) {
@@ -65,11 +76,19 @@ function pageDownload() {
 function chartDownload() {
 	var fileName;
 	var temp = location.href;
+	// temp = temp.split('/');
+	// temp = temp[temp.length - 1].split('.');
+	// temp = temp[0];
+	// fileName = temp + ".png";
+
+
 	temp = temp.split('/');
 	temp = temp[temp.length - 1].split('.');
-	temp = temp[0];
-	fileName = temp + ".png";
-
+	area = temp[0];
+	temp = temp[1].split('&');
+	date = temp[0].split("=")[1]
+	time = temp[1].split("=")[1]
+	fileName = area + '_'+date+'_'+time+ ".png";
 
 	var canvas = mapImage;
 	html2canvas(document.body.getElementsByClassName("chartWrap")[0]).then(function (canvas) {
