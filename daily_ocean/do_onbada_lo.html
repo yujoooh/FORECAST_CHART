@@ -1,388 +1,414 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=yes,  initial-scale=1">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>:: 해황예보도 이미지 자동생성 시스템 ::</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=yes,  initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>:: 해황예보도 이미지 자동생성 시스템 ::</title>
 
-<link rel="stylesheet" href="inc/css/font.css" />
-<link rel="stylesheet" href="inc/css/common.css" />
+    <link rel="stylesheet" href="inc/css/font.css" />
+    <link rel="stylesheet" href="inc/css/common.css" />
 
-<script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
-<script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
-<script type="text/javascript" src="inc/js/moment.js"></script>
-<script type="text/javascript" src="inc/js/Chart.min.js"></script>
-<script type="text/javascript" src="inc/js/html2canvas.js"></script>
+    <script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
+    <script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
+    <script type="text/javascript" src="inc/js/moment.js"></script>
+    <script type="text/javascript" src="inc/js/Chart.min.js"></script>
+    <script type="text/javascript" src="inc/js/html2canvas.js"></script>
     <script type="text/javascript" src="inc/js/common.js"></script>
 
-<script>
-
-    
-$(document).ready(function() {
-        
-        uParams = getParams();
-        var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
-        on_map(dataDir,3065,2164);
-        makeChart();
-    
-    });
-
-var mapImage;
-    
-function pageDownload() {
-  var fileName;
-  var temp = location.href;
-  temp = temp.split('/');
-  temp = temp[temp.length - 1].split('.');
-  temp = temp[0];
-  fileName = temp + ".png";
+    <script>
 
 
-	var canvas = mapImage;
-	html2canvas(document.body.getElementsByClassName("chartWrap")[0], {backgroundColor: null}).then(function(canvas) {
-		//document.body.appendChild(canvas);
-		mapImage = canvas;
-		var imageUrl = mapImage.toDataURL("image/png");
-		imageUrl = atob(imageUrl.split(',')[1]);
-		var len = imageUrl.length;
-		var buf = new ArrayBuffer(len);
-		var view = new Uint8Array(buf);
-		var blob, i;
+        $(document).ready(function () {
 
-		for(i=0; i<len; i++){
-			view[i]= imageUrl.charCodeAt(i) & 0xff;
-		}
+            uParams = getParams();
+            var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
+            on_map(dataDir, 3065, 2164);
+            makeChart();
 
-		blob = new Blob([view], {type:'image/png'});
-		console.log(URL.createObjectURL(blob));
-		console.log(blob);
+        });
 
-		var a = document.createElement('a');
-		a.href = URL.createObjectURL(blob);
-		a.download = fileName;
+        var mapImage;
 
-		a.click();
-	});
-}         
+        function pageDownload() {
+            var fileName;
+            var temp = location.href;
+            //   temp = temp.split('/');
+            //   temp = temp[temp.length - 1].split('.');
+            //   temp = temp[0];
+            //   fileName = temp + ".png";
 
-function makeChart() {
-    // 차트 생성
-    var ctx = document.getElementById("radarChart").getContext('2d');
+            let today = new Date();
+            let year = today.getFullYear(); // 년도
+            let month = today.getMonth() + 1;  // 월
+            let todayDate = today.getDate();  // 날짜
 
-    
-   
-    var rectangle = new Path2D();
-    rectangle.rect(10, 10, 50, 50);
+            temp = temp.split('/');
+            temp = temp[temp.length - 1].split('.');
+            console.log(temp)
+            area = temp[0];
+            console.log(area)
+            temp = temp[1].split('&');
+            console.log(temp)
+            //no chorme driver
+            // dateDelta = temp[0].split("=")[1]
+            //chorme driver
+            dateDelta = temp[1].split("=")[1]
+            // date = temp[1].split("=")[1]
+            date = todayDate + (Number(dateDelta) - 1)
+            //no chorme driver
+            // time = temp[1].split("=")[1]
+            //chorme driver
+            time = temp[2].split("=")[1]
+            // fileName = area + '_'+date+'_'+time+ ".png";
+            fileName = area + '_' + year + month + date + '_' + time + ".png";
 
-    var circle = new Path2D();
-    circle.moveTo(125, 35);
-    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+            var canvas = mapImage;
+            html2canvas(document.body.getElementsByClassName("chartWrap")[0], { backgroundColor: null }).then(function (canvas) {
+                //document.body.appendChild(canvas);
+                mapImage = canvas;
+                var imageUrl = mapImage.toDataURL("image/png");
+                imageUrl = atob(imageUrl.split(',')[1]);
+                var len = imageUrl.length;
+                var buf = new ArrayBuffer(len);
+                var view = new Uint8Array(buf);
+                var blob, i;
 
-    ctx.stroke(rectangle);
-    ctx.fill(circle);
-   
-    var chartOptions = {
-        scale: {
-            display: false,
-            pointLabels: {
-                fontSize: 24,
-                fontStyle: "bold"
-            },
-            gridLines: {
-                circular: true,
-                color:["rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#538dbe","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#82c892"],
-                lineWidth:[1,1,1,1,1,1,1,3],
-                backgroundColor:"rgba(255,255,255,1)"
-            },
-            ticks: {
-                display: true,
-                beginAtZero: false,
-                min:-300,
-                max: 1200,
-                stepSize: 200,
-                fontSize: 24,
-                backgroundColor:"rgba(255,255,255,1)"
-            },
-        },
-        legend: {
-            display: false
-        },
-        "elements": {
-            "line":{
-                "tension":0,
-                "borderWidth":3
-            }
-        },
-        events: false,
-        tooltips: {
-            enabled: false
-        },
-        hover: {
-            animationDuration: 0
-        },
-        animate: false,
-    };
+                for (i = 0; i < len; i++) {
+                    view[i] = imageUrl.charCodeAt(i) & 0xff;
+                }
 
-    var chartData = {
-        "labels":[""],        
-        "datasets":[
-            {
-                "label":"고조",
-                "data":[,],
-                "fill":"-1",
-                "borderColor":"rgba(0,0,0,0)",
-                "pointBackgroundColor":"rgba(0,0,0,0)",
-                "pointBorderColor":"rgba(0,0,0,0)",
-                "pointHoverBackgroundColor":"rgba(0,0,0,0)",
-                "pointRadius":6,
-                "pointHoverBorderColor":"rgba(0,0,0,0)"
-            },
-            {
-                "label":"고조",
-                "data":[,],
-                "fill":"-1",
-                "backgroundColor":"rgba(0,0,0,0)",
-                "borderColor":"rgba(0,0,0,0)",
-                "pointBackgroundColor":"rgba(0,0,0,0)",
-                "pointBorderColor":"rgba(0,0,0,0)",
-                "pointHoverBackgroundColor":"rgba(0,0,0,0)",
-                "pointRadius":6,
-                "pointHoverBorderColor":"rgba(0,0,0,0)"
-            },
-            {
-                "label":"저조",
-                "data":[,],
-                "fill":"-1",
-                "backgroundColor":"rgba(0,0,0,0)",
-                "borderColor":"rgb(54, 162, 235)",
-                "pointBackgroundColor":"#3B529E",
-                "pointBorderColor":"#fff",
-                "pointHoverBackgroundColor":"#fff",
-                "pointRadius":6,
-                "pointHoverBorderColor":"rgb(54, 162, 235)",
-                "fontSize":40,
-            },            
-            {
-                "label":"저조",
-                "data":[,],
-                "fill":"-1",
-                "backgroundColor":"rgba(54, 162, 235, 0.2)",
-                "borderColor":"rgb(54, 162, 235)",
-                "pointBackgroundColor":"#3B529E",
-                "pointBorderColor":"#fff",
-                "pointHoverBackgroundColor":"#fff",
-                "pointRadius":6,
-                "pointHoverBorderColor":"rgb(54, 162, 235)",
-                "fontSize":40,
-            },
-            {
-                "label":"",
-                "data":[,0,0,0,0,0,0,0,0,0,0,0,0],
-                "fill":"-1",
-                "backgroundColor":"rgba(54, 162, 235, 0.2)",
-                "borderColor":"rgba(0,0,0,0)",
-                "pointBackgroundColor":"rgb(255,255,255)",
-                "pointBorderColor":"rgba(0,0,0,0)",
-                "pointHoverBackgroundColor":"rgba(0,0,0,0)",
-                "pointHoverBorderColor":"rgba(0,0,0,0)"
-            }
-        ]
-    };
-    
-    var tideTimeDegrees = [28,55,83,111,138,166,194,222,249,277,305,332];
-    
-    uParams = getParams();
-    var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
-    
-    $.ajax({
-		type: "GET",
-		url: dataDir + "/chart_radar.json",
-		dataType: "json",
-		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
-		success: function(data){
-			
-			var cnt = data.CHART.length;
-			for(var i=0; i < cnt; i++){                
-                // radar chart data
-                chartData.labels.push(data.CHART[i].POS_NAME);
-                chartData.datasets[0].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_01));
-                chartData.datasets[1].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_02));
-                chartData.datasets[2].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_01));
-                chartData.datasets[3].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_02));
-                
-                // tide time
-                $(".tideTime:eq("+i+")").find(".tide_low:eq(0)").text(data.CHART[i].TIDE_LOW_TIME_01);
-                $(".tideTime:eq("+i+")").find(".tide_high:eq(0)").text(data.CHART[i].TIDE_HIGH_TIME_01);
-                $(".tideTime:eq("+i+")").find(".tide_low:eq(1)").text(data.CHART[i].TIDE_LOW_TIME_02);
-                $(".tideTime:eq("+i+")").find(".tide_high:eq(1)").text(data.CHART[i].TIDE_HIGH_TIME_02);
-                $(".tideTime:eq("+i+")").rotate(tideTimeDegrees[i]);            
-			}
-            
-            console.log(chartData.datasets);
-            // make radar chart
-            new Chart(document.getElementById("radarChart"),{
-                "type":"radar",
-                "data":chartData,
-                "options":chartOptions
+                blob = new Blob([view], { type: 'image/png' });
+                console.log(URL.createObjectURL(blob));
+                console.log(blob);
+
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = fileName;
+
+                a.click();
             });
-            
-            // moon image change
-            //$(".moon").html('<img src="inc/img/moon/moon_'+data.CHART_LEGEND.MOON_STEP+'.png" />');
-			
-            // chart legend update
-            $(".sunTime_01").text(data.CHART_LEGEND.SUN_TIME_01);
-            $(".sunTime_02").text(data.CHART_LEGEND.SUN_TIME_02);
-            $(".sunTime_03").text(data.CHART_LEGEND.SUN_TIME_03);
-            $(".moonTime_01").text(data.CHART_LEGEND.MOON_TIME_01);
-            $(".moonTime_02").text(data.CHART_LEGEND.MOON_TIME_02);
-            $(".moonTime_03").text(data.CHART_LEGEND.MOON_TIME_03);
-            
-			
-		},error: function(XMLHttpRequest, textStatus, errorThrown) { 
-			console.log("Status: " + textStatus+":"+errorThrown);
-		}
-	});		
-}
-    
-Chart.pluginService.register({
-    beforeRender: function(chart) {    
-    },
-    beforeDraw: function(chart) {
-      var context = chart.ctx;
-      var centerX = chart.scale.xCenter;
-      var centerY = chart.scale.yCenter;
-      var radius = 330;
+        }
 
-      context.beginPath();
-      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      context.fillStyle = 'rgba(255,255,255,0)';
-      context.fill();
-    },
-    afterDraw: function(chart, easing) {
-      
-    }
-});
+        function makeChart() {
+            // 차트 생성
+            var ctx = document.getElementById("radarChart").getContext('2d');
 
-    
-</script>
-<style>
-.tide_high
-{
-    color : rgba(0,0,0,0);
-}
-</style>
+
+
+            var rectangle = new Path2D();
+            rectangle.rect(10, 10, 50, 50);
+
+            var circle = new Path2D();
+            circle.moveTo(125, 35);
+            circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+            ctx.stroke(rectangle);
+            ctx.fill(circle);
+
+            var chartOptions = {
+                scale: {
+                    display: false,
+                    pointLabels: {
+                        fontSize: 24,
+                        fontStyle: "bold"
+                    },
+                    gridLines: {
+                        circular: true,
+                        color: ["rgba(0,0,0,0.2)", "rgba(0,0,0,0.2)", "rgba(0,0,0,0.2)", "#538dbe", "rgba(0,0,0,0.2)", "rgba(0,0,0,0.2)", "rgba(0,0,0,0.2)", "#82c892"],
+                        lineWidth: [1, 1, 1, 1, 1, 1, 1, 3],
+                        backgroundColor: "rgba(255,255,255,1)"
+                    },
+                    ticks: {
+                        display: true,
+                        beginAtZero: false,
+                        min: -300,
+                        max: 1200,
+                        stepSize: 200,
+                        fontSize: 24,
+                        backgroundColor: "rgba(255,255,255,1)"
+                    },
+                },
+                legend: {
+                    display: false
+                },
+                "elements": {
+                    "line": {
+                        "tension": 0,
+                        "borderWidth": 3
+                    }
+                },
+                events: false,
+                tooltips: {
+                    enabled: false
+                },
+                hover: {
+                    animationDuration: 0
+                },
+                animate: false,
+            };
+
+            var chartData = {
+                "labels": [""],
+                "datasets": [
+                    {
+                        "label": "고조",
+                        "data": [,],
+                        "fill": "-1",
+                        "borderColor": "rgba(0,0,0,0)",
+                        "pointBackgroundColor": "rgba(0,0,0,0)",
+                        "pointBorderColor": "rgba(0,0,0,0)",
+                        "pointHoverBackgroundColor": "rgba(0,0,0,0)",
+                        "pointRadius": 6,
+                        "pointHoverBorderColor": "rgba(0,0,0,0)"
+                    },
+                    {
+                        "label": "고조",
+                        "data": [,],
+                        "fill": "-1",
+                        "backgroundColor": "rgba(0,0,0,0)",
+                        "borderColor": "rgba(0,0,0,0)",
+                        "pointBackgroundColor": "rgba(0,0,0,0)",
+                        "pointBorderColor": "rgba(0,0,0,0)",
+                        "pointHoverBackgroundColor": "rgba(0,0,0,0)",
+                        "pointRadius": 6,
+                        "pointHoverBorderColor": "rgba(0,0,0,0)"
+                    },
+                    {
+                        "label": "저조",
+                        "data": [,],
+                        "fill": "-1",
+                        "backgroundColor": "rgba(0,0,0,0)",
+                        "borderColor": "rgb(54, 162, 235)",
+                        "pointBackgroundColor": "#3B529E",
+                        "pointBorderColor": "#fff",
+                        "pointHoverBackgroundColor": "#fff",
+                        "pointRadius": 6,
+                        "pointHoverBorderColor": "rgb(54, 162, 235)",
+                        "fontSize": 40,
+                    },
+                    {
+                        "label": "저조",
+                        "data": [,],
+                        "fill": "-1",
+                        "backgroundColor": "rgba(54, 162, 235, 0.2)",
+                        "borderColor": "rgb(54, 162, 235)",
+                        "pointBackgroundColor": "#3B529E",
+                        "pointBorderColor": "#fff",
+                        "pointHoverBackgroundColor": "#fff",
+                        "pointRadius": 6,
+                        "pointHoverBorderColor": "rgb(54, 162, 235)",
+                        "fontSize": 40,
+                    },
+                    {
+                        "label": "",
+                        "data": [, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                        "fill": "-1",
+                        "backgroundColor": "rgba(54, 162, 235, 0.2)",
+                        "borderColor": "rgba(0,0,0,0)",
+                        "pointBackgroundColor": "rgb(255,255,255)",
+                        "pointBorderColor": "rgba(0,0,0,0)",
+                        "pointHoverBackgroundColor": "rgba(0,0,0,0)",
+                        "pointHoverBorderColor": "rgba(0,0,0,0)"
+                    }
+                ]
+            };
+
+            var tideTimeDegrees = [28, 55, 83, 111, 138, 166, 194, 222, 249, 277, 305, 332];
+
+            uParams = getParams();
+            var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
+
+            $.ajax({
+                type: "GET",
+                url: dataDir + "/chart_radar.json",
+                dataType: "json",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                success: function (data) {
+
+                    var cnt = data.CHART.length;
+                    for (var i = 0; i < cnt; i++) {
+                        // radar chart data
+                        chartData.labels.push(data.CHART[i].POS_NAME);
+                        chartData.datasets[0].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_01));
+                        chartData.datasets[1].data.push(parseFloat(data.CHART[i].TIDE_HIGH_VALUE_02));
+                        chartData.datasets[2].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_01));
+                        chartData.datasets[3].data.push(parseFloat(data.CHART[i].TIDE_LOW_VALUE_02));
+
+                        // tide time
+                        $(".tideTime:eq(" + i + ")").find(".tide_low:eq(0)").text(data.CHART[i].TIDE_LOW_TIME_01);
+                        $(".tideTime:eq(" + i + ")").find(".tide_high:eq(0)").text(data.CHART[i].TIDE_HIGH_TIME_01);
+                        $(".tideTime:eq(" + i + ")").find(".tide_low:eq(1)").text(data.CHART[i].TIDE_LOW_TIME_02);
+                        $(".tideTime:eq(" + i + ")").find(".tide_high:eq(1)").text(data.CHART[i].TIDE_HIGH_TIME_02);
+                        $(".tideTime:eq(" + i + ")").rotate(tideTimeDegrees[i]);
+                    }
+
+                    console.log(chartData.datasets);
+                    // make radar chart
+                    new Chart(document.getElementById("radarChart"), {
+                        "type": "radar",
+                        "data": chartData,
+                        "options": chartOptions
+                    });
+
+                    // moon image change
+                    //$(".moon").html('<img src="inc/img/moon/moon_'+data.CHART_LEGEND.MOON_STEP+'.png" />');
+
+                    // chart legend update
+                    $(".sunTime_01").text(data.CHART_LEGEND.SUN_TIME_01);
+                    $(".sunTime_02").text(data.CHART_LEGEND.SUN_TIME_02);
+                    $(".sunTime_03").text(data.CHART_LEGEND.SUN_TIME_03);
+                    $(".moonTime_01").text(data.CHART_LEGEND.MOON_TIME_01);
+                    $(".moonTime_02").text(data.CHART_LEGEND.MOON_TIME_02);
+                    $(".moonTime_03").text(data.CHART_LEGEND.MOON_TIME_03);
+
+
+                }, error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("Status: " + textStatus + ":" + errorThrown);
+                }
+            });
+        }
+
+        Chart.pluginService.register({
+            beforeRender: function (chart) {
+            },
+            beforeDraw: function (chart) {
+                var context = chart.ctx;
+                var centerX = chart.scale.xCenter;
+                var centerY = chart.scale.yCenter;
+                var radius = 330;
+
+                context.beginPath();
+                context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                context.fillStyle = 'rgba(255,255,255,0)';
+                context.fill();
+            },
+            afterDraw: function (chart, easing) {
+
+            }
+        });
+
+
+    </script>
+    <style>
+        .tide_high {
+            color: rgba(0, 0, 0, 0);
+        }
+    </style>
 
 </head>
-<body> 
-    
-<div class="dailyOcean">
 
-	<div class="headerContainer" >
-		<div id="image_down"  class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
-            <img src="inc/img/logo_mofKhoa.png" class="f_L" width="383" height="105" />
-            <h1>내일의 바다<span>[海況예보도]</span></h1>
-        </div>
-		<div class="today f_R">
-            <span class="arrow"><i class="icon-arrow"></i></span>
-            <span class="date"></span>
-            <span class="time"></span>
-            <span class="lunar_date"></span>
-        </div>
-	</div>
-	
-	
-	
-	<div class="contentsContainer">
-		
-		<div class="mapContainer">
-			
-            <div class="onMap"></div>
-            
-            <div class="chartWrap">
-                
-                <canvas id="radarChart" width="760" height="780"></canvas>
-                <!--div class="tideUnit">(cm)</div-->
-                <!--div class="moon"><img src="inc/img/moon/moon_01.png" /></div-->
-                <div class="tideTime t_01">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_02">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_03">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_04">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_05">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_06">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_07">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_08">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_09">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_10">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_11">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>
-                <div class="tideTime t_12">
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span><br />
-                    <span class="tide_high">00:00</span>
-                    <span class="tide_low">00:00</span>
-                </div>                
+<body>
+
+    <div class="dailyOcean">
+
+        <div class="headerContainer">
+            <div id="image_down" class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
+                <img src="inc/img/logo_mofKhoa.png" class="f_L" width="383" height="105" />
+                <h1>내일의 바다<span>[海況예보도]</span></h1>
             </div>
-		</div>
-		
-	</div>    
-</div>
+            <div class="today f_R">
+                <span class="arrow"><i class="icon-arrow"></i></span>
+                <span class="date"></span>
+                <span class="time"></span>
+                <span class="lunar_date"></span>
+            </div>
+        </div>
+
+
+
+        <div class="contentsContainer">
+
+            <div class="mapContainer">
+
+                <div class="onMap"></div>
+
+                <div class="chartWrap">
+
+                    <canvas id="radarChart" width="760" height="780"></canvas>
+                    <!--div class="tideUnit">(cm)</div-->
+                    <!--div class="moon"><img src="inc/img/moon/moon_01.png" /></div-->
+                    <div class="tideTime t_01">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_02">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_03">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_04">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_05">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_06">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_07">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_08">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_09">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_10">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_11">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                    <div class="tideTime t_12">
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span><br />
+                        <span class="tide_high">00:00</span>
+                        <span class="tide_low">00:00</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+
 </html>

@@ -1,158 +1,185 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=yes,  initial-scale=1">
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>:: 해황예보도 이미지 자동생성 시스템 ::</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=yes,  initial-scale=1">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>:: 해황예보도 이미지 자동생성 시스템 ::</title>
 
-<link rel="stylesheet" href="inc/css/font.css" />
-<link rel="stylesheet" href="inc/css/common.css" />
+	<link rel="stylesheet" href="inc/css/font.css" />
+	<link rel="stylesheet" href="inc/css/common.css" />
 
-<script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
-<script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
-<script type="text/javascript" src="inc/js/moment.js"></script>
-<script type="text/javascript" src="inc/js/Chart.min.js"></script>
-<script type="text/javascript" src="inc/js/html2canvas.js"></script>
-<script type="text/javascript" src="inc/js/common.js"></script>
+	<script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
+	<script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
+	<script type="text/javascript" src="inc/js/moment.js"></script>
+	<script type="text/javascript" src="inc/js/Chart.min.js"></script>
+	<script type="text/javascript" src="inc/js/html2canvas.js"></script>
+	<script type="text/javascript" src="inc/js/common.js"></script>
 
-<script>
+	<script>
 
-$(document).ready(function() {
-	uParams = getParams();
-	var dataDir = 'RESULT/data_onbada/' + uParams.date + '/' + uParams.time
-	on_map(dataDir,1600,1340);
-	makeChart();
-});
-    
-function on_map(area,area_width, area_height){
-	uParams = getParams();
-	var dataDir = 'RESULT/data_onbada/' + uParams.date + '/' + uParams.time
+		$(document).ready(function () {
+			uParams = getParams();
+			var dataDir = 'RESULT/data_onbada/' + uParams.date + '/' + uParams.time
+			on_map(dataDir, 1600, 1340);
+			makeChart();
+		});
 
-	$.ajax({
-		type: "GET",
-		url: dataDir + "/on_map.json",
-		dataType: "json",
-		contentType:"application/x-www-form-urlencoded; charset=UTF-8",
-		success: function(data){
-			
-			//지도 바운더리 꼭지점 좌표
-			var latEnd = data.BASE_MAP[0].MAP_BOUNDARY_TL_LAT * 1000000;
-			var lngStr = data.BASE_MAP[0].MAP_BOUNDARY_TL_LNG * 1000000;
-			var latStr = data.BASE_MAP[0].MAP_BOUNDARY_BR_LAT * 1000000;
-			var lngEnd = data.BASE_MAP[0].MAP_BOUNDARY_BR_LNG * 1000000;
-			//온맵 이미지
-			$(".onMap").append('<img src="'+dataDir+'/'+data.BASE_MAP[0].MAP_URL+'" width="'+area_width+'" height="'+area_height+'" style="opacity:0"/>');
+		function on_map(area, area_width, area_height) {
+			uParams = getParams();
+			var dataDir = 'RESULT/data_onbada/' + uParams.date + '/' + uParams.time
 
-			var mapWidth = $(".onMap").width();
-			var mapHeight = $(".onMap").height();
-			
-			var baseWidth = mapWidth * 1 / (lngEnd - lngStr) ;
-			var baseHeight = mapHeight * 1 / (latEnd - latStr);
-			/* 지도 관련 끝 */
-			
-            // 오늘 날짜 및 시간            
-            $(".today .date").html(data.TODAY_DATE.DATE+'');
-            $(".today .time").html(data.TODAY_DATE.TIME);
-            $(".today .lunar_date").text("("+data.TODAY_DATE.LUNAR_DATE+")");
-    
-			var marker = "";
-			
-            // 수온,파고
-			var cnt = data.WATER_TEMP_WAVE_HEIGHT.length;
-			for(var i=0; i < cnt; i++){				
-				var markerH = data.WATER_TEMP_WAVE_HEIGHT[i].LAT * 1000000; 
-				var markerW = data.WATER_TEMP_WAVE_HEIGHT[i].LON * 1000000;
-				
-				var top = (latEnd - markerH) * baseHeight - 60;
-				var left = mapWidth - ( (lngEnd - markerW) * baseWidth ) - 75;
-				
-				marker += '<div id="'+data.WATER_TEMP_WAVE_HEIGHT[i].ID+'" class="dataMarker todayInfo" style="top:'+top+'px; left:'+left+'px; z-index:3">';				
-				marker += '<div class="dataBar waterTemp"><span class="icon f_L"><img src="inc/img/icon_waterTemp.png" /></span><div class="data f_L"><span class="value">'+parseFloat(data.WATER_TEMP_WAVE_HEIGHT[i].WATER_TEMP).toFixed(1)+'</span>℃</div></div>';
-				marker += '<div class="dataBar tide"><span class="icon f_L"><img src="inc/img/icon_waveHeight.png" /></span><div class="data f_L"><span class="value">'+parseFloat(data.WATER_TEMP_WAVE_HEIGHT[i].WAVE_HEIGHT).toFixed(1)+'</span>m</div></div>';
-				marker += '</div>';
+			$.ajax({
+				type: "GET",
+				url: dataDir + "/on_map.json",
+				dataType: "json",
+				contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+				success: function (data) {
 
-			}
-			
-			$(".onMap").append(marker);
-            $.each(dataWrapTopMargin, function(index,item) {
-                $(".onMap .tideForecast .dataWrap:eq("+index+")").css("margin-top",item+"px");
-            });
-			            
-            arrayRotate(curDirectIcons,curIconDegrees);
-            curDirectIcons = [];
-            curIconDegrees = [];
-            
-			
-		},error: function(XMLHttpRequest, textStatus, errorThrown) { 
-			console.log("Status: " + textStatus+":"+errorThrown);
-		}
-	});		
-}
+					//지도 바운더리 꼭지점 좌표
+					var latEnd = data.BASE_MAP[0].MAP_BOUNDARY_TL_LAT * 1000000;
+					var lngStr = data.BASE_MAP[0].MAP_BOUNDARY_TL_LNG * 1000000;
+					var latStr = data.BASE_MAP[0].MAP_BOUNDARY_BR_LAT * 1000000;
+					var lngEnd = data.BASE_MAP[0].MAP_BOUNDARY_BR_LNG * 1000000;
+					//온맵 이미지
+					$(".onMap").append('<img src="' + dataDir + '/' + data.BASE_MAP[0].MAP_URL + '" width="' + area_width + '" height="' + area_height + '" style="opacity:0"/>');
 
-var mapImage;
+					var mapWidth = $(".onMap").width();
+					var mapHeight = $(".onMap").height();
 
-function pageDownload() {
-  var fileName;
-  var temp = location.href;
-  temp = temp.split('/');
-  temp = temp[temp.length - 1].split('.');
-  temp = temp[0];
-  fileName = temp + ".png";
+					var baseWidth = mapWidth * 1 / (lngEnd - lngStr);
+					var baseHeight = mapHeight * 1 / (latEnd - latStr);
+					/* 지도 관련 끝 */
+
+					// 오늘 날짜 및 시간            
+					$(".today .date").html(data.TODAY_DATE.DATE + '');
+					$(".today .time").html(data.TODAY_DATE.TIME);
+					$(".today .lunar_date").text("(" + data.TODAY_DATE.LUNAR_DATE + ")");
+
+					var marker = "";
+
+					// 수온,파고
+					var cnt = data.WATER_TEMP_WAVE_HEIGHT.length;
+					for (var i = 0; i < cnt; i++) {
+						var markerH = data.WATER_TEMP_WAVE_HEIGHT[i].LAT * 1000000;
+						var markerW = data.WATER_TEMP_WAVE_HEIGHT[i].LON * 1000000;
+
+						var top = (latEnd - markerH) * baseHeight - 60;
+						var left = mapWidth - ((lngEnd - markerW) * baseWidth) - 75;
+
+						marker += '<div id="' + data.WATER_TEMP_WAVE_HEIGHT[i].ID + '" class="dataMarker todayInfo" style="top:' + top + 'px; left:' + left + 'px; z-index:3">';
+						marker += '<div class="dataBar waterTemp"><span class="icon f_L"><img src="inc/img/icon_waterTemp.png" /></span><div class="data f_L"><span class="value">' + parseFloat(data.WATER_TEMP_WAVE_HEIGHT[i].WATER_TEMP).toFixed(1) + '</span>℃</div></div>';
+						marker += '<div class="dataBar tide"><span class="icon f_L"><img src="inc/img/icon_waveHeight.png" /></span><div class="data f_L"><span class="value">' + parseFloat(data.WATER_TEMP_WAVE_HEIGHT[i].WAVE_HEIGHT).toFixed(1) + '</span>m</div></div>';
+						marker += '</div>';
+
+					}
+
+					$(".onMap").append(marker);
+					$.each(dataWrapTopMargin, function (index, item) {
+						$(".onMap .tideForecast .dataWrap:eq(" + index + ")").css("margin-top", item + "px");
+					});
+
+					arrayRotate(curDirectIcons, curIconDegrees);
+					curDirectIcons = [];
+					curIconDegrees = [];
 
 
-	var canvas = mapImage;
-	html2canvas(document.body.getElementsByClassName("onMap")[0], {backgroundColor: null}).then(function(canvas) {
-		//document.body.appendChild(canvas);
-		mapImage = canvas;
-		var imageUrl = mapImage.toDataURL("image/png");
-		imageUrl = atob(imageUrl.split(',')[1]);
-		var len = imageUrl.length;
-		var buf = new ArrayBuffer(len);
-		var view = new Uint8Array(buf);
-		var blob, i;
-
-		for(i=0; i<len; i++){
-			view[i]= imageUrl.charCodeAt(i) & 0xff;
+				}, error: function (XMLHttpRequest, textStatus, errorThrown) {
+					console.log("Status: " + textStatus + ":" + errorThrown);
+				}
+			});
 		}
 
-		blob = new Blob([view], {type:'image/png'});
-		console.log(URL.createObjectURL(blob));
-		console.log(blob);
+		var mapImage;
 
-		var a = document.createElement('a');
-		a.href = URL.createObjectURL(blob);
-		a.download = fileName;
+		function pageDownload() {
+			var fileName;
+			var temp = location.href;
+			// temp = temp.split('/');
+			// temp = temp[temp.length - 1].split('.');
+			// temp = temp[0];
+			// fileName = temp + ".png";
 
-		a.click();
-	});
-}
-</script>
-    
+			let today = new Date();
+			let year = today.getFullYear(); // 년도
+			let month = today.getMonth() + 1;  // 월
+			let todayDate = today.getDate();  // 날짜
+
+			temp = temp.split('/');
+			temp = temp[temp.length - 1].split('.');
+			console.log(temp)
+			area = temp[0];
+			console.log(area)
+			temp = temp[1].split('&');
+			console.log(temp)
+			//no chorme driver
+			// dateDelta = temp[0].split("=")[1]
+			//chorme driver
+			dateDelta = temp[1].split("=")[1]
+			// date = temp[1].split("=")[1]
+			date = todayDate + (Number(dateDelta) - 1)
+			//no chorme driver
+			// time = temp[1].split("=")[1]
+			//chorme driver
+			time = temp[2].split("=")[1]
+			// fileName = area + '_'+date+'_'+time+ ".png";
+			fileName = area + '_' + year + month + date + '_' + time + ".png";
+
+			var canvas = mapImage;
+			html2canvas(document.body.getElementsByClassName("onMap")[0], { backgroundColor: null }).then(function (canvas) {
+				//document.body.appendChild(canvas);
+				mapImage = canvas;
+				var imageUrl = mapImage.toDataURL("image/png");
+				imageUrl = atob(imageUrl.split(',')[1]);
+				var len = imageUrl.length;
+				var buf = new ArrayBuffer(len);
+				var view = new Uint8Array(buf);
+				var blob, i;
+
+				for (i = 0; i < len; i++) {
+					view[i] = imageUrl.charCodeAt(i) & 0xff;
+				}
+
+				blob = new Blob([view], { type: 'image/png' });
+				console.log(URL.createObjectURL(blob));
+				console.log(blob);
+
+				var a = document.createElement('a');
+				a.href = URL.createObjectURL(blob);
+				a.download = fileName;
+
+				a.click();
+			});
+		}
+	</script>
+
 </head>
-<body> 
-    
-<div class="dailyOcean">
 
-	<div class="headerContainer" >
-		<div id="image_down"  class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
-            <img src="inc/img/logo_mofKhoa.png" class="f_L" width="383" height="105" />
-            <h1>내일의 바다<span>[海況예보도]</span></h1>
-        </div>
-		<div class="today f_R">
-            <span class="arrow"><i class="icon-arrow"></i></span>
-            <span class="date"></span>
-            <span class="time"></span>
-            <span class="lunar_date"></span>
-        </div>
-	</div>
-		
-	<div class="contentsContainer">
-		<div class="mapContainer">
-			<div class="onMap" style="border:0px; background-color:transparent"></div>
+<body>
+
+	<div class="dailyOcean">
+
+		<div class="headerContainer">
+			<div id="image_down" class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
+				<img src="inc/img/logo_mofKhoa.png" class="f_L" width="383" height="105" />
+				<h1>내일의 바다<span>[海況예보도]</span></h1>
+			</div>
+			<div class="today f_R">
+				<span class="arrow"><i class="icon-arrow"></i></span>
+				<span class="date"></span>
+				<span class="time"></span>
+				<span class="lunar_date"></span>
+			</div>
 		</div>
-	</div>
+
+		<div class="contentsContainer">
+			<div class="mapContainer">
+				<div class="onMap" style="border:0px; background-color:transparent"></div>
+			</div>
+		</div>
 </body>
+
 </html>

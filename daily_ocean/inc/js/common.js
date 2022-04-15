@@ -28,6 +28,13 @@ function pageDownload() {
 	var fileName;
 	var temp = location.href;
 	
+	//현재시간 구하기
+	let today = new Date();
+	let year = today.getFullYear(); // 년도
+	let month = today.getMonth() + 1;  // 월
+	let todayDate = today.getDate();  // 날짜
+	
+
 	// temp = temp.split('/');
 	// temp = temp[temp.length - 1].split('.');
 	// temp = temp[0];
@@ -36,13 +43,23 @@ function pageDownload() {
 	//다운로드 파일명 변경
 	temp = temp.split('/');
 	temp = temp[temp.length - 1].split('.');
+	console.log(temp)
 	area = temp[0];
+	console.log(area)
 	temp = temp[1].split('&');
 	console.log(temp)
-	// date = temp[0].split("=")[1]
-	date = temp[1].split("=")[1]
+	//no chorme driver
+	// dateDelta = temp[0].split("=")[1]
+	//chorme driver
+	dateDelta = temp[1].split("=")[1]
+	// date = temp[1].split("=")[1]
+	date= todayDate+ (Number(dateDelta)-1)
+	//no chorme driver
+	// time = temp[1].split("=")[1]
+	//chorme driver
 	time = temp[2].split("=")[1]
-	fileName = area + '_'+date+'_'+time+ ".png";
+	// fileName = area + '_'+date+'_'+time+ ".png";
+	fileName = area + '_'+year+month+date+'_'+time+ ".png";
 
 	var canvas = mapImage;
 	html2canvas(document.body.getElementsByClassName("dailyOcean")[0]).then(function (canvas) {
