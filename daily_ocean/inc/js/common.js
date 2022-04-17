@@ -34,13 +34,13 @@ function pageDownload() {
 	let month = today.getMonth() + 1;  // 월
 	let todayDate = today.getDate();  // 날짜
 	
-
+	// no chorme
 	// temp = temp.split('/');
 	// temp = temp[temp.length - 1].split('.');
 	// temp = temp[0];
 	// fileName = temp + ".png";
 
-	//다운로드 파일명 변경
+	//다운로드 파일명 변경 chromedriver전용
 	temp = temp.split('/');
 	temp = temp[temp.length - 1].split('.');
 	console.log(temp)
