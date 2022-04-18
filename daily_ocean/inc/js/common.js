@@ -7,7 +7,7 @@ function getParams() {
 	var params;
 	params = url.substring(url.indexOf('?') + 1, url.length);
 	params = params.split("&");
-
+	// console.log('params', params)
 	var size = params.length;
 	var key, value;
 	for (var i = 0; i < size; i++) {
@@ -25,42 +25,42 @@ var t_canvas, t_ctx;
 var mapImage;
 
 function pageDownload() {
+
+	var param = new Array();
+
+	var url = decodeURIComponent(location.href);
+	url = decodeURIComponent(url);
+
+	var params;
+	params = url.substring(url.indexOf('?') + 1, url.length);
+	params = params.split("&");
+	
+	console.log('params', params)
 	var fileName;
 	var temp = location.href;
-	
+	console.log("location", location)
 	//현재시간 구하기
 	let today = new Date();
 	let year = today.getFullYear(); // 년도
 	let month = today.getMonth() + 1;  // 월
 	let todayDate = today.getDate();  // 날짜
 	
-	// no chorme
-	// temp = temp.split('/');
-	// temp = temp[temp.length - 1].split('.');
-	// temp = temp[0];
-	// fileName = temp + ".png";
-
-	//다운로드 파일명 변경 chromedriver전용
-	temp = temp.split('/');
-	temp = temp[temp.length - 1].split('.');
-	console.log(temp)
-	area = temp[0];
-	console.log(area)
+	temp = temp.split("?");
+	console.log("temp?", temp);
+	area = temp[0].split("/");
+	area = area[area.length -1];
+	// console.log("area", area);
+	area = area.split('.')[0];
+	console.log("area", area);
 	temp = temp[1].split('&');
-	console.log(temp)
-	//no chorme driver
-	// dateDelta = temp[0].split("=")[1]
-	//chorme driver
-	dateDelta = temp[1].split("=")[1]
-	// date = temp[1].split("=")[1]
-	date= todayDate+ (Number(dateDelta)-1)
-	//no chorme driver
-	// time = temp[1].split("=")[1]
-	//chorme driver
-	time = temp[2].split("=")[1]
-	// fileName = area + '_'+date+'_'+time+ ".png";
+	dateDelta = params[params.length-2].split("=")[1];
+	date= todayDate+ (Number(dateDelta)-1);
+	console.log("date", date);
+	time = params[params.length-1].split("=")[1];
+	console.log("time", time);
+	
 	fileName = area + '_'+year+month+date+'_'+time+ ".png";
-
+	
 	var canvas = mapImage;
 	html2canvas(document.body.getElementsByClassName("dailyOcean")[0]).then(function (canvas) {
 		//document.body.appendChild(canvas);
