@@ -119,6 +119,7 @@ print('0~2days WAVE: '+stWAVE)
 ncWRF = Dataset(filenmWRF)
 print('WRF Loaded')
 
+
 ### MAIN LOOP
 for areaname in liAreaname:
     for fcstdate in liFcstdate:
@@ -134,7 +135,8 @@ for areaname in liAreaname:
              # KST today     09:00 -  4 timestep - 00:00 UTC
 
             if khoastep < 0 or kmastep < 0: continue
-            print(kmastep, khoastep)
+            # print('KMA:',kmastep,'/ KHOA:',khoastep)
+            
   
             # Chart Date
             chartdate = (datetime.strptime(yyyymmdd, '%Y%m%d') + timedelta(days=fcstdate)).strftime('%Y%m%d')
@@ -200,6 +202,7 @@ for areaname in liAreaname:
             chart_legend["MOON_TIME_03"] = df_date['M3'][int(chartdate)][0:5]
             chart_legend["MOON_STEP"] = str(ld)
             chart_radar_json["CHART_LEGEND"] = chart_legend
+
 
             ## WTWH
             water_temp_wave_height = []
@@ -437,6 +440,7 @@ for areaname in liAreaname:
 
             ## CHART RADAR
             df_chart = pd.read_csv('INPUT/INP_CHART_RADAR/chart_radar_'+areaname+'.inp', sep='\\s+', header=None, encoding='UTF-8')
+            # print('INPUT/INP_CHART_RADAR/chart_radar_'+areaname+'.inp')
             df_chart.columns = ['NAME']
             chart = []
             idindex = 0
@@ -450,7 +454,7 @@ for areaname in liAreaname:
                     chart_comp["POS_NAME"] = chart_name
                 df_tide = pd.read_csv('INPUT/01_Tide/'+chart_name+' 예측조위(극치)_20220101_20221231.txt', sep='\\s+', header=None, encoding='EUC-KR', skiprows=7, index_col=[0,1,2,5], engine="python")
                 df_tide.columns = ['HH', 'MM', 'Hgt']
-                df_tide.index.name = ('YYYY','MM','DD','TYPE')
+                df_tide.index.names = ['YYYY','MM','DD','TYPE']
                 chart_comp["TIDE_HIGH_VALUE_01"]=""
                 chart_comp["TIDE_HIGH_TIME_01"] ="--:--"
                 chart_comp["TIDE_LOW_VALUE_01"] =""
@@ -459,9 +463,11 @@ for areaname in liAreaname:
                 chart_comp["TIDE_HIGH_TIME_02"] ="--:--"
                 chart_comp["TIDE_LOW_VALUE_02"] =""
                 chart_comp["TIDE_LOW_TIME_02"]  ="--:--"
+
                 # HIGH TIDE
-                try:
-                    high_tide_sorted = df_tide.loc[yyyy,sm,sd,'MAX',:].values[df_tide.loc[yyyy,sm,sd,'MAX',:].values[:,2].argsort()]
+                try:              
+                    high_tide_sorted = df_tide.loc[yyyy,sm,sd,'MAX'].values[df_tide.loc[yyyy,sm,sd,'MAX'].values[:,2].argsort()]
+                    
                     ht_state = len(high_tide_sorted)
                     for index_ht in range(-1, -1-ht_state, -1):
                         chart_comp["TIDE_HIGH_VALUE_"+str(-index_ht).zfill(2)] = str(high_tide_sorted[index_ht,2])
@@ -471,7 +477,7 @@ for areaname in liAreaname:
                     pass
                 # LOW TIDE
                 try:
-                    low_tide_sorted  = df_tide.loc[yyyy,sm,sd,'MIN',:].values[df_tide.loc[yyyy,sm,sd,'MIN',:].values[:,2].argsort()]
+                    low_tide_sorted  = df_tide.loc[yyyy,sm,sd,'MIN'].values[df_tide.loc[yyyy,sm,sd,'MIN'].values[:,2].argsort()]
                     lt_state = len(low_tide_sorted)
                     for index_lt in range(-1, -1-lt_state, -1):
                         chart_comp["TIDE_LOW_VALUE_"+str(-index_lt).zfill(2)] = str(low_tide_sorted[index_lt,2])
@@ -479,7 +485,10 @@ for areaname in liAreaname:
                         chart_comp["TIDE_LOW_VALUE_02"] = str(low_tide_sorted[index_lt,2])
                 except:
                     pass
+               
                 chart.append(chart_comp)
+            # print(chart_comp)
+            # exit()
             chart_radar_json["CHART"] = chart
 
             ## SAVE JSON
