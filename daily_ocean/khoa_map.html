@@ -1,0 +1,459 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+	
+	</body>
+</html>
+	<style>
+		.forecastImg .foreCastImages {
+			cursor: pointer;
+		}
+
+
+		#day_oc {
+			background-size: contain;
+		}
+	</style>
+
+	<div class="container-wrap">
+		<article class="container">
+			<section class="content_article">
+				<!-- <h3>내일의 바다(해황예보도)</h3> -->
+				<form name="abc" action="" method="post">
+					<input type="hidden" name="type" id="type" />
+					<input type="hidden" name="forecastDay" id="forecastDay" />
+					<input type="hidden" name="forecastHour" id="forecastHour" />
+				</form>
+				<div class="menu_list">
+					<div class="imgList">
+						<div class="imgMap">
+							<img id="basemap" src="${ctxPath}/images/forecast/map.png" alt="해황예보도 V1 이미지" />
+							<img class="foreCastImages" id="imageKorea"
+								onclick="fnCondImageChange('korea','전국',$(this))"
+								src="${ctxPath}/inc/images/forecast/korea_off.png" alt="전국"
+								style="position:absolute; left:135px; top:99px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('incheon','인천',$(this))"
+								src="${ctxPath}/inc/images/forecast/incheon_off.png" alt="인천"
+								style="position:absolute; left:100px; top:57px; width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('gunsan','군산',$(this))"
+								src="${ctxPath}/inc/images/forecast/gunsan_off.png" alt="군산"
+								style="position:absolute; left:88px; top:141px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('mokpo','목포',$(this))"
+								src="${ctxPath}/inc/images/forecast/mokpo_off.png" alt="목포"
+								style="position:absolute; left:67px; top:219px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('jeju','제주',$(this))"
+								src="${ctxPath}/inc/images/forecast/jeju_off.png" alt="제주"
+								style="position:absolute; left:103px; top:258px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('yeosu','여수',$(this))"
+								src="${ctxPath}/inc/images/forecast/yeosu_off.png" alt="여수"
+								style="position:absolute; left:132px; top:203px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('tongyeong','통영',$(this))"
+								src="${ctxPath}/inc/images/forecast/tongyeong_off.png" alt="통영"
+								style="position:absolute; left:170px; top:199px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('busan','부산',$(this))"
+								src="${ctxPath}/inc/images/forecast/busan_off.png" alt="부산"
+								style="position:absolute; left:205px; top:180px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('pohang','포항',$(this))"
+								src="${ctxPath}/inc/images/forecast/pohang_off.png" alt="포항"
+								style="position:absolute; left:210px; top:132px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('sokcho','속초',$(this))"
+								src="${ctxPath}/inc/images/forecast/sokcho_off.png" alt="속초"
+								style="position:absolute; left:177px; top:23px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('taean','태안',$(this))"
+								src="${ctxPath}/inc/images/forecast/taean_off.png" alt="태안"
+								style="position:absolute; left:70px; top:89px;width: 30px; " />
+							<img class="foreCastImages" onclick="fnCondImageChange('heuksando','흑산도',$(this))"
+								src="${ctxPath}/inc/images/forecast/heuksando_off.png" alt="흑산도"
+								style="position:absolute; left:36px; top:209px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('wando','완도',$(this))"
+								src="${ctxPath}/inc/images/forecast/wando_off.png" alt="완도"
+								style="position:absolute; left:102px; top:220px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('hupo','후포',$(this))"
+								src="${ctxPath}/inc/images/forecast/hupo_off.png" alt="후포"
+								style="position:absolute; left:214px; top:92px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('donghae','동해',$(this))"
+								src="${ctxPath}/inc/images/forecast/donghae_off.png" alt="동해"
+								style="position:absolute; left:191px; top:56px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('ulleungdo','울릉도',$(this))"
+								src="${ctxPath}/inc/images/forecast/ulleungdo_off.png" alt="울릉도"
+								style="position:absolute; left:230px; top:41px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('baengnyeongdo','백령도',$(this))"
+								src="${ctxPath}/inc/images/forecast/baengnyeongdo_off.png" alt="백령도"
+								style="position:absolute; left:31px; top:31px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('gyeokyeolbiyeoldo','격렬비열도',$(this))"
+								src="${ctxPath}/inc/images/forecast/gyeokyeolbiyeoldo_off.png" alt="격렬비열도"
+								style="position:absolute; left:33px; top:92px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('yeonggwang','영광',$(this))"
+								src="${ctxPath}/inc/images/forecast/yeonggwang_off.png" alt="영광"
+								style="position:absolute; left:83px; top:183px; width: 30px;" />
+							<img class="foreCastImages" onclick="fnCondImageChange('ieodo','이어도',$(this))"
+								src="${ctxPath}/inc/images/forecast/ieodo_off.png" alt="이어도"
+								style="position:absolute; left:38px; top:283px; width: 30px;" />
+						</div>
+					</div>
+					<!--imgList-->
+					<div class="function_list">
+						<div class="textArea">
+							<p>
+								<b>내일의 바다(海況예보도)</b>
+								는 생활해양정보로서 해양체험․활동과 의사결정 지원을 위해 다양한 해양예측정보를 기호와 색상으로 표현한 해양예보지도입니다.
+							</p>
+						</div>
+						<!--textArea-->
+						<div class="buttonList">
+							<div class="pdfDownload">
+								<%-- <a href="${ctxPath}/inc/images/oceanographic_prediction.pdf" download="해황예보도">
+									<button class="forcastbuttons"></a> --%>
+										<a href="http://www.khoa.go.kr/kcom/file/selectFileDownLoad.do?id=seacond"
+											target="_blank" style="display: block;">
+											<button class="forcastbuttons">
+												<%-- <button class="forcastbuttons"
+													onclick="location.href='${ctxPath}/inc/images/oceanographic_prediction.pdf'"
+													download="해황예보도"> --%>
+													<i>
+														<img class="icons"
+															src="${ctxPath}/inc/images/forecast/pdf_B.png"
+															alt="pdf아이콘" />
+													</i>
+													<p class="buttontext1">내일의 바다 [海況예보도]</p>
+													<p class="buttontext2">PDF 설명자료 다운</p>
+											</button>
+										</a>
+							</div>
+							<div class="casterInfo">
+								<button class="forcastbuttons" onclick="javascript:fnPopupZoneOpen(); return false;">
+									<%-- <img class="quadrangles"
+										src=${ctxPath}/inc/images/forecast/quadrangle_purple.png alt="보라" /> --%>
+									<i>
+										<img class="icons" src="${ctxPath}/inc/images/forecast/caster_B.png"
+											alt="캐스터아이콘" />
+									</i>
+									<p class="buttontext1">내일의 바다 [海況예보도]</p>
+									<p class="buttontext2">캐스터 설명영상 보기</p>
+								</button>
+							</div>
+							<div class="onbadaTV">
+								<button class="forcastbuttons" onclick="javascript:onbadaOpen();return false;">
+									<!-- <img class="quadrangles" src=${ctxPath}/inc/images/forecast/quadrangle_blue.png alt="파랑"/> -->
+									<i>
+										<img class="icons" src="${ctxPath}/inc/images/forecast/seeseaTV_B.png"
+											alt="온바다아이콘" />
+									</i>
+									<p class="buttontext1">해황예보 방송보기</p>
+									<p class="buttontext2">온바다 (See Sea TV)</p>
+								</button>
+							</div>
+							<!--onbadaTV-->
+						</div>
+						<!--buttonList-->
+					</div>
+					<!--function_list-->
+				</div>
+				<!--menu_list-->
+				<p style="padding-left:16px; font-weight:600; color:#3b60a4; font-size:20px;">※ "내일의 바다[海況예보도]"글자를 클릭하시면
+					다운로드 할 수 있습니다.</p>
+				<div class="result_area">
+					<div class="announcementList_area">
+						<div class="announcementList" style="width:78%;">
+							<div class="announcement_time">
+								<p class="announcementList_name">발표</p>
+								<div class="coasttextbox">
+									<input id="announceDate3" type="text" value="" />
+								</div>
+							</div>
+
+							<div class="forecast_time">
+								<p class="announcementList_name">예보도면</p>
+								<div class="coasttextbox">
+									<input type="text" id="announceDate2" value="" />
+								</div>
+							</div>
+						</div>
+						<div class="forcast_button_list" style="width:20%;">
+							<div class="buttons" style="width:100%;">
+								<div class="relocate">
+									<button class="buttons_button" onclick="click_past();">
+										이전
+									</button>
+								</div>
+								<div class="present">
+									<button class="buttons_button" onclick="click_present();">
+										현재
+									</button>
+								</div>
+								<div class="next">
+									<button class="buttons_button" onclick="click_future();">
+										다음
+									</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div id="day_div" style="width:100%;">
+						<img src="" if="day_oc" style="width:100%;" />
+					</div>
+					<div class="output_list">
+						<div id="tempImage">
+
+							<iframe id="day_ocean" name="day_ocean"
+								src="http://www.khoa.go.kr/daily_ocean/do_korea.html?date=03&time=21"
+								style="visibility:true">
+
+							</iframe>
+
+							<script>
+								function bbc(a) {
+									$('#day_temp').attr("src", a);
+									setTimeout(function () {
+										/* $("#day_div").height($('#day_temp').height()); */
+										$('#day_oc').attr("src", $('#day_temp').attr("src"));
+										$("#day_oc").width($('#day_div').width());
+										$('#day_oc').wheelzoom();
+									}, 1000);
+								}
+							</script>
+						</div>
+					</div>
+					<img src="" id="day_temp" style="visibility:hidden">
+					<!--output_list-->
+				</div>
+				<!--result_area-->
+			</section>
+		</article>
+	</div>
+	<script>
+		var imgtype = 'korea';
+		var checkbtn = 0;
+		$(window).resize(function () {
+			var type = $('#type').val(imgtype);
+		});
+
+		$(document).ready(function () {
+			$("#announceDate3").val(getDate(0).substring(0, 4) + '. ' + getDate(0).substring(4, 6) + '. ' + getDate(0).substring(6, 8) + '. ' + getDay(getDate2(0)) + ' 09시');
+			$("#announceDate2").val(getDate(0).substring(0, 4) + '. ' + getDate(0).substring(4, 6) + '. ' + getDate(0).substring(6, 8) + ' ' + getDay(getDate2(0)) + '09시');
+			fnCondImageChange('korea', '전국', $("#imageKorea"));
+			$("#imageKorea").attr("src", $("#imageKorea").attr("src").replace("_off", ""));
+		})
+		function downloadpdf() {
+			location.href = "${ctxPath}/images/oceanographic_prediction.pdf";
+		}
+
+		function click_past() {
+
+			if (checkbtn - 1 < 0) {
+				alert("더이상 자료가없습니다.")
+				return false;
+			} else {
+				checkbtn = checkbtn - 1;
+			}
+			var type = $('#type').val(imgtype);
+
+			$("#announceDate2").val(getDate2(chkDT(checkbtn, "1") - 1).substring(0, 4) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(4, 6) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(6, 8) + '. ' + getDay(getDate2(chkDT(checkbtn, "1") - 1)) + chkDT(checkbtn, "2") + '시');
+			$('#day_ocean').attr("src", "http://www.khoa.go.kr/daily_ocean/do_" + imgtype + ".html?date=" + chkDT(checkbtn, "1") + "&time=" + chkDT(checkbtn, "2"));
+		}
+
+		function click_present() {
+
+			checkbtn = 0;
+			var usehour = "09";
+			var type = $('#type').val(imgtype);
+			$("#announceDate2").val(getDate2(chkDT(checkbtn, "1") - 1).substring(0, 4) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(4, 6) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(6, 8) + '. ' + getDay(getDate2(chkDT(checkbtn, "1") - 1)) + chkDT(checkbtn, "2") + '시');
+			$('#day_ocean').attr("src", "http://www.khoa.go.kr/daily_ocean/do_" + imgtype + ".html?date=" + chkDT(checkbtn, "1") + "&time=" + chkDT(checkbtn, "2"));
+
+		}
+
+		function click_future() {
+			var type = $('#type').val(imgtype);
+			if (checkbtn + 1 == 21) {
+				alert("더이상 자료가없습니다.")
+				return false;
+			} else {
+				checkbtn = checkbtn + 1;
+
+			}
+			$("#announceDate2").val(getDate2(chkDT(checkbtn, "1") - 1).substring(0, 4) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(4, 6) + '. ' + getDate2(chkDT(checkbtn, "1") - 1).substring(6, 8) + '. ' + getDay(getDate2(chkDT(checkbtn, "1") - 1)) + chkDT(checkbtn, "2") + '시');
+			$('#day_ocean').attr("src", "http://www.khoa.go.kr/daily_ocean/do_" + imgtype + ".html?date=" + chkDT(checkbtn, "1") + "&time=" + chkDT(checkbtn, "2"));
+
+		}
+		function fnPopupZoneOpen() {
+			window.open('https://www.youtube.com/embed/mJpC7x9kk2o?rel=0&autoplay=1', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=620, height=360');
+		}
+
+		function onbadaOpen() {
+			var link = '${ctxPath}/Onbada/sub.do?parentSeq=1&categorySeq=623';
+			window.open(link, '_blank');
+		}
+
+		function fnCondImageChange(type, text, a) {
+			$('.foreCastImages').each(function () {
+				var src = $(this).attr("src").split(".");
+				if (src[0].indexOf('_off') > -1) {
+				} else {
+					$(this).attr("src", src[0] + "_off" + ".png");
+				}
+			});
+			a.attr("src", a.attr("src").replace("_off", ""));
+			imgtype = type;
+
+			var type = $('#type').val(imgtype);
+			$('#day_ocean').attr("src", "http://www.khoa.go.kr/daily_ocean/do_" + imgtype + ".html?date=" + chkDT(checkbtn, "1") + "&time=" + chkDT(checkbtn, "2"));
+		}
+
+
+		function getDate(addDay) //날짜 리턴 함수 (yyyymmdd)
+		{
+			var add = 24 * 60 * 60 * 1000; //하루를 밀리세컨드로 계산 
+			var today = new Date();
+			var hour = today.getHours();
+			if (hour < 9) {
+				today = new Date(new Date().getTime() + (add * addDay) - add * 1);
+				var day = (today.getDate()).toString();
+			}
+			else {
+				today = new Date(new Date().getTime() + (add * addDay) - add * 0);
+				var day = (today.getDate()).toString();
+			}
+
+			var month = (today.getMonth() + 1).toString();
+			var year = today.getFullYear().toString();
+			var date = year + (month[1] ? month : "0" + month[0]) + (day[1] ? day : "0" + day[0]);
+
+			return date;
+		}
+
+		function getDate2(addDay) //날짜 리턴 함수 (yyyymmdd)
+		{
+			var add = 24 * 60 * 60 * 1000; //하루를 밀리세컨드로 계산 
+			var today = new Date();
+			var hour = today.getHours();
+			if (hour < 9) {
+				today = new Date(new Date().getTime() + (add * addDay) - add * 1);
+				var day = (today.getDate()).toString();
+			}
+			else {
+				today = new Date(new Date().getTime() + (add * addDay) - add * 0);
+				var day = (today.getDate()).toString();
+			}
+
+			var month = (today.getMonth() + 1).toString();
+			var year = today.getFullYear().toString();
+
+			var date = year + (month[1] ? month : "0" + month[0]) + (day[1] ? day : "0" + day[0]);
+
+
+			return date;
+		}
+
+		function getDay(dateformat) {
+			var year = dateformat.substring(0, 4);
+			var month = dateformat.substring(4, 6);
+			var date = dateformat.substring(6, 8);
+			var d = new Date(year, month - 1, date);
+
+			var n = d.getDay();
+
+			var day = "";
+
+			if (n == 0)
+				day = "(일)";
+			else if (n == 1)
+				day = "(월)";
+			else if (n == 2)
+				day = "(화)";
+			else if (n == 3)
+				day = "(수)";
+			else if (n == 4)
+				day = "(목)";
+			else if (n == 5)
+				day = "(금)";
+			else if (n == 6)
+				day = "(토)";
+
+			return day;
+		}
+
+
+		function chkDT(num, gubun) {
+			var dt = "01";
+			var tm = "09";
+
+			if (num == "0") {
+				dt = "01";
+				tm = "09";
+			} else if (num == "1") {
+				dt = "01";
+				tm = "12";
+			} else if (num == "2") {
+				dt = "01";
+				tm = "15";
+			} else if (num == "3") {
+				dt = "01";
+				tm = "18";
+			} else if (num == "4") {
+				dt = "01";
+				tm = "21";
+			} else if (num == "5") {
+				dt = "02";
+				tm = "00";
+			} else if (num == "6") {
+				dt = "02";
+				tm = "03";
+			} else if (num == "7") {
+				dt = "02";
+				tm = "06";
+			} else if (num == "8") {
+				dt = "02";
+				tm = "09";
+			} else if (num == "9") {
+				dt = "02";
+				tm = "12";
+			} else if (num == "10") {
+				dt = "02";
+				tm = "15";
+			} else if (num == "11") {
+				dt = "02";
+				tm = "18";
+			} else if (num == "12") {
+				dt = "02";
+				tm = "21";
+			} else if (num == "13") {
+				dt = "03";
+				tm = "00";
+			} else if (num == "14") {
+				dt = "03";
+				tm = "03";
+			} else if (num == "15") {
+				dt = "03";
+				tm = "06";
+			} else if (num == "16") {
+				dt = "03";
+				tm = "09";
+			} else if (num == "17") {
+				dt = "03";
+				tm = "12";
+			} else if (num == "18") {
+				dt = "03";
+				tm = "15";
+			} else if (num == "19") {
+				dt = "03";
+				tm = "18";
+			} else if (num == "20") {
+				dt = "03";
+				tm = "21";
+			}
+			if (gubun == "1") {
+				return dt;
+			} else {
+				return tm;
+			}
+
+		}
+	</script>

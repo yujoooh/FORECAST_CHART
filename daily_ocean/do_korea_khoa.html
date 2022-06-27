@@ -9,7 +9,6 @@
 
 <link rel="stylesheet" href="inc/css/font.css" />
 <link rel="stylesheet" href="inc/css/common.css" />
-<link rel="stylesheet" href="inc/css/sub.css" />
 
 <script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
@@ -18,32 +17,34 @@
 <script type="text/javascript" src="inc/js/Chart.min.js"></script>
 <script type="text/javascript" src="inc/js/html2canvas.js"></script>
 <script type="text/javascript" src="inc/js/common.js"></script>
-
+ 
 <script>
-
     
 $(document).ready(function() {
-    
+        
+    // on_map("korea01",3065,2171);
     uParams = getParams();
-    var dataDir = 'RESULT/data_taean/' + uParams.date + '/' + uParams.time
-    on_map(dataDir,2000,2004);
+    var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
+    on_map(dataDir,3065,2164);
     makeChart();
-  
-  });
-    
+
+});
+
 function makeChart() {
     // 차트 생성
     var ctx = document.getElementById("radarChart").getContext('2d');
+   
+    var rectangle = new Path2D();
+    rectangle.rect(10, 10, 50, 50);
 
+    var circle = new Path2D();
+    circle.moveTo(125, 35);
+    circle.arc(100, 35, 25, 0, 2 * Math.PI);
+
+    ctx.stroke(rectangle);
+    ctx.fill(circle);
+   
     var chartOptions = {
-        layout:{
-          padding:{
-            left: 30,
-            right: 30,
-            top: 30,
-            bottom: 30
-          }
-        },
         scale: {
             display: true,
             pointLabels: {
@@ -52,8 +53,9 @@ function makeChart() {
             },
             gridLines: {
                 circular: true,
-                color:["rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#538dbe","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#82c892"],
-                lineWidth:[1,1,1,1,1,1,1,3]
+                color:["rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#538dbe","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","rgba(0,0,0,0.2)","#82c892"],
+                lineWidth:[1,1,1,1,1,1,1,3],
+                backgroundColor:"rgba(255,255,255,1)"
             },
             ticks: {
                 display: true,
@@ -61,7 +63,8 @@ function makeChart() {
                 min:-300,
                 max: 1200,
                 stepSize: 200,
-                fontSize: 22
+                fontSize: 26,
+                backdropColor:"rgba(255,255,255,0.2)"
             },
         },
         legend: {
@@ -89,7 +92,7 @@ function makeChart() {
             {
                 "label":"고조",
                 "data":[,],
-                "fill":"-1",                
+                "fill":"-1",
                 "borderColor":"rgb(255, 99, 132)",
                 "pointBackgroundColor":"#D92E2E",
                 "pointBorderColor":"#fff",
@@ -137,7 +140,7 @@ function makeChart() {
             },
             {
                 "label":"",
-                "data":[,-100,-100,-100,-100],
+                "data":[,0,0,0,0,0,0,0,0,0,0,0,0],
                 "fill":"-1",
                 "backgroundColor":"rgba(54, 162, 235, 0.2)",
                 "borderColor":"rgba(0,0,0,0)",
@@ -149,10 +152,10 @@ function makeChart() {
         ]
     };
     
-    var tideTimeDegrees = [72,144,216,288];
-    
+    var tideTimeDegrees = [28,55,83,111,138,166,194,222,249,277,305,332];
+
     uParams = getParams();
-    var dataDir = 'RESULT/data_taean/' + uParams.date + '/' + uParams.time
+    var dataDir = 'RESULT/data_korea/' + uParams.date + '/' + uParams.time
     
     $.ajax({
 		type: "GET",
@@ -211,40 +214,42 @@ Chart.pluginService.register({
       var context = chart.ctx;
       var centerX = chart.scale.xCenter;
       var centerY = chart.scale.yCenter;
-      var radius = 232;
-
-      fillRoundRect(context,  17, 212,  74, 40, 20);
-      fillRoundRect(context, 510, 212,  74, 40, 20);
-      fillRoundRect(context,  80, 500,  96, 40, 20);
-      fillRoundRect(context, 425, 500,  74, 40, 20);
+      var radius = 330;
 
       context.beginPath();
       context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
       context.fillStyle = 'rgba(255,255,255,0.8)';
-      context.closePath();
       context.fill();
     },
     afterDraw: function(chart, easing) {
       
     }
 });
-
     
 </script>
-    
+ <script>
+	function abc(){
+		html2canvas(document.body.getElementsByClassName("dailyOcean")[0]).then(
+		function (canvas) {parent.bbc(canvas.toDataURL("image/jpeg"))});
+	}
+	$(function(){
+		setTimeout("abc()",1000);
+	});
+</script>  
 </head>
-<body class="taean">
-<div class="dailyOcean">
+<body> 
+ 
+<div class="dailyOcean" id="dailyOcean">
 
 	<div class="headerContainer" >
 		<div id="image_down"  class="topLogo f_L" onClick="pageDownload();" style="cursor:pointer;">
-            <img src="inc/img/logo_mofKhoa.png" class="f_L" width="330" height="90" />
-            <h1 style="margin-top:112px;">내일의 바다<span>[海況예보도]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;태안</h1>
+            <img src="inc/img/logo_mofKhoa.png" class="f_L" width="383" height="105" />
+            <h1>내일의 바다<span>[海況예보도]</span></h1>
         </div>
 		<div class="today f_R">
             <span class="arrow"><i class="icon-arrow"></i></span>
             <span class="date"></span>
-            <span class="time"></span><br/>
+            <span class="time"></span>
             <span class="lunar_date"></span>
         </div>
 	</div>
@@ -255,12 +260,32 @@ Chart.pluginService.register({
 		
 		<div class="mapContainer">
 			
-            <div class="onMap"></div>
+            <div class="onMap" id="onMap"></div>
 			
-                <div style="position:absolute; top:1080px; left:1520px;"><img src="inc/img/loc/txt_14_anmyeon.png"/> </div>
-			
+                <div class="oceanName eastSea"><img src="inc/img/txt_Img_Eastsea.png" /></div>
+                <div class="oceanName yellowSea"><img src="inc/img/txt_Img_Yellowtsea.png" /></div>
+                <div class="oceanName dokdo"><img src="inc/img/txt_Img_Dokdo.png" /></div>
+                <div class="oceanName ongjin"><img src="inc/img/txt_Img_Ongjin.png" /></div>
+                <div class="oceanName shinan"><img src="inc/img/txt_Img_Shinan.png" /></div>
+                <div class="oceanName ieodo"><img src="inc/img/txt_Img_Ieodo.png" /></div>
+
+                <div style="position:absolute; top: 430px; left:1150px;"><img src="inc/img/loc/txt_seoul.png"/>        </div>
+                <div style="position:absolute; top: 750px; left:1240px;"><img src="inc/img/loc/txt_sejong.png"/>       </div>
+                <div style="position:absolute; top: 800px; left:1275px;"><img src="inc/img/loc/txt_daejeon.png"/>      </div>
+                <div style="position:absolute; top: 950px; left:1635px;"><img src="inc/img/loc/txt_daegu.png"/>        </div>
+                <div style="position:absolute; top:1170px; left:1110px;"><img src="inc/img/loc/txt_gwangju.png"/>      </div>
+                <div style="position:absolute; top: 510px; left:1260px;"><img src="inc/img/loc/txt_gyeonggido.png"/>   </div>
+                <div style="position:absolute; top: 400px; left:1520px;"><img src="inc/img/loc/txt_gangwondo.png"/>    </div>
+                <div style="position:absolute; top: 630px; left:1350px;"><img src="inc/img/loc/txt_chungcheongN.png"/> </div>
+                <div style="position:absolute; top: 680px; left:1080px;"><img src="inc/img/loc/txt_chungcheongS.png"/> </div>
+                <div style="position:absolute; top: 750px; left:1630px;"><img src="inc/img/loc/txt_gyeongsangN.png"/>  </div>
+                <div style="position:absolute; top:1070px; left:1460px;"><img src="inc/img/loc/txt_gyeongsangS.png"/>  </div>
+                <div style="position:absolute; top: 980px; left:1200px;"><img src="inc/img/loc/txt_jeonlaN.png"/>      </div>
+                <div style="position:absolute; top:1240px; left:1130px;"><img src="inc/img/loc/txt_jeonlaS.png"/>      </div>
+            
             <div class="chartWrap">
-                <canvas id="radarChart" width="560" height="580"></canvas>
+                
+                <canvas id="radarChart" width="760" height="780"></canvas>
                 <div class="tideUnit">(cm)</div>
                 <div class="moon"><img src="inc/img/moon/moon_01.png" /></div>
                 <div class="tideTime t_01">
@@ -287,43 +312,87 @@ Chart.pluginService.register({
                     <span class="tide_high">00:00</span>
                     <span class="tide_low">00:00</span>
                 </div>
+                <div class="tideTime t_05">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_06">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_07">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_08">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_09">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_10">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_11">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>
+                <div class="tideTime t_12">
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span><br />
+                    <span class="tide_high">00:00</span>
+                    <span class="tide_low">00:00</span>
+                </div>                
             </div>
             
             <div class="chartLegend">
-              <table cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                      <th rowspan="2">태안<br>기준</th>
-                      <td><img src="inc/img/icon_sunrise.png" /></td>
-                      <td>일출</td>
-                      <td class="sunTime_01">00:00</td>
-                      <td><img src="inc/img/icon_sun_culmination.png" /></td>
-                      <td>남중</td>
-                      <td class="sunTime_02">00:00</td>
-                      <td><img src="inc/img/icon_sunset.png" /></td>
-                      <td>일몰</td>
-                      <td class="sunTime_03">00:00</td>
-                  </tr>
-                  <tr>
-                      <td><img src="inc/img/icon_moonrise.png" /></td>
-                      <td>월출</td>
-                      <td class="moonTime_01">00:00</td>
-                      <td><img src="inc/img/icon_moon_culmination.png" /></td>
-                      <td>남중</td>
-                      <td class="moonTime_02">00:00</td>
-                      <td><img src="inc/img/icon_moonset.png" /></td>
-                      <td>월몰</td>
-                      <td class="moonTime_03">00:00</td>
-                  </tr>                        
-              </table>
-          </div>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <th rowspan="2">인천<br>기준</th>
+                        <td><img src="inc/img/icon_sunrise.png" /></td>
+                        <td>일출</td>
+                        <td class="sunTime_01">00:00</td>
+                        <td><img src="inc/img/icon_sun_culmination.png" /></td>
+                        <td>남중</td>
+                        <td class="sunTime_02">00:00</td>
+                        <td><img src="inc/img/icon_sunset.png" /></td>
+                        <td>일몰</td>
+                        <td class="sunTime_03">00:00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="inc/img/icon_moonrise.png" /></td>
+                        <td>월출</td>
+                        <td class="moonTime_01">00:00</td>
+                        <td><img src="inc/img/icon_moon_culmination.png" /></td>
+                        <td>남중</td>
+                        <td class="moonTime_02">00:00</td>
+                        <td><img src="inc/img/icon_moonset.png" /></td>
+                        <td>월몰</td>
+                        <td class="moonTime_03">00:00</td>
+                    </tr>                        
+                </table>
+            </div>
             
 		</div>
 		
 	</div>
-    
-    <div class="minimap">
-        <img src="inc/img/minimap_taean.png" />
-    </div>
 
     <div class="legendContainer">
         <!-- legend -->
@@ -331,8 +400,9 @@ Chart.pluginService.register({
           <div class="lgdBox current">
             <ul>
               <li>해수유동<br>(cm/s)</li>
-              <li style="width:  60px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(0.75) rotate(90deg);"/><br>50</li>
-              <li style="width:  90px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(1.50) rotate(90deg);"/><br>100</li>
+              <li style="width:  40px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(0.75) rotate(90deg);"/><br>50</li>
+              <li style="width:  70px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(1.50) rotate(90deg);"/><br>100</li>
+              <li style="width: 120px;"><img src="inc/img/SCAROW01.svg" style="transform: scale(2.25) rotate(90deg);"/><br>150</li>
             </ul>
           </div>
           <div class="lgdBox tideForecast">
@@ -342,7 +412,7 @@ Chart.pluginService.register({
               <li class="accentBg">조류예보</li>
               <li class="t_C tBlue">전류시각</li>
               <li class="t_C" style="background-color: #F9A01E; color: #fff;">최강유속시각</li>
-              <li class="t_R">최강유속(cm/s)</li>
+              <li class="t_C">최강유속(cm/s)</li>
             </ul>
           </div>
           <div class="lgdBox flooding">
@@ -389,13 +459,11 @@ Chart.pluginService.register({
             </ul>
           </div>
         </div>
-      </div>
+    </div>
     
 </div>
+
+
+
 </body>
-<script>
-    $(function () {
-        setTimeout("pageDownload()", 1000);
-    });
-</script>
 </html>

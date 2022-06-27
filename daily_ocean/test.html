@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" src="inc/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="inc/js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="inc/js/jqueryRotate.js"></script>
+<script type="text/javascript" src="inc/js/moment.js"></script>
+<script type="text/javascript" src="inc/js/Chart.min.js"></script>
+<script type="text/javascript" src="inc/js/html2canvas.js"></script>
+<script type="text/javascript" src="inc/js/common.js"></script>
+<div id="test">
+
+</div>
+
+<body>
+    <!-- <iframe src="http://192.168.3.210/daily_ocean/(edit)do_korea.html?date=01&time=09" frameborder="0"></iframe> -->
+    <iframe id='frame' src='http://192.168.3.210/daily_ocean/(edit)do_korea.html?date=01&time=09' frameborder='0'
+        scrolling='no' style='width: 100%;'
+        onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';"></iframe>
+</body>
+
+<!-- <script>
+    function data() {
+        $("#test").append('<iframe id="frame" src="http://192.168.3.210/daily_ocean/(edit)do_korea.html?date=01&time=09" frameborder="0"\
+        scrolling="no" style="width: 100%;"\
+        onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+"px";"></iframe>');
+    }
+    $(function () {
+        setTimeout("data()", 5000);
+
+    });
+</script> -->
+
+</html>
