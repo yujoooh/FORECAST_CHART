@@ -44,6 +44,10 @@ function pageDownload() {
 	let year = today.getFullYear(); // 년도
 	let month = today.getMonth() + 1;  // 월
 	let todayDate = today.getDate();  // 날짜
+
+	var format = year+(("00"+month.toString()).slice(-2))+(("00"+todayDate.toString()).slice(-2));
+	// console.log('test', year, month, todayDate);
+	// console.log(format)
 	
 	temp = temp.split("?");
 	console.log("temp?", temp);
@@ -59,7 +63,8 @@ function pageDownload() {
 	time = params[params.length-1].split("=")[1];
 	console.log("time", time);
 	
-	fileName = area + '_'+year+month+date+'_'+time+ ".png";
+	// fileName = area + '_'+year+month+date+'_'+time+ ".png";
+	fileName = area + '_'+format+'_'+time+ ".png";
 	
 	var canvas = mapImage;
 	html2canvas(document.body.getElementsByClassName("dailyOcean")[0]).then(function (canvas) {
